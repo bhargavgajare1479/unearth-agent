@@ -24,7 +24,7 @@ export type AnalysisResults = {
   integrity?: MockIntegrity;
 };
 
-export async function analyzeVideo(videoDataUri: string): Promise<AnalysisResults> {
+export async function analyzeInput(input: { type: 'video' | 'audio' | 'image', dataUri: string } | { type: 'text' | 'url', content: string }): Promise<AnalysisResults> {
   // Mock data for features not implemented in provided Genkit flows
   const metadata: MockMetadata = {
     flags: [
@@ -37,7 +37,22 @@ export async function analyzeVideo(videoDataUri: string): Promise<AnalysisResult
     audioStreamHash: "c4ca4238a0b923820dcc509a6f75849b"
   };
 
+  if (input.type !== 'video') {
+    // Return mock data for non-video inputs as flows are video-specific
+    const misScoreResult = await assessMisinformationTrustScore({
+      metadataIntegrity: 50,
+      physicsMatch: 50,
+      sourceCorroboration: 50
+    });
+    return { 
+        misScore: misScoreResult,
+        metadata: { flags: ["Analysis for this input type is in development."] },
+        integrity: { videoStreamHash: 'N/A', audioStreamHash: 'N/A' }
+    };
+  }
+
   try {
+    const videoDataUri = input.dataUri;
     // Run independent analyses in parallel
     const [anonymizationResult, verificationResult, contextResult] = await Promise.all([
       anonymizeWhistleblowerIdentity({ videoDataUri }),
