@@ -19,6 +19,7 @@ import {
 import {analyzeUrlContent, type AnalyzeUrlContentOutput} from '@/ai/flows/analyze-url-content';
 import {transcribeAudio} from '@/ai/flows/transcribe-audio';
 import {analyzeTextContent, type AnalyzeTextContentOutput} from '@/ai/flows/analyze-text-content';
+import {analyzeImageContent, type AnalyzeImageContentOutput} from '@/ai/flows/analyze-image-content';
 
 type MockMetadata = {
   flags: string[];
@@ -38,6 +39,7 @@ export type AnalysisResults = {
   integrity?: MockIntegrity;
   urlAnalysis?: AnalyzeUrlContentOutput;
   textAnalysis?: AnalyzeTextContentOutput;
+  imageAnalysis?: AnalyzeImageContentOutput;
   transcription?: string;
 };
 
@@ -102,13 +104,14 @@ export async function analyzeInput(
   }
 
   if (input.type === 'image') {
-    // Return mock data for image inputs as flow is not yet implemented
+    const imageAnalysisResult = await analyzeImageContent({imageDataUri: input.dataUri});
     const misScoreResult = await assessMisinformationTrustScore({
-      metadataIntegrity: 50,
-      physicsMatch: 50,
-      sourceCorroboration: 50,
+      metadataIntegrity: 50, // Placeholder
+      physicsMatch: 50, // Placeholder
+      sourceCorroboration: scoreMap[imageAnalysisResult.misinformationRisk] || 50,
     });
     return {
+      imageAnalysis: imageAnalysisResult,
       misScore: misScoreResult,
       metadata: {flags: ['Analysis for this input type is in development.']},
       integrity: {videoStreamHash: 'N/A', audioStreamHash: 'N/A'},
