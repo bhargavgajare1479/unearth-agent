@@ -2,15 +2,14 @@
   "manifest_version": 3,
   "name": "Unearth Agent",
   "version": "1.0",
-  "description": "A real-time forensic agent that detects deepfakes and verifies crisis footage on social media.",
+  "description": "Analyzes social media content for misinformation using Unearth Agent.",
   "permissions": [
-    "storage",
     "activeTab",
-    "scripting"
+    "storage"
   ],
   "host_permissions": [
-    "*://*.twitter.com/*",
-    "*://*.instagram.com/*"
+    "https://*.twitter.com/*",
+    "https://*.instagram.com/*"
   ],
   "background": {
     "service_worker": "background.js"
@@ -18,8 +17,8 @@
   "content_scripts": [
     {
       "matches": [
-        "*://*.twitter.com/*",
-        "*://*.instagram.com/*"
+        "https://*.twitter.com/*",
+        "https://*.instagram.com/*"
       ],
       "js": [
         "content.js"
@@ -28,10 +27,5 @@
   ],
   "action": {
     "default_title": "Unearth Agent"
-  },
-  "icons": {
-    "16": "icon16.png",
-    "48": "icon48.png",
-    "128": "icon128.png"
   }
 }
