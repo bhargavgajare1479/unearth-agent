@@ -1,4 +1,2 @@
-// This script will handle background tasks for the extension,
-// such as listening for messages from the content script and
-// making API calls to the Unearth Agent analysis server.
-console.log('Unearth Agent background script loaded.');
+chrome.runtime.onMessage.addListener((e,n,s)=>{if("analyzeContent"===e.action)return async function(e,n){try{const s=await fetch(new URL("/api/analyze",e.origin).href,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(e.payload)});if(!s.ok)throw new Error(`Analysis request failed with status: ${s.status}`);n({success:!0,results:await s.json()})}catch(e){console.error("Unearth Agent: Analysis failed",e),n({success:!1,error:e.message})}}(e,s),!0}),console.log("Unearth Agent background script loaded.");
+//# sourceMappingURL=background.js.map
