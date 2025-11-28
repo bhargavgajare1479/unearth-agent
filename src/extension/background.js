@@ -4,15 +4,15 @@
 
 // The URL to your deployed Next.js application's server action endpoint.
 // In a real deployment, this would be your production URL.
-// For local testing, you might need to use something like http://localhost:9002 if your app runs there.
-const ANALYSIS_ENDPOINT_URL = '/api/analyze'; // We'll use a relative URL which works if the extension is used on the same origin, but for cross-origin we'd need the full URL.
+// For local testing, we'll use the localhost address.
+const ANALYSIS_ENDPOINT_URL = 'http://localhost:9002/api/analyze';
 
 async function analyzeContent(request, sendResponse) {
   try {
     // The analyzeInput function is not directly accessible from the extension.
     // We need to make a network request to an API route that we will create.
     // This API route will, in turn, call the analyzeInput server action.
-    const res = await fetch(new URL(ANALYSIS_ENDPOINT_URL, request.origin).href, {
+    const res = await fetch(ANALYSIS_ENDPOINT_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -21,7 +21,8 @@ async function analyzeContent(request, sendResponse) {
     });
 
     if (!res.ok) {
-      throw new Error(`Analysis request failed with status: ${res.status}`);
+      const errorBody = await res.text();
+      throw new Error(`Analysis request failed with status: ${res.status}. Body: ${errorBody}`);
     }
 
     const results = await res.json();
