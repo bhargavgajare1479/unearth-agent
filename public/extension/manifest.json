@@ -2,25 +2,43 @@
   "manifest_version": 3,
   "name": "Unearth Agent",
   "version": "1.0",
-  "description": "Analyzes social media content for misinformation using the Unearth Agent engine.",
-  "permissions": ["storage", "activeTab"],
-  "host_permissions": ["http://*/*", "https://*/*"],
+  "description": "A real-time forensic agent that detects deepfakes and verifies crisis footage on social media.",
+  "permissions": ["storage", "activeTab", "scripting", "tabs"],
+  "host_permissions": [
+    "https://*.x.com/*",
+    "https://x.com/*",
+    "https://*.twitter.com/*",
+    "https://*.instagram.com/*",
+    "https://instagram.com/*",
+    "https://*.instagramc.com/*",
+    "https://instagramc.com/*",
+    "https://*.facebook.com/*",
+    "https://facebook.com/*",
+    "http://localhost:9002/*",
+    "<all_urls>"
+  ],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["https://*.twitter.com/*", "https://x.com/*", "https://*.instagram.com/*"],
-      "js": ["content.js"]
+      "matches": [
+        "https://*.x.com/*",
+        "https://*.twitter.com/*",
+        "https://*.instagram.com/*",
+        "https://instagram.com/*",
+        "https://*.instagramc.com/*",
+        "https://instagramc.com/*",
+        "https://*.facebook.com/*",
+        "https://facebook.com/*",
+        "<all_urls>"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
     }
   ],
   "action": {
     "default_title": "Unearth Agent"
-  },
-  "web_accessible_resources": [
-    {
-        "resources": ["/images/*.png"],
-        "matches": ["<all_urls>"]
-    }
-  ]
+  }
 }
