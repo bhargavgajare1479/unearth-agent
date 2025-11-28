@@ -3,7 +3,7 @@
 
 import { UploadCloud } from 'lucide-react';
 import { useCallback, useState } from 'react';
-import { useDropzone, Accept } from 'react-dropzone';
+import { useDropzone, type Accept } from 'react-dropzone';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from './ui/card';
 
