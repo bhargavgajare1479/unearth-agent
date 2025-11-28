@@ -5,6 +5,7 @@ import { anonymizeWhistleblowerIdentity, type AnonymizeWhistleblowerIdentityOutp
 import { assessMisinformationTrustScore, type AssessMisinformationTrustScoreOutput } from '@/ai/flows/assess-misinformation-trust-score';
 import { detectRecycledFootage, type DetectRecycledFootageOutput } from '@/ai/flows/detect-recycled-footage';
 import { verifyCrisisFootageContext, type VerifyCrisisFootageContextOutput } from '@/ai/flows/verify-crisis-footage-context';
+import { analyzeUrlContent, type AnalyzeUrlContentOutput } from '@/ai/flows/analyze-url-content';
 
 type MockMetadata = {
   flags: string[];
@@ -22,6 +23,7 @@ export type AnalysisResults = {
   context?: VerifyCrisisFootageContextOutput;
   metadata?: MockMetadata;
   integrity?: MockIntegrity;
+  urlAnalysis?: AnalyzeUrlContentOutput;
 };
 
 export async function analyzeInput(input: { type: 'video' | 'audio' | 'image', dataUri: string } | { type: 'text' | 'url', content: string }): Promise<AnalysisResults> {
@@ -36,6 +38,21 @@ export async function analyzeInput(input: { type: 'video' | 'audio' | 'image', d
     videoStreamHash: "d41d8cd98f00b204e9800998ecf8427e",
     audioStreamHash: "c4ca4238a0b923820dcc509a6f75849b"
   };
+
+  if (input.type === 'url') {
+    const urlAnalysisResult = await analyzeUrlContent({ url: input.content });
+    const scoreMap = { 'Low': 85, 'Medium': 50, 'High': 15 };
+    const misScoreResult = await assessMisinformationTrustScore({
+        metadataIntegrity: 70, // Placeholder for URL
+        physicsMatch: 70, // Placeholder for URL
+        sourceCorroboration: scoreMap[urlAnalysisResult.misinformationRisk] || 50,
+    });
+    return {
+        urlAnalysis: urlAnalysisResult,
+        misScore: misScoreResult,
+        metadata: { flags: [urlAnalysisResult.sourceReputation] },
+    };
+  }
 
   if (input.type !== 'video') {
     // Return mock data for non-video inputs as flows are video-specific
