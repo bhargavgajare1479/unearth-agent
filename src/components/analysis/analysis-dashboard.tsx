@@ -43,7 +43,7 @@ export function AnalysisDashboard({
         {isVideoAnalysis && videoUri && (
           <AnonymizationPreview
             originalVideo={videoUri}
-            anonymizedVideo={results.anonymization?.anonymizedVideoDataUri}
+            anonymizedAudio={results.anonymization?.anonymizedAudioDataUri}
           />
         )}
       </div>

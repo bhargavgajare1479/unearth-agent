@@ -5,10 +5,10 @@ import { UserX } from "lucide-react";
 
 interface AnonymizationPreviewProps {
     originalVideo: string;
-    anonymizedVideo?: string;
+    anonymizedAudio?: string;
 }
 
-export function AnonymizationPreview({ originalVideo, anonymizedVideo }: AnonymizationPreviewProps) {
+export function AnonymizationPreview({ originalVideo, anonymizedAudio }: AnonymizationPreviewProps) {
     return (
         <Card>
             <CardHeader className="flex flex-row items-start gap-4">
@@ -16,8 +16,8 @@ export function AnonymizationPreview({ originalVideo, anonymizedVideo }: Anonymi
                    <UserX className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                    <CardTitle className="font-headline">User Anonymization Preview</CardTitle>
-                    <CardDescription>Preview of the whistleblower identity masking process.</CardDescription>
+                    <CardTitle className="font-headline">Voice Anonymization</CardTitle>
+                    <CardDescription>The original video with its audio replaced by a synthetic, anonymized voice.</CardDescription>
                 </div>
             </CardHeader>
             <CardContent className="grid md:grid-cols-2 gap-6">
@@ -26,8 +26,15 @@ export function AnonymizationPreview({ originalVideo, anonymizedVideo }: Anonymi
                     <video key={originalVideo} controls src={originalVideo} className="w-full rounded-md border aspect-video bg-muted" />
                 </div>
                 <div>
-                    <h3 className="font-semibold mb-2 text-center">Anonymized Preview</h3>
-                    <video key={anonymizedVideo} controls src={anonymizedVideo || originalVideo} className="w-full rounded-md border aspect-video bg-muted" />
+                    <h3 className="font-semibold mb-2 text-center">Anonymized Playback</h3>
+                    <div className="w-full rounded-md border aspect-video bg-muted flex flex-col">
+                        <video key={originalVideo + '-anon'} muted src={originalVideo} className="w-full h-full object-cover" autoPlay loop playsInline />
+                         {anonymizedAudio && (
+                            <div className="p-2 border-t bg-background/50">
+                                <audio key={anonymizedAudio} controls src={anonymizedAudio} className="w-full" />
+                            </div>
+                        )}
+                    </div>
                 </div>
             </CardContent>
         </Card>
