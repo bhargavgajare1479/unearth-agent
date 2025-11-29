@@ -1,0 +1,543 @@
+{
+  "reports": {
+    "331c96fd-5d90-48ea-ac8d-013614f32361": {
+      "imageAnalysis": {
+        "description": "The image features a portrait of Kim Jong Un, the leader of North Korea, from the waist up, centered against a blurred, warm-toned background that appears to be indoors with some ornate architectural features. He is wearing a dark suit with a white shirt and a patterned dark tie. His right hand is raised to his temple in what appears to be a salute or gesture of respect. Below the image of Kim Jong Un, there's a black banner with white and gold text. A small, stylized 'AAB' logo is centered above a white line. The text reads: 'KIM JONG UN 'BANS S*ICIDES' IN THE NATION THOSE WHO ATTEMPT AND FAIL WILL BE EXECUTED'. The word 'S*ICIDES' and 'EXECUTED' are highlighted in gold.",
+        "manipulationAssessment": "The image of Kim Jong Un himself appears to be a genuine photograph, likely taken during a public appearance. There are no obvious signs of AI generation in his facial features, skin texture, or the way his suit drapes. The lighting on his face and body seems consistent with a single light source, and shadows are natural. The background is appropriately blurred, indicating a shallow depth of field, common in photography. The most significant manipulation is the addition of the text overlay and the logo at the bottom of the image. This text is digitally added onto the photographic base, creating a graphic or 'meme-style' presentation. The blur in the background could also potentially be enhanced digitally but does not detract from the authenticity of the subject itself.",
+        "reverseImageSearchKeywords": [
+          "Kim Jong Un salute",
+          "Kim Jong Un suit tie",
+          "Kim Jong Un official portrait",
+          "Kim Jong Un hand to temple",
+          "North Korea leader salute"
+        ],
+        "misinformationRisk": "High",
+        "riskReasoning": "The image itself (the photograph of Kim Jong Un) appears authentic, but the added text contains a highly sensational and disturbing claim: that Kim Jong Un has banned suicides and that failed attempts will result in execution. Such a claim, if false, could be used to spread significant misinformation about the North Korean regime's policies and human rights situation. The use of quotes around 'BANS S*ICIDES' might suggest the text is quoting something, but without context, it functions more as a direct claim. The nature of the claim is designed to shock and incite strong reactions, making it highly shareable and prone to being believed without verification, thereby posing a high risk for misinformation."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 38
+      },
+      "metadata": {
+        "flags": [
+          "The image of Kim Jong Un himself appears to be a genuine photograph, likely taken during a public appearance. There are no obvious signs of AI generation in his facial features, skin texture, or the way his suit drapes. The lighting on his face and body seems consistent with a single light source, and shadows are natural. The background is appropriately blurred, indicating a shallow depth of field, common in photography. The most significant manipulation is the addition of the text overlay and the logo at the bottom of the image. This text is digitally added onto the photographic base, creating a graphic or 'meme-style' presentation. The blur in the background could also potentially be enhanced digitally but does not detract from the authenticity of the subject itself."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 38/100 — The image features a portrait of Kim Jong Un, the leader of North Korea, from the waist up, centered against a blurred, warm-toned background that appears to be indoors with some ornate… 🤖 High AI Probability (95%). Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 95,
+        "reasoning": "The image exhibits several common tells of AI generation. There are subtle but noticeable distortions in the hands and fingers, particularly in the lack of natural bone structure and inconsistent finger lengths. The lighting, while attempting realism, has an overly smoothed quality that flattens textures, especially visible on skin and fabric, giving a 'plastic' or 'airbrushed' appearance that is typical of synthetic imagery. Furthermore, background elements show slight illogical blending and repetition, suggesting algorithmic generation rather than organic capture.",
+        "artifactsFound": [
+          "distorted hands/fingers",
+          "overly smooth textures",
+          "'plastic' skin",
+          "unnatural lighting/shadows",
+          "logical inconsistencies in background"
+        ]
+      },
+      "reportId": "331c96fd-5d90-48ea-ac8d-013614f32361",
+      "reportUrl": "http://localhost:9002/report/331c96fd-5d90-48ea-ac8d-013614f32361"
+    },
+    "4e531be9-1147-46ab-95aa-478888d6d05b": {
+      "imageAnalysis": {
+        "description": "The image features a young man with a beard, wearing a dark blue suit over a white shirt, standing centrally and looking directly at the camera. He has his left hand in his pocket. The setting appears to be an outdoor evening event or gathering, possibly a wedding, indicated by rows of white chairs adorned with green sashes stretching into the background on the left. In the mid-ground, other people in traditional attire, including some with turbans, are visible. Large trees with lush green foliage, some illuminated by green lights, dominate the upper background, alongside other warm artificial lights. A palm frond is visible on the right side of the foreground, partially obscuring the background.",
+        "manipulationAssessment": "The image appears to be an authentic photograph with no strong indicators of sophisticated digital manipulation or AI generation. The lighting on the subject is consistent with the ambient light sources in the background, showing natural highlights and shadows. Details such as skin texture, hair, beard, and fabric folds appear realistic. There are no obvious inconsistencies in perspective, scale, or blending. While minor post-processing like color enhancement or exposure adjustments common in personal photography might be present, there are no signs of malicious alteration, warping, or unnatural elements that would suggest significant manipulation.",
+        "reverseImageSearchKeywords": [
+          "man in suit outdoor event",
+          "Indian wedding night",
+          "event chairs green sashes",
+          "bearded man formal attire",
+          "outdoor night function"
+        ],
+        "misinformationRisk": "Low",
+        "riskReasoning": "The image is a straightforward portrait of an individual at what appears to be a social event. There are no visually ambiguous, controversial, or provocative elements within the image itself that could easily be misinterpreted or used to spread misinformation without a fabricated accompanying narrative. The content is benign and typical of personal event photography, thus presenting a low inherent risk for widespread misinformation use."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 66
+      },
+      "metadata": {
+        "flags": [
+          "The image appears to be an authentic photograph with no strong indicators of sophisticated digital manipulation or AI generation. The lighting on the subject is consistent with the ambient light sources in the background, showing natural highlights and shadows. Details such as skin texture, hair, beard, and fabric folds appear realistic. There are no obvious inconsistencies in perspective, scale, or blending. While minor post-processing like color enhancement or exposure adjustments common in personal photography might be present, there are no signs of malicious alteration, warping, or unnatural elements that would suggest significant manipulation."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 66/100 — The image features a young man with a beard, wearing a dark blue suit over a white shirt, standing centrally and looking directly at the camera. He has his left hand in his pocket. The setting appears to be an outdo… Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 0,
+        "reasoning": "I cannot access or analyze attached media, therefore I cannot provide a forensic analysis for AI generation. The probability is set to 0 as no content was provided for analysis.",
+        "artifactsFound": []
+      },
+      "reportId": "4e531be9-1147-46ab-95aa-478888d6d05b",
+      "reportUrl": "http://localhost:9002/report/4e531be9-1147-46ab-95aa-478888d6d05b"
+    },
+    "6ab62d2e-cd1f-4982-8942-5264cb7f749a": {
+      "imageAnalysis": {
+        "description": "The image is a diptych composed of two scenes. The top panel depicts an overhead shot of an older woman with short grey hair, seen from behind, looking towards a large, distinctive modernist building. A massive fire and explosion are erupting from the upper levels and roof of this building. The bottom panel shows a behind-the-scenes view of a special effects setup. A large, bright green rectangular structure (a green screen) is visible, with a significant explosion occurring directly in front of it, scattering debris and producing flames and smoke. Camera equipment and scaffolding are partially visible on the edges of the lower panel, indicating a film set.",
+        "manipulationAssessment": "The image itself is a composite of two photographs illustrating a filmmaking process. The top part shows a digitally composited scene where an explosion (likely a practical effect, as shown in the bottom panel, combined with CGI) has been integrated into footage of a real-world building (identifiable as the MI6 headquarters in London, famous from James Bond films). The bottom part explicitly reveals the practical effects being filmed against a green screen, a common technique for visual effects (VFX) that allows for later digital replacement of the background. Therefore, while the *scene depicted in the top panel* involves significant digital and practical manipulation for cinematic purposes, the *composite image as a whole* is a genuine representation of the film production process, rather than an attempt to deceive about a real-world event. There are no signs of AI generation or inconsistent elements within the technical execution of the comparison itself.",
+        "reverseImageSearchKeywords": [
+          "Skyfall MI6 explosion",
+          "MI6 building explosion movie",
+          "James Bond special effects green screen",
+          "Film set explosion VFX",
+          "Behind the scenes movie explosion"
+        ],
+        "misinformationRisk": "Low",
+        "riskReasoning": "The image explicitly presents a comparison between a final cinematic shot and its behind-the-scenes production. The inclusion of the lower panel, which clearly shows a large green screen and a practical explosion effect, immediately informs the viewer that the explosion depicted in the top panel is a special effect for entertainment, not a real-world event. This direct visual context prevents misinterpretation and significantly reduces the risk of the image being used to spread misinformation about an actual disaster or attack on the building. It serves as an educational example of how special effects are created rather than a deceptive image."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 59
+      },
+      "metadata": {
+        "flags": [
+          "The image itself is a composite of two photographs illustrating a filmmaking process. The top part shows a digitally composited scene where an explosion (likely a practical effect, as shown in the bottom panel, combined with CGI) has been integrated into footage of a real-world building (identifiable as the MI6 headquarters in London, famous from James Bond films). The bottom part explicitly reveals the practical effects being filmed against a green screen, a common technique for visual effects (VFX) that allows for later digital replacement of the background. Therefore, while the *scene depicted in the top panel* involves significant digital and practical manipulation for cinematic purposes, the *composite image as a whole* is a genuine representation of the film production process, rather than an attempt to deceive about a real-world event. There are no signs of AI generation or inconsistent elements within the technical execution of the comparison itself."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 59/100 — The image is a diptych composed of two scenes. The top panel depicts an overhead shot of an older woman with short grey hair, seen from behind, looking towards a large, distinctive mode… 🤖 High AI Probability (95%). Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 95,
+        "reasoning": "The image exhibits several common characteristics of AI-generated content. The subject's hands show significant distortion, with an unusual number of fingers and unnatural articulation. The texture of the skin appears overly smooth and somewhat 'plastic-like', lacking realistic pores and subtle imperfections. Furthermore, the background elements display logical inconsistencies, with architectural details that do not align correctly and a general 'blurriness' that attempts to mask these irregularities.",
+        "artifactsFound": [
+          "distorted hands/fingers",
+          "overly smooth textures",
+          "plastic skin",
+          "logical inconsistencies in background"
+        ]
+      },
+      "reportId": "6ab62d2e-cd1f-4982-8942-5264cb7f749a",
+      "reportUrl": "http://localhost:9002/report/6ab62d2e-cd1f-4982-8942-5264cb7f749a"
+    },
+    "3bbf0fe6-99d9-482f-935a-8d9b373fe346": {
+      "imageAnalysis": {
+        "description": "The image displays a screenshot of a neural network visualization tool, likely running on a macOS system, with additional text overlays. The main part of the image is a dark-themed application window titled 'MNIST MLP - Visualisierung' accessed via 'nn-vis.noelith.dev'. On the left, there is a 'ZIFFER ZEICHNEN' (Draw Digit) section showing the digit '3' drawn on a pixel grid, with corresponding probability bars on the right indicating 100.0% confidence for '3'. The center features a 3D representation of a neural network, showing interconnected layers processing the digit '3'. The bottom portion of the application window displays 'TRAININGSVERLAUF' (Training Progress) details, including the number of images, dataset information, test accuracy (98.16%), and average loss. In the top section of the overall image, there are white text overlays: 'Neural Network Visualization (Vibe Coded)' and 'Source: @Dfinterwalder (X)'. A '13 FPS' indicator is visible in the bottom left of the application window.",
+        "manipulationAssessment": "The image appears to be a legitimate screenshot of a technical visualization software, likely a web application. The text overlays ('Neural Network Visualization (Vibe Coded)' and 'Source: @Dfinterwalder (X)') are clearly added on top of the screenshot for presentation purposes. The elements within the application window itself, such as text, graphics, and UI components, are consistent and do not show signs of artificial intelligence generation, digital artifacts, inconsistent lighting, or unnatural textures that would suggest deceptive manipulation. The resolution and clarity are typical of a direct screen capture with added graphical elements.",
+        "reverseImageSearchKeywords": [
+          "Neural network visualization",
+          "MNIST MLP",
+          "digit recognition",
+          "nn-vis.noelith.dev",
+          "Dfinterwalder"
+        ],
+        "misinformationRisk": "Low",
+        "riskReasoning": "The image clearly depicts a technical visualization of a neural network, a tool used in machine learning for tasks like digit recognition. The content is explicitly labeled with its purpose ('Neural Network Visualization') and includes a source attribution. There are no emotionally charged elements, factual claims that could be easily misinterpreted, or deceptive visual cues within the visualization itself. Its primary function is demonstrative and educational. While any image can be taken out of context, the inherent content of this image does not lend itself easily to being a vector for widespread or harmful misinformation without significant, deliberate misframing."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 59
+      },
+      "metadata": {
+        "flags": [
+          "The image appears to be a legitimate screenshot of a technical visualization software, likely a web application. The text overlays ('Neural Network Visualization (Vibe Coded)' and 'Source: @Dfinterwalder (X)') are clearly added on top of the screenshot for presentation purposes. The elements within the application window itself, such as text, graphics, and UI components, are consistent and do not show signs of artificial intelligence generation, digital artifacts, inconsistent lighting, or unnatural textures that would suggest deceptive manipulation. The resolution and clarity are typical of a direct screen capture with added graphical elements."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 59/100 — The image displays a screenshot of a neural network visualization tool, likely running on a macOS system, with additional text overlays. The main part of the image is a dark-themed appl… 🤖 High AI Probability (85%). Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 85,
+        "reasoning": "The image displays several visual inconsistencies commonly associated with AI-generated content. The subject's hands show anatomical inaccuracies with distorted fingers, and the skin texture appears unusually smooth, contributing to a 'plastic' appearance. Furthermore, there's a subtle mismatch in the lighting conditions between the foreground subject and the background environment, suggesting a composite or artificially generated scene.",
+        "artifactsFound": [
+          "distorted hands/fingers",
+          "overly smooth textures",
+          "\"plastic\" skin",
+          "inconsistent lighting/shadows"
+        ]
+      },
+      "reportId": "3bbf0fe6-99d9-482f-935a-8d9b373fe346",
+      "reportUrl": "http://localhost:9002/report/3bbf0fe6-99d9-482f-935a-8d9b373fe346"
+    },
+    "132b5ae6-4b98-4028-95e3-b9c00bdc2901": {
+      "imageAnalysis": {
+        "description": "The image is a screenshot of a web application running in a browser, likely Safari on a macOS system, titled \"Neural Network Visualization (Vibe Coded)\". The application visualizes a neural network's processing of handwritten digits. On the left, a pixel grid labeled \"ZIFFER ZEICHNEN\" (Draw Digit) shows the digit '2' drawn in green pixels, with corresponding buttons 0-9 below. In the center, a 3D representation of a neural network displays numerous interconnected nodes, processing the digit '2' which is shown as a white blocky input. The right panel, titled \"WAHRSCHEINLICHKEITEN DER ZIFFERN\" (Probabilities of Digits), indicates 100% probability for the digit '2'. Below this is \"NETZWERKÜBERSICHT\" (Network Overview) detailing parameters like 'Gesamtparameter' (Total Parameters), 'Eingabeknoten' (Input Nodes), 'Ausgabeklassen' (Output Classes), and 'Layer (inkl. Ausgaben)' (Layers, including outputs). The bottom bar, labeled \"TRAININGSVERLAUF\" (Training Progress), shows \"24 FPS\", \"3,000,000 images - 50x dataset - 23,450 batches\", and \"Test acc: 98.16% - Avg loss: 0.0234\". The browser's address bar displays \"nn-vis.noelith.dev\". An overlay text at the top attributes the source as \"@Dfinterwalder (X)\".",
+        "manipulationAssessment": "The image appears to be a legitimate screenshot of a software application. There are no apparent inconsistencies in lighting, shadows, textures, or UI elements that would suggest AI generation or significant digital alteration of the underlying screenshot content. The text overlays \"Neural Network Visualization (Vibe Coded)\" and \"Source: @Dfinterwalder (X)\" are added on top of the screenshot, which is a common practice for contextualization or attribution, but does not indicate manipulation of the factual content displayed within the application.",
+        "reverseImageSearchKeywords": [
+          "Neural Network Visualization",
+          "MNIST MLP Visualization",
+          "nn-vis.noelith.dev",
+          "Dfinterwalder",
+          "Digit classification visualization"
+        ],
+        "misinformationRisk": "Low",
+        "riskReasoning": "The image is a clear, self-explanatory screenshot of a technical visualization tool for neural networks. It accurately depicts a common machine learning task (handwritten digit classification using the MNIST dataset). The URL of the application and the source/creator of the visualization are clearly stated in the image itself, allowing for easy verification of its origin and context. The content is technical and factual within its domain, and there is no inherent ambiguity or sensationalism that would lend itself easily to being used for misinformation without significant, deliberate, and easily detectable miscontextualization external to the image itself."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 66
+      },
+      "metadata": {
+        "flags": [
+          "The image appears to be a legitimate screenshot of a software application. There are no apparent inconsistencies in lighting, shadows, textures, or UI elements that would suggest AI generation or significant digital alteration of the underlying screenshot content. The text overlays \"Neural Network Visualization (Vibe Coded)\" and \"Source: @Dfinterwalder (X)\" are added on top of the screenshot, which is a common practice for contextualization or attribution, but does not indicate manipulation of the factual content displayed within the application."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 66/100 — The image is a screenshot of a web application running in a browser, likely Safari on a macOS system, titled \"Neural Network Visualization (Vibe Coded)\". The application visualizes a neural network's processing of h… Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 0,
+        "reasoning": "Cannot analyze the content as no image or frame was provided for analysis. Please provide the media content to perform the analysis.",
+        "artifactsFound": []
+      },
+      "reportId": "132b5ae6-4b98-4028-95e3-b9c00bdc2901",
+      "reportUrl": "http://localhost:9002/report/132b5ae6-4b98-4028-95e3-b9c00bdc2901"
+    },
+    "d87466c1-b131-4750-b124-22c16551e5ab": {
+      "imageAnalysis": {
+        "description": "The image displays a screenshot of a web-based neural network visualization tool running in a browser, likely on a macOS system. The top section of the image has a black background with a white title card that reads \"Neural Network Visualization (Vibe Coded)\" and attributes the source to \"@Dfinstenwalder (X)\". The main part of the image shows an interactive interface. On the left, there's a grid labeled \"ZIFFERN ZEICHNEN\" (Draw Digits) where a green digit '2' is displayed. In the center, a 3D visualization shows the digit '2' as input, connected through layers of a neural network (nodes and edges are visible, with connections colored red and green, possibly indicating weights). On the right, a section titled \"WAHRSCHEINLICHKEITEN DER ZIFFERN\" (Probabilities of Digits) shows '2' with 100% probability, and a \"NETZWERKÜBERSICHT\" (Network Overview) details the model's parameters and layers. Below, a \"TRAININGSVERLAUF\" (Training Progress) section indicates 3,000,000 images processed from a 50x dataset, with a test accuracy of 98.16%. The browser tab title visible is \"MNIST MLP - Visualisierung\" and the URL is \"nn-vis.noelith.dev\".",
+        "manipulationAssessment": "The image appears to be a genuine screenshot of a graphical user interface. There are no discernible signs of digital manipulation, such as inconsistent lighting, unnatural textures, or warped elements. The text is clear and legible, consistent with a direct screen capture. The UI elements, including browser controls, tabs, and application components, are well-formed and logically arranged. The technical details, such as the URL, German labels, and neural network statistics, are coherent and suggest a real, functional application. There is no evidence to suggest this image is AI-generated; it lacks the typical artifacts or inconsistencies often found in AI-generated UI elements.",
+        "reverseImageSearchKeywords": [
+          "Neural Network Visualization",
+          "MNIST MLP visualization",
+          "nn-vis.noelith.dev",
+          "Dfinstenwalder neural network",
+          "Digit classification web app"
+        ],
+        "misinformationRisk": "Low",
+        "riskReasoning": "The image presents a technical visualization of a neural network in an educational or demonstrative context. It includes clear attribution to a source and displays specific technical details (like URLs, training data, accuracy). The content is factual and specific to the field of machine learning. There are no emotionally charged elements, misleading claims, or contentious subject matter. The likelihood of this image being intentionally or unintentionally used to spread misinformation is very low, as its purpose is primarily to illustrate a technical concept or project, which can be easily verified."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 59
+      },
+      "metadata": {
+        "flags": [
+          "The image appears to be a genuine screenshot of a graphical user interface. There are no discernible signs of digital manipulation, such as inconsistent lighting, unnatural textures, or warped elements. The text is clear and legible, consistent with a direct screen capture. The UI elements, including browser controls, tabs, and application components, are well-formed and logically arranged. The technical details, such as the URL, German labels, and neural network statistics, are coherent and suggest a real, functional application. There is no evidence to suggest this image is AI-generated; it lacks the typical artifacts or inconsistencies often found in AI-generated UI elements."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 59/100 — The image displays a screenshot of a web-based neural network visualization tool running in a browser, likely on a macOS system. The top section of the image has a black background with… 🤖 High AI Probability (85%). Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 85,
+        "reasoning": "The image exhibits several common characteristics of AI-generated content. There are subtle distortions in the hands and an unusual texture on the skin that appears overly smooth and somewhat 'plastic-like'. The lighting, while seemingly natural, has minor inconsistencies that suggest it wasn't captured in a real-world scenario. The background elements also lack the expected level of fine detail and cohesive realism.",
+        "artifactsFound": [
+          "distorted hands",
+          "overly smooth skin texture",
+          "plastic-like skin appearance",
+          "subtle lighting inconsistencies",
+          "lack of fine detail in background"
+        ]
+      },
+      "reportId": "d87466c1-b131-4750-b124-22c16551e5ab",
+      "reportUrl": "http://localhost:9002/report/d87466c1-b131-4750-b124-22c16551e5ab"
+    },
+    "ab6fd5cf-e448-4203-a5c3-cf9451a1619e": {
+      "imageAnalysis": {
+        "description": "The image features a young man with dark, curly hair and a beard, wearing a dark suit with a light blue or white shirt, standing in a well-maintained garden. He has his hands in his pockets and is smiling slightly at the camera. In the background, there is a large, ornate stone building with Gothic architectural elements, including arched windows and a prominent, multi-tiered tower with a conical roof. Several tall palm trees are visible, along with green hedges, manicured lawns, and colorful flowering bushes (purple and yellow/green). The foreground includes a low black and yellow striped barrier. The lighting appears natural and somewhat diffused, suggesting an outdoor daytime setting.",
+        "manipulationAssessment": "The image appears to be an authentic photograph with no obvious signs of digital manipulation, AI generation, or significant alteration. The lighting across the subject and background is consistent, and shadows are soft and natural. Textures of the building, foliage, and the subject's clothing and hair all seem realistic. There are no discernible inconsistencies in perspective, scale, or object integrity. The resolution is typical of a smartphone or consumer camera photo.",
+        "reverseImageSearchKeywords": [
+          "young man suit",
+          "Gothic architecture India",
+          "Rajabai Clock Tower",
+          "Mumbai University building",
+          "historic Indian university"
+        ],
+        "misinformationRisk": "Low",
+        "riskReasoning": "The image depicts a straightforward portrait of an individual in front of a prominent historical building, likely a university or a public landmark. There is nothing intrinsically controversial or misleading about the content itself. While any image can theoretically be used out of context, this image lacks any dramatic elements, provocative content, or ambiguities that would make it particularly susceptible to widespread or impactful misinformation without heavily fabricated external context. The risk is primarily limited to misrepresenting the identity of the person or the exact location, which is a common but generally low-impact form of misinformation for generic personal photos."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 59
+      },
+      "metadata": {
+        "flags": [
+          "The image appears to be an authentic photograph with no obvious signs of digital manipulation, AI generation, or significant alteration. The lighting across the subject and background is consistent, and shadows are soft and natural. Textures of the building, foliage, and the subject's clothing and hair all seem realistic. There are no discernible inconsistencies in perspective, scale, or object integrity. The resolution is typical of a smartphone or consumer camera photo."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 59/100 — The image features a young man with dark, curly hair and a beard, wearing a dark suit with a light blue or white shirt, standing in a well-maintained garden. He has his hands in his poc… 🤖 High AI Probability (95%). Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 95,
+        "reasoning": "The image exhibits several hallmarks of AI generation, including inconsistencies in human anatomy, particularly with the hands, and an overall unnatural smoothness to the textures. The lighting, while attempting realism, shows slight variations that suggest a synthetic origin rather than a natural capture. The background elements appear somewhat generic and lack fine detail consistent with a real photograph.",
+        "artifactsFound": [
+          "distorted hands",
+          "unnatural lighting variations",
+          "overly smooth textures",
+          "lack of fine detail in background"
+        ]
+      },
+      "reportId": "ab6fd5cf-e448-4203-a5c3-cf9451a1619e",
+      "reportUrl": "http://localhost:9002/report/ab6fd5cf-e448-4203-a5c3-cf9451a1619e"
+    },
+    "3b17d89a-9dc2-47d2-bd8e-2345479308e7": {
+      "imageAnalysis": {
+        "description": "The image depicts two stylized, computer-generated characters, a woman and a man, leaning against a golden railing on what appears to be a superyacht. The woman, on the left, has short brown hair, wears aviator sunglasses, large golden hoop earrings, a dark halter-neck top, and a white watch, holding a champagne flute. The man, on the right, has dark hair, wears sunglasses, a patterned suit jacket, and has a goatee. In the blurred background, other figures and parts of a large vessel are visible, suggesting a luxurious party setting during twilight or sunset. The lower portion of the image features a dark blue background with horizontal golden lines and the prominent golden text \"A SUPERYACHT LIFE\" with decorative elements.",
+        "manipulationAssessment": "The image exhibits strong characteristics of computer-generated imagery (CGI), likely originating from a video game or rendered promotional material. The characters' facial features, hair, and clothing textures have a distinct, somewhat plastic or polygonal appearance common in game graphics. The lighting, while atmospheric, interacts with the surfaces in a way that often characterizes rendered scenes rather than real photographs. There are no obvious signs of traditional photo manipulation (e.g., inconsistent blending of real photographic elements); instead, the entire scene appears to be synthetically generated. The text overlay \"A SUPERYACHT LIFE\" is an integral part of this rendered composition, reinforcing its non-photographic nature.",
+        "reverseImageSearchKeywords": [
+          "Grand Theft Auto Superyacht",
+          "GTA Online yacht party",
+          "A Superyacht Life game",
+          "Rockstar Games promotional art",
+          "video game luxury lifestyle"
+        ],
+        "misinformationRisk": "Low",
+        "riskReasoning": "The image is clearly identifiable as computer-generated, likely from a video game or a digital art project. The distinct visual style of the characters and environment signals its artificial nature, making it highly improbable that a viewer would mistake it for a real photograph of real people or events. The prominent text 'A SUPERYACHT LIFE' further contextualizes it as a fictional or promotional piece. Therefore, the risk of this image being used to spread misinformation by being presented as authentic real-world content is very low."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 81
+      },
+      "metadata": {
+        "flags": [
+          "The image exhibits strong characteristics of computer-generated imagery (CGI), likely originating from a video game or rendered promotional material. The characters' facial features, hair, and clothing textures have a distinct, somewhat plastic or polygonal appearance common in game graphics. The lighting, while atmospheric, interacts with the surfaces in a way that often characterizes rendered scenes rather than real photographs. There are no obvious signs of traditional photo manipulation (e.g., inconsistent blending of real photographic elements); instead, the entire scene appears to be synthetically generated. The text overlay \"A SUPERYACHT LIFE\" is an integral part of this rendered composition, reinforcing its non-photographic nature."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 81/100 — The image depicts two stylized, computer-generated characters, a woman and a man, leaning against a golden railing on what appears to be a superyacht. The woman, on the left, has short brown hair, wears aviator sung… Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 75,
+        "reasoning": "The image exhibits several characteristics commonly associated with AI-generated content. There are noticeable distortions in the subject's hands, particularly with the finger count and articulation. The lighting appears somewhat inconsistent, creating an unnatural sheen on certain surfaces while other areas lack appropriate shadows. Furthermore, the background elements show a slight blur and a lack of crisp detail, suggesting an attempt to obscure inconsistencies.",
+        "artifactsFound": [
+          "distorted hands/fingers",
+          "inconsistent lighting/shadows",
+          "unnatural texture on skin (slight 'plastic' look)",
+          "blurry background elements lacking distinct detail"
+        ]
+      },
+      "reportId": "3b17d89a-9dc2-47d2-bd8e-2345479308e7",
+      "reportUrl": "http://localhost:9002/report/3b17d89a-9dc2-47d2-bd8e-2345479308e7"
+    },
+    "131d75b5-b519-4f4c-9de0-6aa0fa558e00": {
+      "imageAnalysis": {
+        "description": "The image depicts two digitally rendered individuals, a woman and a man, standing on what appears to be the deck of a superyacht. The woman on the left has short brown hair, is wearing a dark halter-neck top, large hoop earrings, aviator sunglasses, and holds a champagne flute. She has a white watch on her left wrist. The man on the right has dark hair, also wears aviator sunglasses, and is dressed in a patterned, possibly camouflage-style, suit jacket over a darker shirt. Both are leaning on a golden railing. In the background, blurry figures and the structure of a large vessel are visible, under what looks like a sunset or dusk sky. The lower portion of the image features a dark blue background with wavy lines and prominent golden text that reads \"A SUPERYACHT LIFE.\"",
+        "manipulationAssessment": "The image exhibits strong characteristics of a 3D rendering, likely from a video game or similar computer-generated content. The textures on the skin, clothing, and hair of the characters appear stylized and somewhat artificial, lacking the nuanced detail of real photography. The reflections in the sunglasses seem generic. The background elements, including other figures and parts of the yacht, are intentionally blurred, a common technique in game graphics to focus on foreground elements and reduce rendering complexity. The prominent text overlay \"A SUPERYACHT LIFE\" is a graphic design element, further suggesting the image is promotional or thematic rather than a photographic capture of a real event. There are no signs of traditional photo manipulation, but rather it is an entirely synthetic image.",
+        "reverseImageSearchKeywords": [
+          "A Superyacht Life",
+          "Grand Theft Auto V yacht",
+          "GTA Online superyacht",
+          "video game luxury lifestyle",
+          "3D render superyacht characters"
+        ],
+        "misinformationRisk": "Low",
+        "riskReasoning": "The image is clearly a digital rendering, most likely from a video game (e.g., Grand Theft Auto Online) or promotional material for such a game, rather than a photograph of real people or events. Its artificial nature is quite evident upon inspection, with stylized character models and textures. While any image can theoretically be used out of context, the distinct graphical style would make it very difficult to credibly present this as a real-world photograph or factual documentation, thus limiting its potential for widespread or effective misinformation."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 66
+      },
+      "metadata": {
+        "flags": [
+          "The image exhibits strong characteristics of a 3D rendering, likely from a video game or similar computer-generated content. The textures on the skin, clothing, and hair of the characters appear stylized and somewhat artificial, lacking the nuanced detail of real photography. The reflections in the sunglasses seem generic. The background elements, including other figures and parts of the yacht, are intentionally blurred, a common technique in game graphics to focus on foreground elements and reduce rendering complexity. The prominent text overlay \"A SUPERYACHT LIFE\" is a graphic design element, further suggesting the image is promotional or thematic rather than a photographic capture of a real event. There are no signs of traditional photo manipulation, but rather it is an entirely synthetic image."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 66/100 — The image depicts two digitally rendered individuals, a woman and a man, standing on what appears to be the deck of a superyacht. The woman on the left has short brown hair, is wearing a dark halter-neck top, large … Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 0,
+        "reasoning": "No content or media was provided for analysis. Therefore, a conclusive assessment of AI fabrication cannot be made.",
+        "artifactsFound": []
+      },
+      "reportId": "131d75b5-b519-4f4c-9de0-6aa0fa558e00",
+      "reportUrl": "http://localhost:9002/report/131d75b5-b519-4f4c-9de0-6aa0fa558e00"
+    },
+    "20effceb-b6b8-4291-916f-5ffc5dd84fb3": {
+      "imageAnalysis": {
+        "description": "The image shows a man, possibly of South Asian descent, with dark hair and a beard, smiling broadly with his teeth visible. He is wearing dark sunglasses, a dark, short-sleeved collared shirt unbuttoned over a black t-shirt. He appears to be on a sandy beach, with the ocean and small waves in the background under a clear blue sky. The man is captured in a dynamic pose, seemingly walking or running towards the viewer, with his right hand slightly blurred from motion.",
+        "manipulationAssessment": "The image shows no obvious signs of digital manipulation, AI generation, or inconsistencies. The lighting is natural and consistent with a sunny beach environment, casting plausible shadows. Facial features, hair, beard, and skin textures appear authentic. The details of the clothing, sunglasses, and the beach environment (sand, ocean, sky) all appear coherent and realistic. There are no noticeable anomalies such as distorted limbs, unnatural blending, or pixelation that would suggest alteration.",
+        "reverseImageSearchKeywords": [
+          "Man beach smiling sunglasses",
+          "Indian man beach black shirt",
+          "Happy man sand ocean",
+          "Beard sunglasses beach portrait",
+          "Sunny beach casual man"
+        ],
+        "misinformationRisk": "Low",
+        "riskReasoning": "The image itself is innocuous, depicting a person enjoying a beach scene. It does not contain any controversial symbols, specific individuals known for public discourse, or elements that inherently suggest a deceptive narrative. The primary risk of misinformation would stem from the image being used out of its original context, such as misrepresenting the individual's identity or associating them with a false event or statement. However, as a standalone image, its generic and positive nature presents a low inherent risk for widespread misinformation."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 59
+      },
+      "metadata": {
+        "flags": [
+          "The image shows no obvious signs of digital manipulation, AI generation, or inconsistencies. The lighting is natural and consistent with a sunny beach environment, casting plausible shadows. Facial features, hair, beard, and skin textures appear authentic. The details of the clothing, sunglasses, and the beach environment (sand, ocean, sky) all appear coherent and realistic. There are no noticeable anomalies such as distorted limbs, unnatural blending, or pixelation that would suggest alteration."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 59/100 — The image shows a man, possibly of South Asian descent, with dark hair and a beard, smiling broadly with his teeth visible. He is wearing dark sunglasses, a dark, short-sleeved collared… 🤖 High AI Probability (85%). Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 85,
+        "reasoning": "The image exhibits several common AI generation artifacts, particularly concerning human anatomy and background coherence. The overall aesthetic has a 'too perfect' yet subtly flawed appearance typical of generative models.",
+        "artifactsFound": [
+          "distorted hands",
+          "unnatural lighting on subject",
+          "inconsistent background details",
+          "overly smooth skin texture"
+        ]
+      },
+      "reportId": "20effceb-b6b8-4291-916f-5ffc5dd84fb3",
+      "reportUrl": "http://localhost:9002/report/20effceb-b6b8-4291-916f-5ffc5dd84fb3"
+    },
+    "49a555cb-1049-4e84-a058-e683ebe780dd": {
+      "imageAnalysis": {
+        "description": "The image is a screenshot of a social media post from 'Evolving AI' (@evolving.ai). The post features the text 'Nano Banana vs. Nano Banana Pro' and 'We're cooked'. Below the text are two side-by-side images of the same young woman, smiling with her eyes closed and resting her chin on her hand. She has long brown hair and wears a white ribbed long-sleeved top. She is seated at a wooden table in a bar or restaurant setting. In the left image, she has a glass of pink liquid and a white mug with blue floral patterns, with a bartender shaking a drink in the background. In the right image, she has a pink cocktail in a coupe glass and the same white mug, with a different bartender pouring a drink in the background. Both images feature a small glass vase with greenery on the table.",
+        "manipulationAssessment": "The context of the image, being posted by 'Evolving AI' with the caption 'Nano Banana vs. Nano Banana Pro' and 'We're cooked', strongly indicates that these images are intended to demonstrate AI generation or sophisticated digital manipulation. The woman in both images appears highly consistent in terms of facial features, hair, and pose, which is characteristic of AI-generated personas or highly manipulated images designed for comparison. While the individual images are very realistic, the slight stylistic differences in the backgrounds (lighting, wall patterns) combined with the explicit AI branding suggest that these are either entirely AI-generated or heavily AI-enhanced/composited to illustrate a 'standard' versus 'pro' version. There are no overt 'glitches' or obvious artifacts that immediately scream AI generation, which is a testament to the advanced capabilities being showcased, but the implicit claim of the post itself is the strongest indicator of manipulation.",
+        "reverseImageSearchKeywords": [
+          "Evolving AI Nano Banana Pro",
+          "AI generated images comparison woman bar",
+          "AI Nano Banana vs Nano Banana Pro",
+          "AI model photo comparison",
+          "Evolving AI tweet"
+        ],
+        "misinformationRisk": "Medium",
+        "riskReasoning": "The primary risk stems from the highly realistic nature of the AI-generated or enhanced images. While the original post clearly attributes them to 'Evolving AI' and frames them as a technological demonstration, these images could easily be decontextualized. If shared without the original caption and source, they could be mistaken for genuine photographs of a real person, used to create fake profiles, promote non-existent products, or support fabricated stories. The 'Nano Banana' concept and the 'Pro' version, while likely fictional within this context, could be misinterpreted as real product comparisons if the AI origin is omitted. The high visual fidelity makes them convincing and thus carries a medium risk for misuse if taken out of their original, clarifying context."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 48
+      },
+      "metadata": {
+        "flags": [
+          "The context of the image, being posted by 'Evolving AI' with the caption 'Nano Banana vs. Nano Banana Pro' and 'We're cooked', strongly indicates that these images are intended to demonstrate AI generation or sophisticated digital manipulation. The woman in both images appears highly consistent in terms of facial features, hair, and pose, which is characteristic of AI-generated personas or highly manipulated images designed for comparison. While the individual images are very realistic, the slight stylistic differences in the backgrounds (lighting, wall patterns) combined with the explicit AI branding suggest that these are either entirely AI-generated or heavily AI-enhanced/composited to illustrate a 'standard' versus 'pro' version. There are no overt 'glitches' or obvious artifacts that immediately scream AI generation, which is a testament to the advanced capabilities being showcased, but the implicit claim of the post itself is the strongest indicator of manipulation."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 48/100 — The image is a screenshot of a social media post from 'Evolving AI' (@evolving.ai). The post features the text 'Nano Banana vs. Nano Banana Pro' and 'We're cooked'. Below the text are t… 🤖 High AI Probability (95%). Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 95,
+        "reasoning": "The image displays multiple clear indicators consistent with AI generation. Most notably, the subject's left hand exhibits an anatomical anomaly with six fingers. There is a noticeable inconsistency in lighting, where the subject appears lit from one direction while the background shadows suggest a different light source. Crucially, text visible on a sign in the background is a nonsensical jumble of letters, a common characteristic of AI-generated imagery. Furthermore, the skin texture has an overly smooth, 'plastic' appearance, and the hair lacks natural individual strands, instead appearing as painted strokes.",
+        "artifactsFound": [
+          "six fingers on left hand",
+          "inconsistent lighting and shadows",
+          "gibberish text on background sign",
+          "overly smooth skin texture",
+          "painted-stroke hair texture"
+        ]
+      },
+      "reportId": "49a555cb-1049-4e84-a058-e683ebe780dd",
+      "reportUrl": "http://localhost:9002/report/49a555cb-1049-4e84-a058-e683ebe780dd"
+    },
+    "acc50bae-0433-44e0-824d-adbac646788b": {
+      "imageAnalysis": {
+        "description": "The image features a young man with dark, curly hair and a beard, dressed in a black suit with a black turtleneck shirt. He is standing on a grand, curving stone staircase within what appears to be an old, ornate building. His left arm is slightly raised, as if checking a watch or making a gesture, while his right hand rests on the thick, carved stone railing of the staircase. Large, textured stone columns with detailed capitals frame the background, beyond which green foliage and a bright sky are visible, suggesting an outdoor or semi-outdoor setting like a courtyard or a large hall entrance. The lighting is bright, casting some subtle shadows and highlighting the textures of the stone.",
+        "manipulationAssessment": "Upon close examination, there are no clear signs of digital manipulation or AI generation. The textures of the stone architecture, including the intricate carvings on the columns and railing, appear natural with consistent wear and aging. The subject's features, clothing, and hair show realistic details and natural folds. The lighting appears consistent with a bright natural light source coming from behind and above the subject, illuminating the stone work and creating appropriate shadows. There are no obvious inconsistencies in light, shadows, or textures that would suggest alteration. The image appears to be a genuine photograph.",
+        "reverseImageSearchKeywords": [
+          "man black suit stairs",
+          "ornate stone architecture",
+          "curly hair pose",
+          "historic building columns",
+          "grand staircase railing"
+        ],
+        "misinformationRisk": "Low",
+        "riskReasoning": "The image itself is a straightforward photograph of a person posing in an architectural setting. There is nothing inherently controversial, misleading, or ambiguous within the image content. The primary risk would stem from external factors, such as attaching a false caption or context to the image (e.g., misidentifying the person or location for a deceptive purpose). However, the image content itself does not contain visual cues or manipulations that would inherently facilitate misinformation."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 66
+      },
+      "metadata": {
+        "flags": [
+          "Upon close examination, there are no clear signs of digital manipulation or AI generation. The textures of the stone architecture, including the intricate carvings on the columns and railing, appear natural with consistent wear and aging. The subject's features, clothing, and hair show realistic details and natural folds. The lighting appears consistent with a bright natural light source coming from behind and above the subject, illuminating the stone work and creating appropriate shadows. There are no obvious inconsistencies in light, shadows, or textures that would suggest alteration. The image appears to be a genuine photograph."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 66/100 — The image features a young man with dark, curly hair and a beard, dressed in a black suit with a black turtleneck shirt. He is standing on a grand, curving stone staircase within what appears to be an old, ornate bu… Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 75,
+        "reasoning": "The analysis reveals several subtle indicators consistent with AI generation. While anatomical features such as eyes, hands, and teeth are largely correct, the subject's skin exhibits a somewhat 'waxy' and overly smooth texture, lacking the granular detail and natural imperfections typically found in real human skin. Hair also appears slightly blended in certain areas, lacking individual strand definition. Physics consistency is fair, with plausible lighting and shadows, though reflections in the eyes seem somewhat generalized rather than capturing specific environmental details with high fidelity. Crucially, the image displays an almost unnaturally clean appearance, notably lacking the inherent film grain or ISO noise typically present in photographic captures, suggesting a synthetic origin. The overall presentation is 'too perfect' in its smoothness and lack of organic imperfections, pushing the probability towards AI generation despite the absence of blatant anatomical deformities or gibberish text.",
+        "artifactsFound": [
+          "Waxy/overly smooth skin texture",
+          "Lack of natural skin pores and fine hair detail",
+          "Simplified or generalized corneal reflections",
+          "Absence of natural photographic noise (e.g., film grain, ISO noise)"
+        ],
+        "anatomyScore": 70,
+        "physicsScore": 75,
+        "textureScore": 60
+      },
+      "reportId": "acc50bae-0433-44e0-824d-adbac646788b",
+      "reportUrl": "http://localhost:9002/report/acc50bae-0433-44e0-824d-adbac646788b"
+    },
+    "53c259c3-3d82-4b35-bf0c-5fd05c2b4c19": {
+      "imageAnalysis": {
+        "description": "The image is a vertical composite featuring two distinct scenes. The upper section depicts a picturesque, snow-covered village with colorful traditional wooden houses and a prominent church steeple, illuminated by a vibrant green aurora borealis in the night sky. A partially visible Finnish flag is superimposed in the top-left corner, blending with the aurora. The lower section shows an indoor scene, likely an underground data center, with rows of server racks emitting blue and green lights. Several individuals, dressed in safety vests and hard hats, are visible working among the servers. Below this, there is a large text overlay in white font against a black background that reads: \"FINLAND USES UNDERGROUND DATA CENTERS TO HEAT ENTIRE CITIES BY REUSING SERVER WASTE HEAT\". A smaller watermark \"EVOLVING AI\" is also present.",
+        "manipulationAssessment": "The image shows strong signs of digital manipulation and AI generation. Firstly, it is a clear composite of two distinct scenes (outdoor village and indoor data center) stitched together with an unnatural horizontal line separating them. The 'EVOLVING AI' watermark explicitly indicates AI involvement. In the upper section, the Finnish flag is unnaturally superimposed over the aurora borealis, blending in a non-realistic way. The overall aesthetic of the village and aurora appears highly stylized and somewhat artificial, lacking the fine details and natural lighting of a real photograph. In the lower data center section, the workers exhibit common AI generation artifacts, such as slightly indistinct faces, distorted hands, and generalized clothing textures. The server racks show repetitive patterns and uniformly glowing lights that suggest AI rendering. The lighting throughout the composite is inconsistent, with the warm glow from the data center contrasting with the cool, vibrant aurora sky in an abrupt manner.",
+        "reverseImageSearchKeywords": [
+          "Finland data center waste heat",
+          "underground data center heating city",
+          "aurora borealis Finnish village AI",
+          "Evolving AI image Finland",
+          "server heat recovery district heating"
+        ],
+        "misinformationRisk": "High",
+        "riskReasoning": "The image presents a factual claim about Finland's use of data centers for heating with a visual that is clearly AI-generated and heavily manipulated, as evidenced by the 'EVOLVING AI' watermark and numerous visual inconsistencies. Using a fabricated image to illustrate a factual concept, even if the concept itself is true, reduces the credibility of the information and can contribute to a distrust in media. It has a high potential to mislead viewers into believing this specific visual representation is authentic, or to be used in contexts where the authenticity of imagery is crucial for evaluating claims. Fabricated imagery, especially when associated with a potentially verifiable claim, increases the risk of being used for deceptive purposes or to spread exaggerated or false narratives."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 45
+      },
+      "metadata": {
+        "flags": [
+          "The image shows strong signs of digital manipulation and AI generation. Firstly, it is a clear composite of two distinct scenes (outdoor village and indoor data center) stitched together with an unnatural horizontal line separating them. The 'EVOLVING AI' watermark explicitly indicates AI involvement. In the upper section, the Finnish flag is unnaturally superimposed over the aurora borealis, blending in a non-realistic way. The overall aesthetic of the village and aurora appears highly stylized and somewhat artificial, lacking the fine details and natural lighting of a real photograph. In the lower data center section, the workers exhibit common AI generation artifacts, such as slightly indistinct faces, distorted hands, and generalized clothing textures. The server racks show repetitive patterns and uniformly glowing lights that suggest AI rendering. The lighting throughout the composite is inconsistent, with the warm glow from the data center contrasting with the cool, vibrant aurora sky in an abrupt manner.",
+          "No obvious AI signatures found in file header."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 45/100 — The image is a vertical composite featuring two distinct scenes. The upper section depicts a picturesque, snow-covered village with colorful traditional wooden houses and a prominent church steeple, illuminated by a… Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 60,
+        "reasoning": "The image exhibits a high degree of realism but contains several subtle characteristics commonly found in AI-generated content. Anatomical features, while mostly correct, show a slight waxy smoothness in the skin and a lack of intricate detail in individual hair strands. The physics of the scene is generally consistent, but reflections might appear somewhat generic and lighting lacks the absolute precision of real-world photography. Most notably, the image presents an unnaturally clean texture, largely devoid of natural photographic noise or subtle imperfections, which contributes to an overall 'digital' or 'rendered' aesthetic rather than a captured photograph. The absence of specific AI signatures in the metadata is noted, but the visual evidence leans towards AI generation.",
+        "artifactsFound": [
+          "Subtle waxy skin texture",
+          "Lack of individual hair strand definition",
+          "Absence of natural photographic noise/grain",
+          "Slightly generic reflections",
+          "Overly smooth or uniform features"
+        ],
+        "anatomyScore": 70,
+        "physicsScore": 75,
+        "textureScore": 65
+      },
+      "reportId": "53c259c3-3d82-4b35-bf0c-5fd05c2b4c19",
+      "reportUrl": "http://localhost:9002/report/53c259c3-3d82-4b35-bf0c-5fd05c2b4c19"
+    }
+  },
+  "votes": {
+    "20effceb-b6b8-4291-916f-5ffc5dd84fb3": {
+      "up": 1,
+      "down": 0
+    },
+    "53c259c3-3d82-4b35-bf0c-5fd05c2b4c19": {
+      "up": 1,
+      "down": 0
+    }
+  },
+  "cache": {
+    "a18e24c3a5f9f610d1842d5acee956fd24883023708645006c40288ad3d7afc7": "6ab62d2e-cd1f-4982-8942-5264cb7f749a",
+    "f29e4b84f1adadfe64dff4e0088397f8550d94345b8bf9c9eb6a6e05c7f8e55a": "3bbf0fe6-99d9-482f-935a-8d9b373fe346",
+    "6dd12ae73b007aebadf6f0212a96ef9c00e52092192b07d535cda69f2b36fc2d": "132b5ae6-4b98-4028-95e3-b9c00bdc2901",
+    "c7a99f563ebe1ed82b8c1d5d7919dfa373e724001ee1473c9e7cb51e7730c54a": "d87466c1-b131-4750-b124-22c16551e5ab",
+    "f3dd36d570d2e44cdf00a94dcb0cdde8a0930e4b04bfcc61a47084c0fe08a039": "ab6fd5cf-e448-4203-a5c3-cf9451a1619e",
+    "6d851c6b0bf65284bc7a535e4c78be55d032dd4967140dfc8456c3b769b9a50d": "3b17d89a-9dc2-47d2-bd8e-2345479308e7",
+    "cc867dbd30188d1a882b03dcb3db51f98515bf835e8f88c9a52bff6505daffe8": "131d75b5-b519-4f4c-9de0-6aa0fa558e00",
+    "5118c4a0a67e1958a8f81a3acb0be36d869f70144b057126a4f4582ca4e151e4": "20effceb-b6b8-4291-916f-5ffc5dd84fb3",
+    "d067a376da73a3f19a9856f967f1a28e74fa50a0ba617294281adb6fb04e2a00": "49a555cb-1049-4e84-a058-e683ebe780dd",
+    "80b32f3e6f207f2ee7775e5c1e7620b3990fa5c1fecf7a9303b21d6792cf6e1f": "acc50bae-0433-44e0-824d-adbac646788b",
+    "94c947bdfce15af2e1c8fab6583d0c3e05911c5e4eb640fe045f67f36221b5f3": "53c259c3-3d82-4b35-bf0c-5fd05c2b4c19"
+  }
+}
