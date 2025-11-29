@@ -105,6 +105,34 @@ export function AnalysisDashboard({
               <span className="ml-2 text-sm text-gray-500">Probability</span>
             </div>
           </div>
+
+          {/* Forensic Scores */}
+          {results.aiDetection.anatomyScore !== undefined && (
+            <div className="mb-4 grid grid-cols-3 gap-2 border-b border-gray-200 pb-4">
+              <div className="text-center p-2 bg-white/50 rounded">
+                <div className="text-xs font-medium text-gray-500 uppercase tracking-wider">Anatomy</div>
+                <div className={`text-lg font-bold ${results.aiDetection.anatomyScore < 50 ? 'text-red-600' : 'text-green-600'}`}>
+                  {results.aiDetection.anatomyScore}%
+                </div>
+                <div className="text-[10px] text-gray-400">Realism</div>
+              </div>
+              <div className="text-center p-2 bg-white/50 rounded">
+                <div className="text-xs font-medium text-gray-500 uppercase tracking-wider">Physics</div>
+                <div className={`text-lg font-bold ${results.aiDetection.physicsScore < 50 ? 'text-red-600' : 'text-green-600'}`}>
+                  {results.aiDetection.physicsScore}%
+                </div>
+                <div className="text-[10px] text-gray-400">Realism</div>
+              </div>
+              <div className="text-center p-2 bg-white/50 rounded">
+                <div className="text-xs font-medium text-gray-500 uppercase tracking-wider">Texture</div>
+                <div className={`text-lg font-bold ${results.aiDetection.textureScore < 50 ? 'text-red-600' : 'text-green-600'}`}>
+                  {results.aiDetection.textureScore}%
+                </div>
+                <div className="text-[10px] text-gray-400">Realism</div>
+              </div>
+            </div>
+          )}
+
           <p className="text-sm text-gray-700 mb-4">{results.aiDetection.reasoning}</p>
           {results.aiDetection.artifactsFound.length > 0 && (
             <div>

@@ -386,10 +386,143 @@
       },
       "reportId": "20effceb-b6b8-4291-916f-5ffc5dd84fb3",
       "reportUrl": "http://localhost:9002/report/20effceb-b6b8-4291-916f-5ffc5dd84fb3"
+    },
+    "49a555cb-1049-4e84-a058-e683ebe780dd": {
+      "imageAnalysis": {
+        "description": "The image is a screenshot of a social media post from 'Evolving AI' (@evolving.ai). The post features the text 'Nano Banana vs. Nano Banana Pro' and 'We're cooked'. Below the text are two side-by-side images of the same young woman, smiling with her eyes closed and resting her chin on her hand. She has long brown hair and wears a white ribbed long-sleeved top. She is seated at a wooden table in a bar or restaurant setting. In the left image, she has a glass of pink liquid and a white mug with blue floral patterns, with a bartender shaking a drink in the background. In the right image, she has a pink cocktail in a coupe glass and the same white mug, with a different bartender pouring a drink in the background. Both images feature a small glass vase with greenery on the table.",
+        "manipulationAssessment": "The context of the image, being posted by 'Evolving AI' with the caption 'Nano Banana vs. Nano Banana Pro' and 'We're cooked', strongly indicates that these images are intended to demonstrate AI generation or sophisticated digital manipulation. The woman in both images appears highly consistent in terms of facial features, hair, and pose, which is characteristic of AI-generated personas or highly manipulated images designed for comparison. While the individual images are very realistic, the slight stylistic differences in the backgrounds (lighting, wall patterns) combined with the explicit AI branding suggest that these are either entirely AI-generated or heavily AI-enhanced/composited to illustrate a 'standard' versus 'pro' version. There are no overt 'glitches' or obvious artifacts that immediately scream AI generation, which is a testament to the advanced capabilities being showcased, but the implicit claim of the post itself is the strongest indicator of manipulation.",
+        "reverseImageSearchKeywords": [
+          "Evolving AI Nano Banana Pro",
+          "AI generated images comparison woman bar",
+          "AI Nano Banana vs Nano Banana Pro",
+          "AI model photo comparison",
+          "Evolving AI tweet"
+        ],
+        "misinformationRisk": "Medium",
+        "riskReasoning": "The primary risk stems from the highly realistic nature of the AI-generated or enhanced images. While the original post clearly attributes them to 'Evolving AI' and frames them as a technological demonstration, these images could easily be decontextualized. If shared without the original caption and source, they could be mistaken for genuine photographs of a real person, used to create fake profiles, promote non-existent products, or support fabricated stories. The 'Nano Banana' concept and the 'Pro' version, while likely fictional within this context, could be misinterpreted as real product comparisons if the AI origin is omitted. The high visual fidelity makes them convincing and thus carries a medium risk for misuse if taken out of their original, clarifying context."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 48
+      },
+      "metadata": {
+        "flags": [
+          "The context of the image, being posted by 'Evolving AI' with the caption 'Nano Banana vs. Nano Banana Pro' and 'We're cooked', strongly indicates that these images are intended to demonstrate AI generation or sophisticated digital manipulation. The woman in both images appears highly consistent in terms of facial features, hair, and pose, which is characteristic of AI-generated personas or highly manipulated images designed for comparison. While the individual images are very realistic, the slight stylistic differences in the backgrounds (lighting, wall patterns) combined with the explicit AI branding suggest that these are either entirely AI-generated or heavily AI-enhanced/composited to illustrate a 'standard' versus 'pro' version. There are no overt 'glitches' or obvious artifacts that immediately scream AI generation, which is a testament to the advanced capabilities being showcased, but the implicit claim of the post itself is the strongest indicator of manipulation."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 48/100 — The image is a screenshot of a social media post from 'Evolving AI' (@evolving.ai). The post features the text 'Nano Banana vs. Nano Banana Pro' and 'We're cooked'. Below the text are t… 🤖 High AI Probability (95%). Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 95,
+        "reasoning": "The image displays multiple clear indicators consistent with AI generation. Most notably, the subject's left hand exhibits an anatomical anomaly with six fingers. There is a noticeable inconsistency in lighting, where the subject appears lit from one direction while the background shadows suggest a different light source. Crucially, text visible on a sign in the background is a nonsensical jumble of letters, a common characteristic of AI-generated imagery. Furthermore, the skin texture has an overly smooth, 'plastic' appearance, and the hair lacks natural individual strands, instead appearing as painted strokes.",
+        "artifactsFound": [
+          "six fingers on left hand",
+          "inconsistent lighting and shadows",
+          "gibberish text on background sign",
+          "overly smooth skin texture",
+          "painted-stroke hair texture"
+        ]
+      },
+      "reportId": "49a555cb-1049-4e84-a058-e683ebe780dd",
+      "reportUrl": "http://localhost:9002/report/49a555cb-1049-4e84-a058-e683ebe780dd"
+    },
+    "acc50bae-0433-44e0-824d-adbac646788b": {
+      "imageAnalysis": {
+        "description": "The image features a young man with dark, curly hair and a beard, dressed in a black suit with a black turtleneck shirt. He is standing on a grand, curving stone staircase within what appears to be an old, ornate building. His left arm is slightly raised, as if checking a watch or making a gesture, while his right hand rests on the thick, carved stone railing of the staircase. Large, textured stone columns with detailed capitals frame the background, beyond which green foliage and a bright sky are visible, suggesting an outdoor or semi-outdoor setting like a courtyard or a large hall entrance. The lighting is bright, casting some subtle shadows and highlighting the textures of the stone.",
+        "manipulationAssessment": "Upon close examination, there are no clear signs of digital manipulation or AI generation. The textures of the stone architecture, including the intricate carvings on the columns and railing, appear natural with consistent wear and aging. The subject's features, clothing, and hair show realistic details and natural folds. The lighting appears consistent with a bright natural light source coming from behind and above the subject, illuminating the stone work and creating appropriate shadows. There are no obvious inconsistencies in light, shadows, or textures that would suggest alteration. The image appears to be a genuine photograph.",
+        "reverseImageSearchKeywords": [
+          "man black suit stairs",
+          "ornate stone architecture",
+          "curly hair pose",
+          "historic building columns",
+          "grand staircase railing"
+        ],
+        "misinformationRisk": "Low",
+        "riskReasoning": "The image itself is a straightforward photograph of a person posing in an architectural setting. There is nothing inherently controversial, misleading, or ambiguous within the image content. The primary risk would stem from external factors, such as attaching a false caption or context to the image (e.g., misidentifying the person or location for a deceptive purpose). However, the image content itself does not contain visual cues or manipulations that would inherently facilitate misinformation."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 66
+      },
+      "metadata": {
+        "flags": [
+          "Upon close examination, there are no clear signs of digital manipulation or AI generation. The textures of the stone architecture, including the intricate carvings on the columns and railing, appear natural with consistent wear and aging. The subject's features, clothing, and hair show realistic details and natural folds. The lighting appears consistent with a bright natural light source coming from behind and above the subject, illuminating the stone work and creating appropriate shadows. There are no obvious inconsistencies in light, shadows, or textures that would suggest alteration. The image appears to be a genuine photograph."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 66/100 — The image features a young man with dark, curly hair and a beard, dressed in a black suit with a black turtleneck shirt. He is standing on a grand, curving stone staircase within what appears to be an old, ornate bu… Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 75,
+        "reasoning": "The analysis reveals several subtle indicators consistent with AI generation. While anatomical features such as eyes, hands, and teeth are largely correct, the subject's skin exhibits a somewhat 'waxy' and overly smooth texture, lacking the granular detail and natural imperfections typically found in real human skin. Hair also appears slightly blended in certain areas, lacking individual strand definition. Physics consistency is fair, with plausible lighting and shadows, though reflections in the eyes seem somewhat generalized rather than capturing specific environmental details with high fidelity. Crucially, the image displays an almost unnaturally clean appearance, notably lacking the inherent film grain or ISO noise typically present in photographic captures, suggesting a synthetic origin. The overall presentation is 'too perfect' in its smoothness and lack of organic imperfections, pushing the probability towards AI generation despite the absence of blatant anatomical deformities or gibberish text.",
+        "artifactsFound": [
+          "Waxy/overly smooth skin texture",
+          "Lack of natural skin pores and fine hair detail",
+          "Simplified or generalized corneal reflections",
+          "Absence of natural photographic noise (e.g., film grain, ISO noise)"
+        ],
+        "anatomyScore": 70,
+        "physicsScore": 75,
+        "textureScore": 60
+      },
+      "reportId": "acc50bae-0433-44e0-824d-adbac646788b",
+      "reportUrl": "http://localhost:9002/report/acc50bae-0433-44e0-824d-adbac646788b"
+    },
+    "53c259c3-3d82-4b35-bf0c-5fd05c2b4c19": {
+      "imageAnalysis": {
+        "description": "The image is a vertical composite featuring two distinct scenes. The upper section depicts a picturesque, snow-covered village with colorful traditional wooden houses and a prominent church steeple, illuminated by a vibrant green aurora borealis in the night sky. A partially visible Finnish flag is superimposed in the top-left corner, blending with the aurora. The lower section shows an indoor scene, likely an underground data center, with rows of server racks emitting blue and green lights. Several individuals, dressed in safety vests and hard hats, are visible working among the servers. Below this, there is a large text overlay in white font against a black background that reads: \"FINLAND USES UNDERGROUND DATA CENTERS TO HEAT ENTIRE CITIES BY REUSING SERVER WASTE HEAT\". A smaller watermark \"EVOLVING AI\" is also present.",
+        "manipulationAssessment": "The image shows strong signs of digital manipulation and AI generation. Firstly, it is a clear composite of two distinct scenes (outdoor village and indoor data center) stitched together with an unnatural horizontal line separating them. The 'EVOLVING AI' watermark explicitly indicates AI involvement. In the upper section, the Finnish flag is unnaturally superimposed over the aurora borealis, blending in a non-realistic way. The overall aesthetic of the village and aurora appears highly stylized and somewhat artificial, lacking the fine details and natural lighting of a real photograph. In the lower data center section, the workers exhibit common AI generation artifacts, such as slightly indistinct faces, distorted hands, and generalized clothing textures. The server racks show repetitive patterns and uniformly glowing lights that suggest AI rendering. The lighting throughout the composite is inconsistent, with the warm glow from the data center contrasting with the cool, vibrant aurora sky in an abrupt manner.",
+        "reverseImageSearchKeywords": [
+          "Finland data center waste heat",
+          "underground data center heating city",
+          "aurora borealis Finnish village AI",
+          "Evolving AI image Finland",
+          "server heat recovery district heating"
+        ],
+        "misinformationRisk": "High",
+        "riskReasoning": "The image presents a factual claim about Finland's use of data centers for heating with a visual that is clearly AI-generated and heavily manipulated, as evidenced by the 'EVOLVING AI' watermark and numerous visual inconsistencies. Using a fabricated image to illustrate a factual concept, even if the concept itself is true, reduces the credibility of the information and can contribute to a distrust in media. It has a high potential to mislead viewers into believing this specific visual representation is authentic, or to be used in contexts where the authenticity of imagery is crucial for evaluating claims. Fabricated imagery, especially when associated with a potentially verifiable claim, increases the risk of being used for deceptive purposes or to spread exaggerated or false narratives."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 45
+      },
+      "metadata": {
+        "flags": [
+          "The image shows strong signs of digital manipulation and AI generation. Firstly, it is a clear composite of two distinct scenes (outdoor village and indoor data center) stitched together with an unnatural horizontal line separating them. The 'EVOLVING AI' watermark explicitly indicates AI involvement. In the upper section, the Finnish flag is unnaturally superimposed over the aurora borealis, blending in a non-realistic way. The overall aesthetic of the village and aurora appears highly stylized and somewhat artificial, lacking the fine details and natural lighting of a real photograph. In the lower data center section, the workers exhibit common AI generation artifacts, such as slightly indistinct faces, distorted hands, and generalized clothing textures. The server racks show repetitive patterns and uniformly glowing lights that suggest AI rendering. The lighting throughout the composite is inconsistent, with the warm glow from the data center contrasting with the cool, vibrant aurora sky in an abrupt manner.",
+          "No obvious AI signatures found in file header."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 45/100 — The image is a vertical composite featuring two distinct scenes. The upper section depicts a picturesque, snow-covered village with colorful traditional wooden houses and a prominent church steeple, illuminated by a… Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 60,
+        "reasoning": "The image exhibits a high degree of realism but contains several subtle characteristics commonly found in AI-generated content. Anatomical features, while mostly correct, show a slight waxy smoothness in the skin and a lack of intricate detail in individual hair strands. The physics of the scene is generally consistent, but reflections might appear somewhat generic and lighting lacks the absolute precision of real-world photography. Most notably, the image presents an unnaturally clean texture, largely devoid of natural photographic noise or subtle imperfections, which contributes to an overall 'digital' or 'rendered' aesthetic rather than a captured photograph. The absence of specific AI signatures in the metadata is noted, but the visual evidence leans towards AI generation.",
+        "artifactsFound": [
+          "Subtle waxy skin texture",
+          "Lack of individual hair strand definition",
+          "Absence of natural photographic noise/grain",
+          "Slightly generic reflections",
+          "Overly smooth or uniform features"
+        ],
+        "anatomyScore": 70,
+        "physicsScore": 75,
+        "textureScore": 65
+      },
+      "reportId": "53c259c3-3d82-4b35-bf0c-5fd05c2b4c19",
+      "reportUrl": "http://localhost:9002/report/53c259c3-3d82-4b35-bf0c-5fd05c2b4c19"
     }
   },
   "votes": {
     "20effceb-b6b8-4291-916f-5ffc5dd84fb3": {
+      "up": 1,
+      "down": 0
+    },
+    "53c259c3-3d82-4b35-bf0c-5fd05c2b4c19": {
       "up": 1,
       "down": 0
     }
@@ -402,6 +535,9 @@
     "f3dd36d570d2e44cdf00a94dcb0cdde8a0930e4b04bfcc61a47084c0fe08a039": "ab6fd5cf-e448-4203-a5c3-cf9451a1619e",
     "6d851c6b0bf65284bc7a535e4c78be55d032dd4967140dfc8456c3b769b9a50d": "3b17d89a-9dc2-47d2-bd8e-2345479308e7",
     "cc867dbd30188d1a882b03dcb3db51f98515bf835e8f88c9a52bff6505daffe8": "131d75b5-b519-4f4c-9de0-6aa0fa558e00",
-    "5118c4a0a67e1958a8f81a3acb0be36d869f70144b057126a4f4582ca4e151e4": "20effceb-b6b8-4291-916f-5ffc5dd84fb3"
+    "5118c4a0a67e1958a8f81a3acb0be36d869f70144b057126a4f4582ca4e151e4": "20effceb-b6b8-4291-916f-5ffc5dd84fb3",
+    "d067a376da73a3f19a9856f967f1a28e74fa50a0ba617294281adb6fb04e2a00": "49a555cb-1049-4e84-a058-e683ebe780dd",
+    "80b32f3e6f207f2ee7775e5c1e7620b3990fa5c1fecf7a9303b21d6792cf6e1f": "acc50bae-0433-44e0-824d-adbac646788b",
+    "94c947bdfce15af2e1c8fab6583d0c3e05911c5e4eb640fe045f67f36221b5f3": "53c259c3-3d82-4b35-bf0c-5fd05c2b4c19"
   }
 }

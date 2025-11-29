@@ -147,6 +147,32 @@ function generateCaption(score: number, summary: string, aiProb?: number): strin
   return `${prefix}${truncatedSummary}${suffix}`;
 }
 
+// Helper to extract AI metadata
+function extractAiMetadata(dataUri: string): string {
+  try {
+    // Decode base64 to buffer (first 4KB is usually enough for headers)
+    const base64Data = dataUri.split(',')[1];
+    if (!base64Data) return "No data found.";
+
+    const buffer = Buffer.from(base64Data, 'base64');
+    const header = buffer.subarray(0, 4096).toString('utf-8'); // Convert to string to search for text tags
+
+    const keywords = [
+      "Midjourney", "DALL-E", "Stable Diffusion", "Adobe Firefly", "AI Generated",
+      "c2pa", "DreamStudio", "Bing Image Creator"
+    ];
+
+    const found = keywords.filter(k => header.includes(k));
+
+    if (found.length > 0) {
+      return `Found potential AI signatures in file metadata: ${found.join(', ')}.`;
+    }
+    return "No obvious AI signatures found in file header.";
+  } catch (e) {
+    return "Could not read metadata.";
+  }
+}
+
 export async function analyzeInput(
   input:
     | { type: 'video' | 'audio' | 'image'; dataUri: string }
@@ -169,8 +195,6 @@ export async function analyzeInput(
   }
 
   console.log(`Cache Miss. Analyzing content...`);
-
-
 
   const scoreMap = { Low: 85, Medium: 50, High: 15 };
   let results: AnalysisResults = {};
@@ -234,7 +258,8 @@ export async function analyzeInput(
   else if (input.type === 'image') {
     try {
       const imageAnalysisResult = await analyzeImageContent({ imageDataUri: input.dataUri });
-      const aiDetectionResult = await detectAiGeneration({ dataUri: input.dataUri });
+      const metadataInfo = extractAiMetadata(input.dataUri);
+      const aiDetectionResult = await detectAiGeneration({ dataUri: input.dataUri, metadataInfo });
 
       const manipulationScore = imageAnalysisResult.manipulationAssessment.toLowerCase().includes('no obvious signs') ? 85 : 35;
       // Factor in AI probability to integrity score
@@ -249,7 +274,7 @@ export async function analyzeInput(
       results = {
         imageAnalysis: imageAnalysisResult,
         misScore: misScoreResult,
-        metadata: { flags: [imageAnalysisResult.manipulationAssessment] },
+        metadata: { flags: [imageAnalysisResult.manipulationAssessment, metadataInfo] },
         integrity: { videoStreamHash: 'c4ca4238a0b923820dcc509a6f75849b', audioStreamHash: 'N/A' },
         generatedCaption: caption,
         aiDetection: aiDetectionResult,
@@ -264,6 +289,7 @@ export async function analyzeInput(
     try {
       const videoDataUri = input.dataUri;
       const { transcription } = await transcribeAudio({ audioDataUri: videoDataUri });
+      const metadataInfo = extractAiMetadata(input.dataUri);
 
       const [anonymizationResult, verificationResult, contextResult, aiDetectionResult] = await Promise.all([
         anonymizeWhistleblowerIdentity({ videoDataUri }),
@@ -278,7 +304,7 @@ export async function analyzeInput(
           time: new Date().toISOString(),
           weatherDescription: 'Clear sky', // Placeholder weather
         }),
-        detectAiGeneration({ dataUri: videoDataUri }),
+        detectAiGeneration({ dataUri: videoDataUri, metadataInfo }),
       ]);
 
       // Calculate scores based on analysis results

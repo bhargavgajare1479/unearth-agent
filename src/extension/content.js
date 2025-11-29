@@ -122,27 +122,28 @@ function showResults(data) {
     facts += `<div><h4 style="margin-bottom: 5px;">Transcription:</h4><p style="font-size: 12px; color: #666; font-style: italic;">"${results.transcription.slice(0, 200)}${results.transcription.length > 200 ? '...' : ''}"</p></div>`;
   }
 
-  let scoreColor = "#333";
-  let scoreLabel = "Unknown";
-  if (score > 75) { scoreColor = "#22c55e"; scoreLabel = "High Trust"; }
-  else if (score > 40) { scoreColor = "#f59e0b"; scoreLabel = "Caution"; }
-  else if (score !== "N/A") { scoreColor = "#ef4444"; scoreLabel = "High Risk"; }
+  let iconSvg = "";
+  if (score > 50) {
+    // Green Shield Check
+    iconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>`;
+  } else {
+    // Red Shield Alert
+    iconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`;
+  }
+
+  // Define border color for summary box based on score
+  const summaryBorderColor = score > 50 ? "#22c55e" : "#ef4444";
 
   modalContent.innerHTML = `
     <div style="text-align: center; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px;">
-      <h3 style="margin-top: 0; font-size: 14px; color: #666; text-transform: uppercase; letter-spacing: 0.5px;">Trust Score</h3>
-      <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-        <span style="font-size: 48px; font-weight: 800; color: ${scoreColor}; line-height: 1;">${score}</span>
-        <div style="text-align: left;">
-            <div style="font-size: 18px; font-weight: bold; color: ${scoreColor};">${scoreLabel}</div>
-            <div style="font-size: 12px; color: #999;">out of 100</div>
-        </div>
+      <div style="display: flex; align-items: center; justify-content: center;">
+        ${iconSvg}
       </div>
     </div>
     
     <div style="margin-bottom: 15px;">
       <h4 style="margin-bottom: 5px; font-size: 14px;">Analysis Summary:</h4>
-      <p style="background: #f8f9fa; padding: 12px; border-radius: 6px; font-size: 14px; line-height: 1.5; border-left: 4px solid ${scoreColor}; margin-top: 0;">${reasoning}</p>
+      <p style="background: #f8f9fa; padding: 12px; border-radius: 6px; font-size: 14px; line-height: 1.5; border-left: 4px solid ${summaryBorderColor}; margin-top: 0;">${reasoning}</p>
     </div>
 
     ${facts ? `<div style="margin-bottom: 15px; border-top: 1px solid #eee; padding-top: 10px;">${facts}</div>` : ''}
