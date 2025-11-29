@@ -74,35 +74,80 @@ function showLoading() {
 }
 
 function showResults(data) {
+  console.log("Unearth Agent: showResults", data);
   if (!data.success) {
-    modalContent.innerHTML = `<p style="color: red; font-weight: bold;">Analysis Failed</p><p>${
-      data.error || "An unknown error occurred."
-    }</p>`;
+    modalContent.innerHTML = `<p style="color: red; font-weight: bold;">Analysis Failed</p><p>${data.error || "An unknown error occurred."
+      }</p>
+    <p style="font-size: 10px; color: #999; margin-top: 10px;">Check the extension console or server logs for more details.</p>`;
     return;
   }
 
   const results = data.results;
   const score = results.misScore?.misinformationImmunityScore ?? "N/A";
   let reasoning = "No detailed analysis available.";
-  if (results.urlAnalysis) reasoning = results.urlAnalysis.riskReasoning;
-  if (results.textAnalysis) reasoning = results.textAnalysis.riskReasoning;
-  if (results.imageAnalysis) reasoning = results.imageAnalysis.riskReasoning;
-  if (results.verification) reasoning = results.verification.gdeltResults;
+  let details = "";
+  let facts = "";
+
+  // Helper to format list
+  const formatList = (items) => items.map(i => `<li>${i}</li>`).join('');
+
+  if (results.urlAnalysis) {
+    reasoning = results.urlAnalysis.riskReasoning;
+    details += `<p><strong>Source Reputation:</strong> ${results.urlAnalysis.sourceReputation}</p>`;
+    if (results.urlAnalysis.keyClaims?.length) {
+      facts = `<div><h4 style="margin-bottom: 5px;">Key Claims:</h4><ul style="padding-left: 20px; margin-top: 0;">${formatList(results.urlAnalysis.keyClaims)}</ul></div>`;
+    }
+  }
+  if (results.textAnalysis) {
+    reasoning = results.textAnalysis.riskReasoning;
+    if (results.textAnalysis.keyClaims?.length) {
+      facts = `<div><h4 style="margin-bottom: 5px;">Key Claims:</h4><ul style="padding-left: 20px; margin-top: 0;">${formatList(results.textAnalysis.keyClaims)}</ul></div>`;
+    }
+  }
+  if (results.imageAnalysis) {
+    reasoning = results.imageAnalysis.riskReasoning;
+    details += `<p><strong>Manipulation:</strong> ${results.imageAnalysis.manipulationAssessment}</p>`;
+    if (results.imageAnalysis.description) {
+      facts = `<div><h4 style="margin-bottom: 5px;">Content Description:</h4><p style="font-size: 13px; color: #555;">${results.imageAnalysis.description}</p></div>`;
+    }
+  }
+  if (results.verification) {
+    reasoning = results.verification.gdeltResults;
+    details += `<p><strong>Verification:</strong> ${results.verification.gdeltResults}</p>`;
+    if (results.context) {
+      details += `<p><strong>Weather Match:</strong> ${results.context.weatherMatch ? "Yes" : "No"}</p>`;
+    }
+  }
+  if (results.transcription) {
+    facts += `<div><h4 style="margin-bottom: 5px;">Transcription:</h4><p style="font-size: 12px; color: #666; font-style: italic;">"${results.transcription.slice(0, 200)}${results.transcription.length > 200 ? '...' : ''}"</p></div>`;
+  }
 
   let scoreColor = "#333";
-  if (score > 75) scoreColor = "#22c55e"; // green
-  else if (score > 40) scoreColor = "#f59e0b"; // amber
-  else if (score !== "N/A") scoreColor = "#ef4444"; // red
+  let scoreLabel = "Unknown";
+  if (score > 75) { scoreColor = "#22c55e"; scoreLabel = "High Trust"; }
+  else if (score > 40) { scoreColor = "#f59e0b"; scoreLabel = "Caution"; }
+  else if (score !== "N/A") { scoreColor = "#ef4444"; scoreLabel = "High Risk"; }
 
   modalContent.innerHTML = `
-    <div style="text-align: center;">
-      <h3 style="margin-top: 0; font-size: 16px; color: #555;">Misinformation Immunity Score</h3>
-      <p style="font-size: 48px; font-weight: bold; margin: 10px 0; color: ${scoreColor};">${score}</p>
+    <div style="text-align: center; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px;">
+      <h3 style="margin-top: 0; font-size: 14px; color: #666; text-transform: uppercase; letter-spacing: 0.5px;">Trust Score</h3>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+        <span style="font-size: 48px; font-weight: 800; color: ${scoreColor}; line-height: 1;">${score}</span>
+        <div style="text-align: left;">
+            <div style="font-size: 18px; font-weight: bold; color: ${scoreColor};">${scoreLabel}</div>
+            <div style="font-size: 12px; color: #999;">out of 100</div>
+        </div>
+      </div>
     </div>
-    <div>
-      <h4 style="margin-bottom: 5px;">Analysis Summary:</h4>
-      <p style="background: #f5f5f5; padding: 10px; border-radius: 4px; font-size: 14px; border-left: 3px solid ${scoreColor};">${reasoning}</p>
+    
+    <div style="margin-bottom: 15px;">
+      <h4 style="margin-bottom: 5px; font-size: 14px;">Analysis Summary:</h4>
+      <p style="background: #f8f9fa; padding: 12px; border-radius: 6px; font-size: 14px; line-height: 1.5; border-left: 4px solid ${scoreColor}; margin-top: 0;">${reasoning}</p>
     </div>
+
+    ${facts ? `<div style="margin-bottom: 15px; border-top: 1px solid #eee; padding-top: 10px;">${facts}</div>` : ''}
+    
+    ${details ? `<div style="font-size: 13px; color: #666; border-top: 1px solid #eee; padding-top: 10px;">${details}</div>` : ''}
   `;
 }
 
@@ -308,14 +353,27 @@ function extractContentFromPost(postElement) {
       postElement.querySelector("video[src]") ||
       postElement.querySelector("video");
     if (video && video.src) return { type: "url", content: video.src };
-    const image = postElement.querySelector(
-      "img[src], img[data-src], img[srcset]"
-    );
-    if (image) {
+    // Find the best image candidate (largest by area) to avoid selecting avatars or emojis
+    const images = postElement.querySelectorAll("img[src], img[data-src], img[srcset]");
+    let bestImage = null;
+    let maxArea = 0;
+
+    images.forEach((img) => {
+      const rect = img.getBoundingClientRect();
+      const area = rect.width * rect.height;
+      // Filter out small images (likely avatars, emojis, or UI icons)
+      // 10,000 px^2 is roughly 100x100
+      if (area > 10000 && area > maxArea) {
+        maxArea = area;
+        bestImage = img;
+      }
+    });
+
+    if (bestImage) {
       let src =
-        image.getAttribute("src") ||
-        image.getAttribute("data-src") ||
-        image.getAttribute("srcset");
+        bestImage.getAttribute("src") ||
+        bestImage.getAttribute("data-src") ||
+        bestImage.getAttribute("srcset");
       if (src && src.includes(",")) {
         const parts = src.split(",").map((s) => s.trim());
         const last = parts[parts.length - 1].split(" ")[0];

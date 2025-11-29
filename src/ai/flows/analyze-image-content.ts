@@ -7,8 +7,8 @@
  * - AnalyzeImageContentOutput - The return type for the analyzeImageContent function.
  */
 
-import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
+import { ai } from '@/ai/genkit';
+import { z } from 'genkit';
 
 const AnalyzeImageContentInputSchema = z.object({
   imageDataUri: z
@@ -16,6 +16,7 @@ const AnalyzeImageContentInputSchema = z.object({
     .describe(
       "An image file, as a data URI that must include a MIME type and use Base64 encoding. Expected format: 'data:<mimetype>;base64,<encoded_data>'."
     ),
+  context: z.string().optional().describe('Optional textual context (e.g., social media caption) to aid analysis.'),
 });
 export type AnalyzeImageContentInput = z.infer<typeof AnalyzeImageContentInputSchema>;
 
@@ -42,14 +43,16 @@ export async function analyzeImageContent(input: AnalyzeImageContentInput): Prom
 
 const analyzeImageContentPrompt = ai.definePrompt({
   name: 'analyzeImageContentPrompt',
-  input: {schema: AnalyzeImageContentInputSchema},
-  output: {schema: AnalyzeImageContentOutputSchema},
+  input: { schema: AnalyzeImageContentInputSchema },
+  output: { schema: AnalyzeImageContentOutputSchema },
   prompt: `You are a digital forensics expert specializing in image analysis. Analyze the provided image.
+  
+  Context/Caption: {{context}}
 
   1.  **Describe the Image:** Provide a detailed description of what you see in the image.
   2.  **Assess for Manipulation:** Look for any signs of digital alteration, AI generation, or inconsistencies (e.g., strange lighting, unnatural textures, inconsistent shadows, illogical details).
   3.  **Generate Search Keywords:** Provide a list of 3-5 distinct keywords that would be effective for a reverse image search to find the image's origin or other contexts in which it has appeared.
-  4.  **Assess Misinformation Risk:** Based on your analysis, assess the risk of this image being used to spread misinformation (Low, Medium, or High).
+  4.  **Assess Misinformation Risk:** Based on your analysis, assess the risk of this image being used to spread misinformation (Low, Medium, or High). Consider the provided context/caption if available.
   5.  **Provide Reasoning:** Explain your risk assessment.
 
   Return your analysis in the specified JSON format.
@@ -67,7 +70,7 @@ const analyzeImageContentFlow = ai.defineFlow(
     outputSchema: AnalyzeImageContentOutputSchema,
   },
   async input => {
-    const {output} = await analyzeImageContentPrompt(input);
+    const { output } = await analyzeImageContentPrompt(input);
     return output!;
   }
 );

@@ -5,7 +5,7 @@
 // The URL to your deployed Next.js application's server action endpoint.
 // In a real deployment, this would be your production URL.
 // For local testing, we'll use the localhost address.
-const ANALYSIS_ENDPOINT_URL = "http://localhost:9002/api/analyze";
+const ANALYSIS_ENDPOINT_URL = "http://127.0.0.1:9002/api/analyze";
 
 async function analyzeContent(request, sendResponse) {
   try {
