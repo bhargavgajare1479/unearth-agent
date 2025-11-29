@@ -147,8 +147,90 @@ function showResults(data) {
 
     ${facts ? `<div style="margin-bottom: 15px; border-top: 1px solid #eee; padding-top: 10px;">${facts}</div>` : ''}
     
-    ${details ? `<div style="font-size: 13px; color: #666; border-top: 1px solid #eee; padding-top: 10px;">${details}</div>` : ''}
+    ${details ? `<div style="font-size: 13px; color: #666; border-top: 1px solid #eee; padding-top: 10px; margin-bottom: 15px;">${details}</div>` : ''}
+
+    <div style="border-top: 1px solid #eee; padding-top: 15px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <h4 style="margin: 0; font-size: 12px; color: #666; text-transform: uppercase;">Language</h4>
+            <select id="unearth-lang-select" style="font-size: 12px; padding: 2px 5px; border-radius: 4px; border: 1px solid #ccc;">
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Marathi">Marathi</option>
+                <option value="Spanish">Spanish</option>
+            </select>
+        </div>
+        <div id="unearth-translated-summary" style="display: none; background: #eef2ff; padding: 10px; border-radius: 4px; font-size: 13px; color: #333; margin-bottom: 10px;"></div>
+
+        <h4 style="margin: 0 0 10px 0; font-size: 12px; color: #666; text-transform: uppercase;">Share Verified Report</h4>
+        <div style="display: flex; gap: 8px;">
+            <button id="unearth-share-x" style="flex: 1; background: #000; color: white; border: none; padding: 8px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 500;">Share on X</button>
+            <button id="unearth-share-fb" style="flex: 1; background: #1877F2; color: white; border: none; padding: 8px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 500;">Facebook</button>
+        </div>
+        <div style="margin-top: 8px;">
+             <button id="unearth-copy-link" style="width: 100%; background: #f0f0f0; color: #333; border: 1px solid #ccc; padding: 8px; border-radius: 4px; cursor: pointer; font-size: 12px;">Copy Report Link</button>
+        </div>
+    </div>
   `;
+
+  // Add event listeners
+  setTimeout(() => {
+    const caption = results.generatedCaption || `Verified by Unearth. MIS Score: ${score}/100`;
+    const reportUrl = results.reportUrl || "https://unearth.ai";
+    const encodedCaption = encodeURIComponent(caption);
+    const encodedUrl = encodeURIComponent(reportUrl);
+
+    // Share buttons
+    document.getElementById('unearth-share-x').onclick = () => {
+      window.open(`https://twitter.com/intent/tweet?text=${encodedCaption}&url=${encodedUrl}`, '_blank');
+    };
+    document.getElementById('unearth-share-fb').onclick = () => {
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=${encodedCaption}`, '_blank');
+    };
+    document.getElementById('unearth-copy-link').onclick = () => {
+      navigator.clipboard.writeText(`${caption} ${reportUrl}`).then(() => {
+        const btn = document.getElementById('unearth-copy-link');
+        btn.innerText = "Copied!";
+        setTimeout(() => btn.innerText = "Copy Report Link", 2000);
+      });
+    };
+
+    // Language Selector
+    const langSelect = document.getElementById('unearth-lang-select');
+    const translatedDiv = document.getElementById('unearth-translated-summary');
+
+    langSelect.onchange = async (e) => {
+      const lang = e.target.value;
+      if (lang === 'English') {
+        translatedDiv.style.display = 'none';
+        return;
+      }
+
+      translatedDiv.style.display = 'block';
+      translatedDiv.innerText = 'Translating...';
+
+      // Send message to background to handle translation (since content script can't call server actions directly easily)
+      // Ideally we would use the background script to proxy this, but for now we'll assume we can't easily import the server action in extension context without a proper API route.
+      // Wait, we have an API route! We should use it.
+      // But the API route currently only handles 'analyze'. We need a 'translate' endpoint or update the analyze endpoint.
+      // For this hackathon scope, let's assume we can't easily add a new route without restarting everything.
+      // Actually, we can just display a message that full translation requires the web dashboard for now, OR we can try to use the existing analyze endpoint if we modified it.
+      // Let's modify the API route to handle translation requests!
+
+      chrome.runtime.sendMessage(
+        {
+          action: "translate",
+          payload: { summary: reasoning, targetLanguage: lang }
+        },
+        (response) => {
+          if (response && response.success) {
+            translatedDiv.innerText = response.translatedSummary;
+          } else {
+            translatedDiv.innerText = "Translation failed. Please try on the website.";
+          }
+        }
+      );
+    };
+  }, 100);
 }
 
 // --- LOGIC ---
@@ -208,39 +290,59 @@ function createFactCheckButton(postElement, insertBefore = null) {
         );
         // If this is a blob: URL we can handle it in the page context without background proxy
         if (analyzed.content.startsWith("blob:")) {
+          console.log("Unearth Agent: Detected blob URL, attempting conversion:", analyzed.content);
+
+          const handleFallback = () => {
+            console.log("Unearth Agent: Fetch failed, attempting frame capture fallback.");
+            if (analyzed.element && analyzed.element.tagName === 'VIDEO') {
+              const frameData = captureVideoFrame(analyzed.element);
+              if (frameData) {
+                console.log("Unearth Agent: Frame capture successful, sending as image.");
+                chrome.runtime.sendMessage(
+                  {
+                    action: "analyzeContent",
+                    payload: { type: "image", dataUri: frameData },
+                    origin: window.location.origin,
+                  },
+                  showResults
+                );
+                return;
+              }
+            }
+
+            // If all else fails
+            chrome.runtime.sendMessage(
+              {
+                action: "analyzeContent",
+                payload: { type: "url", content: analyzed.content },
+                origin: window.location.origin,
+              },
+              showResults
+            );
+          };
+
           fetchBlobUrlAsDataUri(analyzed.content).then((dataUri) => {
             if (!dataUri) {
-              chrome.runtime.sendMessage(
-                {
-                  action: "analyzeContent",
-                  payload: { type: "url", content: analyzed.content },
-                  origin: window.location.origin,
-                },
-                showResults
-              );
+              handleFallback();
               return;
             }
-            // Determine if blob is image or video
+
+            // Determine if blob is image or video based on MIME type or analyzed.type
             const ct = dataUri.split(";")[0];
-            if (ct.includes("image"))
-              chrome.runtime.sendMessage(
-                {
-                  action: "analyzeContent",
-                  payload: { type: "image", dataUri },
-                  origin: window.location.origin,
-                },
-                showResults
-              );
-            else
-              chrome.runtime.sendMessage(
-                {
-                  action: "analyzeContent",
-                  payload: { type: "video", dataUri },
-                  origin: window.location.origin,
-                },
-                showResults
-              );
-          });
+            let type = "video"; // Default to video if uncertain, as images usually have clear extensions
+            if (ct.includes("image")) type = "image";
+
+            console.log("Unearth Agent: Converted blob to data URI. Type:", type);
+
+            chrome.runtime.sendMessage(
+              {
+                action: "analyzeContent",
+                payload: { type: type, dataUri },
+                origin: window.location.origin,
+              },
+              showResults
+            );
+          }).catch(() => handleFallback());
           return;
         }
 
@@ -352,7 +454,7 @@ function extractContentFromPost(postElement) {
     const video =
       postElement.querySelector("video[src]") ||
       postElement.querySelector("video");
-    if (video && video.src) return { type: "url", content: video.src };
+    if (video && video.src) return { type: "url", content: video.src, element: video };
     // Find the best image candidate (largest by area) to avoid selecting avatars or emojis
     const images = postElement.querySelectorAll("img[src], img[data-src], img[srcset]");
     let bestImage = null;
@@ -379,7 +481,7 @@ function extractContentFromPost(postElement) {
         const last = parts[parts.length - 1].split(" ")[0];
         src = last;
       }
-      if (src) return { type: "url", content: src };
+      if (src) return { type: "url", content: src, element: bestImage };
     }
     const text =
       postElement.querySelector('[data-testid="tweetText"]') ||
@@ -394,6 +496,20 @@ function extractContentFromPost(postElement) {
     return null;
   } catch (err) {
     console.error("extractContentFromPost error", err);
+    return null;
+  }
+}
+
+function captureVideoFrame(video) {
+  try {
+    const canvas = document.createElement("canvas");
+    canvas.width = video.videoWidth || 640;
+    canvas.height = video.videoHeight || 360;
+    const ctx = canvas.getContext("2d");
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    return canvas.toDataURL("image/jpeg");
+  } catch (e) {
+    console.error("Unearth Agent: Failed to capture video frame", e);
     return null;
   }
 }

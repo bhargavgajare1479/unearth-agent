@@ -19,7 +19,19 @@ export async function POST(request: Request) {
     const body = await request.json();
 
     // Call the existing server action
-    console.log('API: Received analysis request', { type: body.type });
+    console.log('API: Received request', { type: body.type, action: body.action });
+
+    if (body.action === 'translate') {
+      const { translateSummary } = await import('@/app/actions');
+      const translation = await translateSummary({
+        summary: body.summary,
+        targetLanguage: body.targetLanguage
+      });
+      return NextResponse.json({ success: true, translatedSummary: translation.translatedSummary }, {
+        headers: { 'Access-Control-Allow-Origin': '*' },
+      });
+    }
+
     const results = await analyzeInput(body);
 
     return NextResponse.json(results, {

@@ -81,6 +81,17 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     analyzeContent(request, sendResponse);
     return true;
   }
+  if (request.action === "translate") {
+    fetch(ANALYSIS_ENDPOINT_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "translate", ...request.payload }),
+    })
+      .then(r => r.json())
+      .then(data => sendResponse(data))
+      .catch(err => sendResponse({ success: false, error: err.message }));
+    return true;
+  }
   if (request.action === "fetchMedia") {
     fetchMedia(request, sendResponse);
     return true;
