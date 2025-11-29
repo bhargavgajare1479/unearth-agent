@@ -135,25 +135,23 @@ function createFactCheckButton(postElement) {
     let payload = null;
 
     // Try to find different types of content within the post
-    const image = postElement.querySelector('img[alt="Image"]');
+    // The querySelector for images on Twitter/X can be tricky. This is a more robust selector.
+    const image = postElement.querySelector('img[alt][src*="pbs.twimg.com/media"]');
     const video = postElement.querySelector('video');
-    // Twitter/X specific selector for the main text content
     const postTextElement = postElement.querySelector('[data-testid="tweetText"]'); 
 
     if (video && video.src) {
-        // Can't read video content directly. Best we can do is send the URL.
-        // In a real-world scenario, this is a limitation. Our app can handle it if the URL is public.
-         payload = { type: 'url', content: video.src };
+        payload = { type: 'url', content: video.src };
     } else if (image && image.src) {
-        // We can't analyze external images directly due to CORS.
-        // We'll treat it as a URL analysis. The backend can fetch it.
-        payload = { type: 'url', content: image.src };
+        // Send the image URL to the background script for processing.
+        // This avoids CORS issues in the content script.
+        payload = { type: 'image', content: image.src };
     } else if (postTextElement && postTextElement.innerText) {
         payload = { type: 'text', content: postTextElement.innerText };
     }
 
     if (payload) {
-      chrome.runtime.sendMessage({ action: 'analyzeContent', payload, origin: window.location.origin }, showResults);
+      chrome.runtime.sendMessage({ action: 'analyzeContent', payload }, showResults);
     } else {
       showResults({ success: false, error: "Couldn't find analyzable content (text, image, or video) in this post." });
     }
