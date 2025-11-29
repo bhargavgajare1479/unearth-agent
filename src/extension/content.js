@@ -310,160 +310,24 @@ function createFactCheckButton(postElement, insertBefore = null) {
     showLoading();
     let payload = null;
 
-    // Extract the best content candidate for analysis
-    const analyzed = extractContentFromPost(postElement);
-    if (analyzed && analyzed.type === "text") {
-      payload = { type: "text", content: analyzed.content };
-    } else if (analyzed && analyzed.type === "url") {
-      // If the URL is already a data URI, use it directly
-      if (analyzed.content.startsWith("data:")) {
-        // Detect image/video from the data URI's MIME type
-        if (analyzed.content.startsWith("data:image")) {
-          payload = { type: "image", dataUri: analyzed.content };
-        } else if (
-          analyzed.content.startsWith("data:video") ||
-          analyzed.content.startsWith("data:audio")
-        ) {
-          payload = { type: "video", dataUri: analyzed.content };
-        } else {
-          // Unknown MIME type: fallback to URL-based analysis
-          payload = { type: "url", content: analyzed.content };
-        }
-      } else {
-        // Request the background to fetch and convert to data URI so we can send it for analysis
-        showLoading();
-        console.debug(
-          "Unearth Agent: requesting fetchMedia for",
-          analyzed.content
-        );
-        // If this is a blob: URL we can handle it in the page context without background proxy
-        if (analyzed.content.startsWith("blob:")) {
-          console.log("Unearth Agent: Detected blob URL, attempting conversion:", analyzed.content);
+    // Try to find different types of content within the post
+    // The querySelector for images on Twitter/X can be tricky. This is a more robust selector.
+    const image = postElement.querySelector('img[alt][src*="pbs.twimg.com/media"]');
+    const video = postElement.querySelector('video');
+    const postTextElement = postElement.querySelector('[data-testid="tweetText"]'); 
 
-          const handleFallback = () => {
-            console.log("Unearth Agent: Fetch failed, attempting frame capture fallback.");
-            if (analyzed.element && analyzed.element.tagName === 'VIDEO') {
-              const frameData = captureVideoFrame(analyzed.element);
-              if (frameData) {
-                console.log("Unearth Agent: Frame capture successful, sending as image.");
-                chrome.runtime.sendMessage(
-                  {
-                    action: "analyzeContent",
-                    payload: { type: "image", dataUri: frameData },
-                    origin: window.location.origin,
-                  },
-                  showResults
-                );
-                return;
-              }
-            }
-
-            // If all else fails
-            chrome.runtime.sendMessage(
-              {
-                action: "analyzeContent",
-                payload: { type: "url", content: analyzed.content },
-                origin: window.location.origin,
-              },
-              showResults
-            );
-          };
-
-          fetchBlobUrlAsDataUri(analyzed.content).then((dataUri) => {
-            if (!dataUri) {
-              handleFallback();
-              return;
-            }
-
-            // Determine if blob is image or video based on MIME type or analyzed.type
-            const ct = dataUri.split(";")[0];
-            let type = "video"; // Default to video if uncertain, as images usually have clear extensions
-            if (ct.includes("image")) type = "image";
-
-            console.log("Unearth Agent: Converted blob to data URI. Type:", type);
-
-            chrome.runtime.sendMessage(
-              {
-                action: "analyzeContent",
-                payload: { type: type, dataUri },
-                origin: window.location.origin,
-              },
-              showResults
-            );
-          }).catch(() => handleFallback());
-          return;
-        }
-
-        chrome.runtime.sendMessage(
-          { action: "fetchMedia", payload: { url: analyzed.content } },
-          (resp) => {
-            if (!resp || !resp.success) {
-              console.warn(
-                "Unearth Agent: background fetchMedia failed, falling back to URL",
-                resp && resp.error
-              );
-              // Fallback: send URL directly to the server to try fetching it
-              chrome.runtime.sendMessage(
-                {
-                  action: "analyzeContent",
-                  payload: { type: "url", content: analyzed.content },
-                  origin: window.location.origin,
-                },
-                showResults
-              );
-              return;
-            }
-
-            const { dataUri, contentType } = resp;
-            // Choose the correct input type expected by the analysis endpoint
-            if (contentType && contentType.includes("image")) {
-              chrome.runtime.sendMessage(
-                {
-                  action: "analyzeContent",
-                  payload: { type: "image", dataUri },
-                  origin: window.location.origin,
-                },
-                showResults
-              );
-            } else if (
-              contentType &&
-              (contentType.includes("video") || contentType.includes("audio"))
-            ) {
-              chrome.runtime.sendMessage(
-                {
-                  action: "analyzeContent",
-                  payload: { type: "video", dataUri },
-                  origin: window.location.origin,
-                },
-                showResults
-              );
-            } else {
-              // Unknown content type; fall back to URL analysis
-              chrome.runtime.sendMessage(
-                {
-                  action: "analyzeContent",
-                  payload: { type: "url", content: analyzed.content },
-                  origin: window.location.origin,
-                },
-                showResults
-              );
-            }
-          }
-        );
-        // We bail out here because the async response will call showResults or fallback
-        return;
-      }
+    if (video && video.src) {
+        payload = { type: 'url', content: video.src };
+    } else if (image && image.src) {
+        // Send the image URL to the background script for processing.
+        // This avoids CORS issues in the content script.
+        payload = { type: 'image', content: image.src };
+    } else if (postTextElement && postTextElement.innerText) {
+        payload = { type: 'text', content: postTextElement.innerText };
     }
 
     if (payload) {
-      console.debug(
-        "Unearth Agent: sending analyzeContent payload type",
-        payload.type
-      );
-      chrome.runtime.sendMessage(
-        { action: "analyzeContent", payload, origin: window.location.origin },
-        showResults
-      );
+      chrome.runtime.sendMessage({ action: 'analyzeContent', payload }, showResults);
     } else {
       showResults({
         success: false,
@@ -649,4 +513,4 @@ observer.observe(document.body, {
   subtree: true,
 });
 
-console.log("Unearth Agent content script loaded and observing.");
+console.log('Unearth Agent content script loaded and observing.');
