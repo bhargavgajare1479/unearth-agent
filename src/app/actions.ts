@@ -55,32 +55,56 @@ export type AnalysisResults = {
 
 import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
 
 // File path for persistent storage
 const DB_PATH = path.join(process.cwd(), 'reports.json');
 
+// Helper to generate content hash
+function generateContentHash(input: { type: string; content?: string; dataUri?: string }): string {
+  const data = input.content || input.dataUri || '';
+  return crypto.createHash('sha256').update(input.type + ':' + data).digest('hex');
+}
+
 // Helper to read DB
-function readDb(): { reports: Record<string, AnalysisResults>, votes: Record<string, { up: number, down: number }> } {
+function readDb(): {
+  reports: Record<string, AnalysisResults>,
+  votes: Record<string, { up: number, down: number }>,
+  cache: Record<string, string>
+} {
   try {
     if (!fs.existsSync(DB_PATH)) {
-      return { reports: {}, votes: {} };
+      return { reports: {}, votes: {}, cache: {} };
     }
     const data = fs.readFileSync(DB_PATH, 'utf-8');
-    return JSON.parse(data);
+    const parsed = JSON.parse(data);
+    return {
+      reports: parsed.reports || {},
+      votes: parsed.votes || {},
+      cache: parsed.cache || {}
+    };
   } catch (error) {
     console.error('Error reading DB:', error);
-    return { reports: {}, votes: {} };
+    return { reports: {}, votes: {}, cache: {} };
   }
 }
 
 // Helper to write DB
-function writeDb(data: { reports: Record<string, AnalysisResults>, votes: Record<string, { up: number, down: number }> }) {
+function writeDb(data: {
+  reports: Record<string, AnalysisResults>,
+  votes: Record<string, { up: number, down: number }>,
+  cache: Record<string, string>
+}) {
   try {
     fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2));
   } catch (error) {
     console.error('Error writing DB:', error);
   }
 }
+
+// ... (getReport, voteOnReport)
+
+
 
 export async function getReport(id: string): Promise<AnalysisResults | undefined> {
   const db = readDb();
@@ -128,6 +152,26 @@ export async function analyzeInput(
     | { type: 'video' | 'audio' | 'image'; dataUri: string }
     | { type: 'text' | 'url'; content: string }
 ): Promise<AnalysisResults> {
+
+  // 1. Check Cache
+  const contentHash = generateContentHash(input);
+  const db = readDb();
+
+  if (db.cache[contentHash]) {
+    const cachedReportId = db.cache[contentHash];
+    const cachedReport = db.reports[cachedReportId];
+    if (cachedReport) {
+      console.log(`Cache Hit! Returning report ${cachedReportId}`);
+      // Return cached report with current votes
+      const votes = db.votes[cachedReportId] || { up: 0, down: 0 };
+      return { ...cachedReport, votes };
+    }
+  }
+
+  console.log(`Cache Miss. Analyzing content...`);
+
+
+
   const scoreMap = { Low: 85, Medium: 50, High: 15 };
   let results: AnalysisResults = {};
 
@@ -280,6 +324,7 @@ export async function analyzeInput(
 
     const db = readDb();
     db.reports[reportId] = results;
+    db.cache[contentHash] = reportId; // Update cache
     writeDb(db);
   }
 

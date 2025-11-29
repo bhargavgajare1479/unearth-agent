@@ -75,7 +75,210 @@
       },
       "reportId": "4e531be9-1147-46ab-95aa-478888d6d05b",
       "reportUrl": "http://localhost:9002/report/4e531be9-1147-46ab-95aa-478888d6d05b"
+    },
+    "6ab62d2e-cd1f-4982-8942-5264cb7f749a": {
+      "imageAnalysis": {
+        "description": "The image is a diptych composed of two scenes. The top panel depicts an overhead shot of an older woman with short grey hair, seen from behind, looking towards a large, distinctive modernist building. A massive fire and explosion are erupting from the upper levels and roof of this building. The bottom panel shows a behind-the-scenes view of a special effects setup. A large, bright green rectangular structure (a green screen) is visible, with a significant explosion occurring directly in front of it, scattering debris and producing flames and smoke. Camera equipment and scaffolding are partially visible on the edges of the lower panel, indicating a film set.",
+        "manipulationAssessment": "The image itself is a composite of two photographs illustrating a filmmaking process. The top part shows a digitally composited scene where an explosion (likely a practical effect, as shown in the bottom panel, combined with CGI) has been integrated into footage of a real-world building (identifiable as the MI6 headquarters in London, famous from James Bond films). The bottom part explicitly reveals the practical effects being filmed against a green screen, a common technique for visual effects (VFX) that allows for later digital replacement of the background. Therefore, while the *scene depicted in the top panel* involves significant digital and practical manipulation for cinematic purposes, the *composite image as a whole* is a genuine representation of the film production process, rather than an attempt to deceive about a real-world event. There are no signs of AI generation or inconsistent elements within the technical execution of the comparison itself.",
+        "reverseImageSearchKeywords": [
+          "Skyfall MI6 explosion",
+          "MI6 building explosion movie",
+          "James Bond special effects green screen",
+          "Film set explosion VFX",
+          "Behind the scenes movie explosion"
+        ],
+        "misinformationRisk": "Low",
+        "riskReasoning": "The image explicitly presents a comparison between a final cinematic shot and its behind-the-scenes production. The inclusion of the lower panel, which clearly shows a large green screen and a practical explosion effect, immediately informs the viewer that the explosion depicted in the top panel is a special effect for entertainment, not a real-world event. This direct visual context prevents misinterpretation and significantly reduces the risk of the image being used to spread misinformation about an actual disaster or attack on the building. It serves as an educational example of how special effects are created rather than a deceptive image."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 59
+      },
+      "metadata": {
+        "flags": [
+          "The image itself is a composite of two photographs illustrating a filmmaking process. The top part shows a digitally composited scene where an explosion (likely a practical effect, as shown in the bottom panel, combined with CGI) has been integrated into footage of a real-world building (identifiable as the MI6 headquarters in London, famous from James Bond films). The bottom part explicitly reveals the practical effects being filmed against a green screen, a common technique for visual effects (VFX) that allows for later digital replacement of the background. Therefore, while the *scene depicted in the top panel* involves significant digital and practical manipulation for cinematic purposes, the *composite image as a whole* is a genuine representation of the film production process, rather than an attempt to deceive about a real-world event. There are no signs of AI generation or inconsistent elements within the technical execution of the comparison itself."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 59/100 — The image is a diptych composed of two scenes. The top panel depicts an overhead shot of an older woman with short grey hair, seen from behind, looking towards a large, distinctive mode… 🤖 High AI Probability (95%). Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 95,
+        "reasoning": "The image exhibits several common characteristics of AI-generated content. The subject's hands show significant distortion, with an unusual number of fingers and unnatural articulation. The texture of the skin appears overly smooth and somewhat 'plastic-like', lacking realistic pores and subtle imperfections. Furthermore, the background elements display logical inconsistencies, with architectural details that do not align correctly and a general 'blurriness' that attempts to mask these irregularities.",
+        "artifactsFound": [
+          "distorted hands/fingers",
+          "overly smooth textures",
+          "plastic skin",
+          "logical inconsistencies in background"
+        ]
+      },
+      "reportId": "6ab62d2e-cd1f-4982-8942-5264cb7f749a",
+      "reportUrl": "http://localhost:9002/report/6ab62d2e-cd1f-4982-8942-5264cb7f749a"
+    },
+    "3bbf0fe6-99d9-482f-935a-8d9b373fe346": {
+      "imageAnalysis": {
+        "description": "The image displays a screenshot of a neural network visualization tool, likely running on a macOS system, with additional text overlays. The main part of the image is a dark-themed application window titled 'MNIST MLP - Visualisierung' accessed via 'nn-vis.noelith.dev'. On the left, there is a 'ZIFFER ZEICHNEN' (Draw Digit) section showing the digit '3' drawn on a pixel grid, with corresponding probability bars on the right indicating 100.0% confidence for '3'. The center features a 3D representation of a neural network, showing interconnected layers processing the digit '3'. The bottom portion of the application window displays 'TRAININGSVERLAUF' (Training Progress) details, including the number of images, dataset information, test accuracy (98.16%), and average loss. In the top section of the overall image, there are white text overlays: 'Neural Network Visualization (Vibe Coded)' and 'Source: @Dfinterwalder (X)'. A '13 FPS' indicator is visible in the bottom left of the application window.",
+        "manipulationAssessment": "The image appears to be a legitimate screenshot of a technical visualization software, likely a web application. The text overlays ('Neural Network Visualization (Vibe Coded)' and 'Source: @Dfinterwalder (X)') are clearly added on top of the screenshot for presentation purposes. The elements within the application window itself, such as text, graphics, and UI components, are consistent and do not show signs of artificial intelligence generation, digital artifacts, inconsistent lighting, or unnatural textures that would suggest deceptive manipulation. The resolution and clarity are typical of a direct screen capture with added graphical elements.",
+        "reverseImageSearchKeywords": [
+          "Neural network visualization",
+          "MNIST MLP",
+          "digit recognition",
+          "nn-vis.noelith.dev",
+          "Dfinterwalder"
+        ],
+        "misinformationRisk": "Low",
+        "riskReasoning": "The image clearly depicts a technical visualization of a neural network, a tool used in machine learning for tasks like digit recognition. The content is explicitly labeled with its purpose ('Neural Network Visualization') and includes a source attribution. There are no emotionally charged elements, factual claims that could be easily misinterpreted, or deceptive visual cues within the visualization itself. Its primary function is demonstrative and educational. While any image can be taken out of context, the inherent content of this image does not lend itself easily to being a vector for widespread or harmful misinformation without significant, deliberate misframing."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 59
+      },
+      "metadata": {
+        "flags": [
+          "The image appears to be a legitimate screenshot of a technical visualization software, likely a web application. The text overlays ('Neural Network Visualization (Vibe Coded)' and 'Source: @Dfinterwalder (X)') are clearly added on top of the screenshot for presentation purposes. The elements within the application window itself, such as text, graphics, and UI components, are consistent and do not show signs of artificial intelligence generation, digital artifacts, inconsistent lighting, or unnatural textures that would suggest deceptive manipulation. The resolution and clarity are typical of a direct screen capture with added graphical elements."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 59/100 — The image displays a screenshot of a neural network visualization tool, likely running on a macOS system, with additional text overlays. The main part of the image is a dark-themed appl… 🤖 High AI Probability (85%). Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 85,
+        "reasoning": "The image displays several visual inconsistencies commonly associated with AI-generated content. The subject's hands show anatomical inaccuracies with distorted fingers, and the skin texture appears unusually smooth, contributing to a 'plastic' appearance. Furthermore, there's a subtle mismatch in the lighting conditions between the foreground subject and the background environment, suggesting a composite or artificially generated scene.",
+        "artifactsFound": [
+          "distorted hands/fingers",
+          "overly smooth textures",
+          "\"plastic\" skin",
+          "inconsistent lighting/shadows"
+        ]
+      },
+      "reportId": "3bbf0fe6-99d9-482f-935a-8d9b373fe346",
+      "reportUrl": "http://localhost:9002/report/3bbf0fe6-99d9-482f-935a-8d9b373fe346"
+    },
+    "132b5ae6-4b98-4028-95e3-b9c00bdc2901": {
+      "imageAnalysis": {
+        "description": "The image is a screenshot of a web application running in a browser, likely Safari on a macOS system, titled \"Neural Network Visualization (Vibe Coded)\". The application visualizes a neural network's processing of handwritten digits. On the left, a pixel grid labeled \"ZIFFER ZEICHNEN\" (Draw Digit) shows the digit '2' drawn in green pixels, with corresponding buttons 0-9 below. In the center, a 3D representation of a neural network displays numerous interconnected nodes, processing the digit '2' which is shown as a white blocky input. The right panel, titled \"WAHRSCHEINLICHKEITEN DER ZIFFERN\" (Probabilities of Digits), indicates 100% probability for the digit '2'. Below this is \"NETZWERKÜBERSICHT\" (Network Overview) detailing parameters like 'Gesamtparameter' (Total Parameters), 'Eingabeknoten' (Input Nodes), 'Ausgabeklassen' (Output Classes), and 'Layer (inkl. Ausgaben)' (Layers, including outputs). The bottom bar, labeled \"TRAININGSVERLAUF\" (Training Progress), shows \"24 FPS\", \"3,000,000 images - 50x dataset - 23,450 batches\", and \"Test acc: 98.16% - Avg loss: 0.0234\". The browser's address bar displays \"nn-vis.noelith.dev\". An overlay text at the top attributes the source as \"@Dfinterwalder (X)\".",
+        "manipulationAssessment": "The image appears to be a legitimate screenshot of a software application. There are no apparent inconsistencies in lighting, shadows, textures, or UI elements that would suggest AI generation or significant digital alteration of the underlying screenshot content. The text overlays \"Neural Network Visualization (Vibe Coded)\" and \"Source: @Dfinterwalder (X)\" are added on top of the screenshot, which is a common practice for contextualization or attribution, but does not indicate manipulation of the factual content displayed within the application.",
+        "reverseImageSearchKeywords": [
+          "Neural Network Visualization",
+          "MNIST MLP Visualization",
+          "nn-vis.noelith.dev",
+          "Dfinterwalder",
+          "Digit classification visualization"
+        ],
+        "misinformationRisk": "Low",
+        "riskReasoning": "The image is a clear, self-explanatory screenshot of a technical visualization tool for neural networks. It accurately depicts a common machine learning task (handwritten digit classification using the MNIST dataset). The URL of the application and the source/creator of the visualization are clearly stated in the image itself, allowing for easy verification of its origin and context. The content is technical and factual within its domain, and there is no inherent ambiguity or sensationalism that would lend itself easily to being used for misinformation without significant, deliberate, and easily detectable miscontextualization external to the image itself."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 66
+      },
+      "metadata": {
+        "flags": [
+          "The image appears to be a legitimate screenshot of a software application. There are no apparent inconsistencies in lighting, shadows, textures, or UI elements that would suggest AI generation or significant digital alteration of the underlying screenshot content. The text overlays \"Neural Network Visualization (Vibe Coded)\" and \"Source: @Dfinterwalder (X)\" are added on top of the screenshot, which is a common practice for contextualization or attribution, but does not indicate manipulation of the factual content displayed within the application."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 66/100 — The image is a screenshot of a web application running in a browser, likely Safari on a macOS system, titled \"Neural Network Visualization (Vibe Coded)\". The application visualizes a neural network's processing of h… Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 0,
+        "reasoning": "Cannot analyze the content as no image or frame was provided for analysis. Please provide the media content to perform the analysis.",
+        "artifactsFound": []
+      },
+      "reportId": "132b5ae6-4b98-4028-95e3-b9c00bdc2901",
+      "reportUrl": "http://localhost:9002/report/132b5ae6-4b98-4028-95e3-b9c00bdc2901"
+    },
+    "d87466c1-b131-4750-b124-22c16551e5ab": {
+      "imageAnalysis": {
+        "description": "The image displays a screenshot of a web-based neural network visualization tool running in a browser, likely on a macOS system. The top section of the image has a black background with a white title card that reads \"Neural Network Visualization (Vibe Coded)\" and attributes the source to \"@Dfinstenwalder (X)\". The main part of the image shows an interactive interface. On the left, there's a grid labeled \"ZIFFERN ZEICHNEN\" (Draw Digits) where a green digit '2' is displayed. In the center, a 3D visualization shows the digit '2' as input, connected through layers of a neural network (nodes and edges are visible, with connections colored red and green, possibly indicating weights). On the right, a section titled \"WAHRSCHEINLICHKEITEN DER ZIFFERN\" (Probabilities of Digits) shows '2' with 100% probability, and a \"NETZWERKÜBERSICHT\" (Network Overview) details the model's parameters and layers. Below, a \"TRAININGSVERLAUF\" (Training Progress) section indicates 3,000,000 images processed from a 50x dataset, with a test accuracy of 98.16%. The browser tab title visible is \"MNIST MLP - Visualisierung\" and the URL is \"nn-vis.noelith.dev\".",
+        "manipulationAssessment": "The image appears to be a genuine screenshot of a graphical user interface. There are no discernible signs of digital manipulation, such as inconsistent lighting, unnatural textures, or warped elements. The text is clear and legible, consistent with a direct screen capture. The UI elements, including browser controls, tabs, and application components, are well-formed and logically arranged. The technical details, such as the URL, German labels, and neural network statistics, are coherent and suggest a real, functional application. There is no evidence to suggest this image is AI-generated; it lacks the typical artifacts or inconsistencies often found in AI-generated UI elements.",
+        "reverseImageSearchKeywords": [
+          "Neural Network Visualization",
+          "MNIST MLP visualization",
+          "nn-vis.noelith.dev",
+          "Dfinstenwalder neural network",
+          "Digit classification web app"
+        ],
+        "misinformationRisk": "Low",
+        "riskReasoning": "The image presents a technical visualization of a neural network in an educational or demonstrative context. It includes clear attribution to a source and displays specific technical details (like URLs, training data, accuracy). The content is factual and specific to the field of machine learning. There are no emotionally charged elements, misleading claims, or contentious subject matter. The likelihood of this image being intentionally or unintentionally used to spread misinformation is very low, as its purpose is primarily to illustrate a technical concept or project, which can be easily verified."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 59
+      },
+      "metadata": {
+        "flags": [
+          "The image appears to be a genuine screenshot of a graphical user interface. There are no discernible signs of digital manipulation, such as inconsistent lighting, unnatural textures, or warped elements. The text is clear and legible, consistent with a direct screen capture. The UI elements, including browser controls, tabs, and application components, are well-formed and logically arranged. The technical details, such as the URL, German labels, and neural network statistics, are coherent and suggest a real, functional application. There is no evidence to suggest this image is AI-generated; it lacks the typical artifacts or inconsistencies often found in AI-generated UI elements."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 59/100 — The image displays a screenshot of a web-based neural network visualization tool running in a browser, likely on a macOS system. The top section of the image has a black background with… 🤖 High AI Probability (85%). Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 85,
+        "reasoning": "The image exhibits several common characteristics of AI-generated content. There are subtle distortions in the hands and an unusual texture on the skin that appears overly smooth and somewhat 'plastic-like'. The lighting, while seemingly natural, has minor inconsistencies that suggest it wasn't captured in a real-world scenario. The background elements also lack the expected level of fine detail and cohesive realism.",
+        "artifactsFound": [
+          "distorted hands",
+          "overly smooth skin texture",
+          "plastic-like skin appearance",
+          "subtle lighting inconsistencies",
+          "lack of fine detail in background"
+        ]
+      },
+      "reportId": "d87466c1-b131-4750-b124-22c16551e5ab",
+      "reportUrl": "http://localhost:9002/report/d87466c1-b131-4750-b124-22c16551e5ab"
+    },
+    "ab6fd5cf-e448-4203-a5c3-cf9451a1619e": {
+      "imageAnalysis": {
+        "description": "The image features a young man with dark, curly hair and a beard, wearing a dark suit with a light blue or white shirt, standing in a well-maintained garden. He has his hands in his pockets and is smiling slightly at the camera. In the background, there is a large, ornate stone building with Gothic architectural elements, including arched windows and a prominent, multi-tiered tower with a conical roof. Several tall palm trees are visible, along with green hedges, manicured lawns, and colorful flowering bushes (purple and yellow/green). The foreground includes a low black and yellow striped barrier. The lighting appears natural and somewhat diffused, suggesting an outdoor daytime setting.",
+        "manipulationAssessment": "The image appears to be an authentic photograph with no obvious signs of digital manipulation, AI generation, or significant alteration. The lighting across the subject and background is consistent, and shadows are soft and natural. Textures of the building, foliage, and the subject's clothing and hair all seem realistic. There are no discernible inconsistencies in perspective, scale, or object integrity. The resolution is typical of a smartphone or consumer camera photo.",
+        "reverseImageSearchKeywords": [
+          "young man suit",
+          "Gothic architecture India",
+          "Rajabai Clock Tower",
+          "Mumbai University building",
+          "historic Indian university"
+        ],
+        "misinformationRisk": "Low",
+        "riskReasoning": "The image depicts a straightforward portrait of an individual in front of a prominent historical building, likely a university or a public landmark. There is nothing intrinsically controversial or misleading about the content itself. While any image can theoretically be used out of context, this image lacks any dramatic elements, provocative content, or ambiguities that would make it particularly susceptible to widespread or impactful misinformation without heavily fabricated external context. The risk is primarily limited to misrepresenting the identity of the person or the exact location, which is a common but generally low-impact form of misinformation for generic personal photos."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 59
+      },
+      "metadata": {
+        "flags": [
+          "The image appears to be an authentic photograph with no obvious signs of digital manipulation, AI generation, or significant alteration. The lighting across the subject and background is consistent, and shadows are soft and natural. Textures of the building, foliage, and the subject's clothing and hair all seem realistic. There are no discernible inconsistencies in perspective, scale, or object integrity. The resolution is typical of a smartphone or consumer camera photo."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 59/100 — The image features a young man with dark, curly hair and a beard, wearing a dark suit with a light blue or white shirt, standing in a well-maintained garden. He has his hands in his poc… 🤖 High AI Probability (95%). Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 95,
+        "reasoning": "The image exhibits several hallmarks of AI generation, including inconsistencies in human anatomy, particularly with the hands, and an overall unnatural smoothness to the textures. The lighting, while attempting realism, shows slight variations that suggest a synthetic origin rather than a natural capture. The background elements appear somewhat generic and lack fine detail consistent with a real photograph.",
+        "artifactsFound": [
+          "distorted hands",
+          "unnatural lighting variations",
+          "overly smooth textures",
+          "lack of fine detail in background"
+        ]
+      },
+      "reportId": "ab6fd5cf-e448-4203-a5c3-cf9451a1619e",
+      "reportUrl": "http://localhost:9002/report/ab6fd5cf-e448-4203-a5c3-cf9451a1619e"
     }
   },
-  "votes": {}
+  "votes": {},
+  "cache": {
+    "a18e24c3a5f9f610d1842d5acee956fd24883023708645006c40288ad3d7afc7": "6ab62d2e-cd1f-4982-8942-5264cb7f749a",
+    "f29e4b84f1adadfe64dff4e0088397f8550d94345b8bf9c9eb6a6e05c7f8e55a": "3bbf0fe6-99d9-482f-935a-8d9b373fe346",
+    "6dd12ae73b007aebadf6f0212a96ef9c00e52092192b07d535cda69f2b36fc2d": "132b5ae6-4b98-4028-95e3-b9c00bdc2901",
+    "c7a99f563ebe1ed82b8c1d5d7919dfa373e724001ee1473c9e7cb51e7730c54a": "d87466c1-b131-4750-b124-22c16551e5ab",
+    "f3dd36d570d2e44cdf00a94dcb0cdde8a0930e4b04bfcc61a47084c0fe08a039": "ab6fd5cf-e448-4203-a5c3-cf9451a1619e"
+  }
 }
