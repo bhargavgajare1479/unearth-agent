@@ -186,8 +186,9 @@ function showResults(data) {
             <button id="unearth-share-x" style="flex: 1; background: #000; color: white; border: none; padding: 8px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 500;">Share on X</button>
             <button id="unearth-share-fb" style="flex: 1; background: #1877F2; color: white; border: none; padding: 8px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 500;">Facebook</button>
         </div>
-        <div style="margin-top: 8px;">
-             <button id="unearth-copy-link" style="width: 100%; background: #f0f0f0; color: #333; border: 1px solid #ccc; padding: 8px; border-radius: 4px; cursor: pointer; font-size: 12px;">Copy Report Link</button>
+        <div style="margin-top: 8px; display: flex; gap: 8px;">
+             <button id="unearth-open-report" style="flex: 1; background: #4f46e5; color: white; border: none; padding: 8px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 600;">Open Full Report</button>
+             <button id="unearth-copy-link" style="width: 30px; background: #f0f0f0; color: #333; border: 1px solid #ccc; padding: 8px; border-radius: 4px; cursor: pointer; font-size: 12px; display: flex; align-items: center; justify-content: center;" title="Copy Link">🔗</button>
         </div>
     </div>
   `;
@@ -207,11 +208,19 @@ function showResults(data) {
     document.getElementById('unearth-share-fb').onclick = () => {
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=${encodedCaption}`, '_blank');
     };
+
+    // Open Report Button
+    document.getElementById('unearth-open-report').onclick = () => {
+      window.open(reportUrl, '_blank');
+    };
+
+    // Copy Link Button
     document.getElementById('unearth-copy-link').onclick = () => {
       navigator.clipboard.writeText(`${caption} ${reportUrl}`).then(() => {
         const btn = document.getElementById('unearth-copy-link');
-        btn.innerText = "Copied!";
-        setTimeout(() => btn.innerText = "Copy Report Link", 2000);
+        const originalText = btn.innerText;
+        btn.innerText = "✓";
+        setTimeout(() => btn.innerText = originalText, 2000);
       });
     };
 

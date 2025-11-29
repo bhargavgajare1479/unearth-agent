@@ -271,14 +271,137 @@
       },
       "reportId": "ab6fd5cf-e448-4203-a5c3-cf9451a1619e",
       "reportUrl": "http://localhost:9002/report/ab6fd5cf-e448-4203-a5c3-cf9451a1619e"
+    },
+    "3b17d89a-9dc2-47d2-bd8e-2345479308e7": {
+      "imageAnalysis": {
+        "description": "The image depicts two stylized, computer-generated characters, a woman and a man, leaning against a golden railing on what appears to be a superyacht. The woman, on the left, has short brown hair, wears aviator sunglasses, large golden hoop earrings, a dark halter-neck top, and a white watch, holding a champagne flute. The man, on the right, has dark hair, wears sunglasses, a patterned suit jacket, and has a goatee. In the blurred background, other figures and parts of a large vessel are visible, suggesting a luxurious party setting during twilight or sunset. The lower portion of the image features a dark blue background with horizontal golden lines and the prominent golden text \"A SUPERYACHT LIFE\" with decorative elements.",
+        "manipulationAssessment": "The image exhibits strong characteristics of computer-generated imagery (CGI), likely originating from a video game or rendered promotional material. The characters' facial features, hair, and clothing textures have a distinct, somewhat plastic or polygonal appearance common in game graphics. The lighting, while atmospheric, interacts with the surfaces in a way that often characterizes rendered scenes rather than real photographs. There are no obvious signs of traditional photo manipulation (e.g., inconsistent blending of real photographic elements); instead, the entire scene appears to be synthetically generated. The text overlay \"A SUPERYACHT LIFE\" is an integral part of this rendered composition, reinforcing its non-photographic nature.",
+        "reverseImageSearchKeywords": [
+          "Grand Theft Auto Superyacht",
+          "GTA Online yacht party",
+          "A Superyacht Life game",
+          "Rockstar Games promotional art",
+          "video game luxury lifestyle"
+        ],
+        "misinformationRisk": "Low",
+        "riskReasoning": "The image is clearly identifiable as computer-generated, likely from a video game or a digital art project. The distinct visual style of the characters and environment signals its artificial nature, making it highly improbable that a viewer would mistake it for a real photograph of real people or events. The prominent text 'A SUPERYACHT LIFE' further contextualizes it as a fictional or promotional piece. Therefore, the risk of this image being used to spread misinformation by being presented as authentic real-world content is very low."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 81
+      },
+      "metadata": {
+        "flags": [
+          "The image exhibits strong characteristics of computer-generated imagery (CGI), likely originating from a video game or rendered promotional material. The characters' facial features, hair, and clothing textures have a distinct, somewhat plastic or polygonal appearance common in game graphics. The lighting, while atmospheric, interacts with the surfaces in a way that often characterizes rendered scenes rather than real photographs. There are no obvious signs of traditional photo manipulation (e.g., inconsistent blending of real photographic elements); instead, the entire scene appears to be synthetically generated. The text overlay \"A SUPERYACHT LIFE\" is an integral part of this rendered composition, reinforcing its non-photographic nature."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 81/100 — The image depicts two stylized, computer-generated characters, a woman and a man, leaning against a golden railing on what appears to be a superyacht. The woman, on the left, has short brown hair, wears aviator sung… Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 75,
+        "reasoning": "The image exhibits several characteristics commonly associated with AI-generated content. There are noticeable distortions in the subject's hands, particularly with the finger count and articulation. The lighting appears somewhat inconsistent, creating an unnatural sheen on certain surfaces while other areas lack appropriate shadows. Furthermore, the background elements show a slight blur and a lack of crisp detail, suggesting an attempt to obscure inconsistencies.",
+        "artifactsFound": [
+          "distorted hands/fingers",
+          "inconsistent lighting/shadows",
+          "unnatural texture on skin (slight 'plastic' look)",
+          "blurry background elements lacking distinct detail"
+        ]
+      },
+      "reportId": "3b17d89a-9dc2-47d2-bd8e-2345479308e7",
+      "reportUrl": "http://localhost:9002/report/3b17d89a-9dc2-47d2-bd8e-2345479308e7"
+    },
+    "131d75b5-b519-4f4c-9de0-6aa0fa558e00": {
+      "imageAnalysis": {
+        "description": "The image depicts two digitally rendered individuals, a woman and a man, standing on what appears to be the deck of a superyacht. The woman on the left has short brown hair, is wearing a dark halter-neck top, large hoop earrings, aviator sunglasses, and holds a champagne flute. She has a white watch on her left wrist. The man on the right has dark hair, also wears aviator sunglasses, and is dressed in a patterned, possibly camouflage-style, suit jacket over a darker shirt. Both are leaning on a golden railing. In the background, blurry figures and the structure of a large vessel are visible, under what looks like a sunset or dusk sky. The lower portion of the image features a dark blue background with wavy lines and prominent golden text that reads \"A SUPERYACHT LIFE.\"",
+        "manipulationAssessment": "The image exhibits strong characteristics of a 3D rendering, likely from a video game or similar computer-generated content. The textures on the skin, clothing, and hair of the characters appear stylized and somewhat artificial, lacking the nuanced detail of real photography. The reflections in the sunglasses seem generic. The background elements, including other figures and parts of the yacht, are intentionally blurred, a common technique in game graphics to focus on foreground elements and reduce rendering complexity. The prominent text overlay \"A SUPERYACHT LIFE\" is a graphic design element, further suggesting the image is promotional or thematic rather than a photographic capture of a real event. There are no signs of traditional photo manipulation, but rather it is an entirely synthetic image.",
+        "reverseImageSearchKeywords": [
+          "A Superyacht Life",
+          "Grand Theft Auto V yacht",
+          "GTA Online superyacht",
+          "video game luxury lifestyle",
+          "3D render superyacht characters"
+        ],
+        "misinformationRisk": "Low",
+        "riskReasoning": "The image is clearly a digital rendering, most likely from a video game (e.g., Grand Theft Auto Online) or promotional material for such a game, rather than a photograph of real people or events. Its artificial nature is quite evident upon inspection, with stylized character models and textures. While any image can theoretically be used out of context, the distinct graphical style would make it very difficult to credibly present this as a real-world photograph or factual documentation, thus limiting its potential for widespread or effective misinformation."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 66
+      },
+      "metadata": {
+        "flags": [
+          "The image exhibits strong characteristics of a 3D rendering, likely from a video game or similar computer-generated content. The textures on the skin, clothing, and hair of the characters appear stylized and somewhat artificial, lacking the nuanced detail of real photography. The reflections in the sunglasses seem generic. The background elements, including other figures and parts of the yacht, are intentionally blurred, a common technique in game graphics to focus on foreground elements and reduce rendering complexity. The prominent text overlay \"A SUPERYACHT LIFE\" is a graphic design element, further suggesting the image is promotional or thematic rather than a photographic capture of a real event. There are no signs of traditional photo manipulation, but rather it is an entirely synthetic image."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 66/100 — The image depicts two digitally rendered individuals, a woman and a man, standing on what appears to be the deck of a superyacht. The woman on the left has short brown hair, is wearing a dark halter-neck top, large … Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 0,
+        "reasoning": "No content or media was provided for analysis. Therefore, a conclusive assessment of AI fabrication cannot be made.",
+        "artifactsFound": []
+      },
+      "reportId": "131d75b5-b519-4f4c-9de0-6aa0fa558e00",
+      "reportUrl": "http://localhost:9002/report/131d75b5-b519-4f4c-9de0-6aa0fa558e00"
+    },
+    "20effceb-b6b8-4291-916f-5ffc5dd84fb3": {
+      "imageAnalysis": {
+        "description": "The image shows a man, possibly of South Asian descent, with dark hair and a beard, smiling broadly with his teeth visible. He is wearing dark sunglasses, a dark, short-sleeved collared shirt unbuttoned over a black t-shirt. He appears to be on a sandy beach, with the ocean and small waves in the background under a clear blue sky. The man is captured in a dynamic pose, seemingly walking or running towards the viewer, with his right hand slightly blurred from motion.",
+        "manipulationAssessment": "The image shows no obvious signs of digital manipulation, AI generation, or inconsistencies. The lighting is natural and consistent with a sunny beach environment, casting plausible shadows. Facial features, hair, beard, and skin textures appear authentic. The details of the clothing, sunglasses, and the beach environment (sand, ocean, sky) all appear coherent and realistic. There are no noticeable anomalies such as distorted limbs, unnatural blending, or pixelation that would suggest alteration.",
+        "reverseImageSearchKeywords": [
+          "Man beach smiling sunglasses",
+          "Indian man beach black shirt",
+          "Happy man sand ocean",
+          "Beard sunglasses beach portrait",
+          "Sunny beach casual man"
+        ],
+        "misinformationRisk": "Low",
+        "riskReasoning": "The image itself is innocuous, depicting a person enjoying a beach scene. It does not contain any controversial symbols, specific individuals known for public discourse, or elements that inherently suggest a deceptive narrative. The primary risk of misinformation would stem from the image being used out of its original context, such as misrepresenting the individual's identity or associating them with a false event or statement. However, as a standalone image, its generic and positive nature presents a low inherent risk for widespread misinformation."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 59
+      },
+      "metadata": {
+        "flags": [
+          "The image shows no obvious signs of digital manipulation, AI generation, or inconsistencies. The lighting is natural and consistent with a sunny beach environment, casting plausible shadows. Facial features, hair, beard, and skin textures appear authentic. The details of the clothing, sunglasses, and the beach environment (sand, ocean, sky) all appear coherent and realistic. There are no noticeable anomalies such as distorted limbs, unnatural blending, or pixelation that would suggest alteration."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 59/100 — The image shows a man, possibly of South Asian descent, with dark hair and a beard, smiling broadly with his teeth visible. He is wearing dark sunglasses, a dark, short-sleeved collared… 🤖 High AI Probability (85%). Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 85,
+        "reasoning": "The image exhibits several common AI generation artifacts, particularly concerning human anatomy and background coherence. The overall aesthetic has a 'too perfect' yet subtly flawed appearance typical of generative models.",
+        "artifactsFound": [
+          "distorted hands",
+          "unnatural lighting on subject",
+          "inconsistent background details",
+          "overly smooth skin texture"
+        ]
+      },
+      "reportId": "20effceb-b6b8-4291-916f-5ffc5dd84fb3",
+      "reportUrl": "http://localhost:9002/report/20effceb-b6b8-4291-916f-5ffc5dd84fb3"
     }
   },
-  "votes": {},
+  "votes": {
+    "20effceb-b6b8-4291-916f-5ffc5dd84fb3": {
+      "up": 1,
+      "down": 0
+    }
+  },
   "cache": {
     "a18e24c3a5f9f610d1842d5acee956fd24883023708645006c40288ad3d7afc7": "6ab62d2e-cd1f-4982-8942-5264cb7f749a",
     "f29e4b84f1adadfe64dff4e0088397f8550d94345b8bf9c9eb6a6e05c7f8e55a": "3bbf0fe6-99d9-482f-935a-8d9b373fe346",
     "6dd12ae73b007aebadf6f0212a96ef9c00e52092192b07d535cda69f2b36fc2d": "132b5ae6-4b98-4028-95e3-b9c00bdc2901",
     "c7a99f563ebe1ed82b8c1d5d7919dfa373e724001ee1473c9e7cb51e7730c54a": "d87466c1-b131-4750-b124-22c16551e5ab",
-    "f3dd36d570d2e44cdf00a94dcb0cdde8a0930e4b04bfcc61a47084c0fe08a039": "ab6fd5cf-e448-4203-a5c3-cf9451a1619e"
+    "f3dd36d570d2e44cdf00a94dcb0cdde8a0930e4b04bfcc61a47084c0fe08a039": "ab6fd5cf-e448-4203-a5c3-cf9451a1619e",
+    "6d851c6b0bf65284bc7a535e4c78be55d032dd4967140dfc8456c3b769b9a50d": "3b17d89a-9dc2-47d2-bd8e-2345479308e7",
+    "cc867dbd30188d1a882b03dcb3db51f98515bf835e8f88c9a52bff6505daffe8": "131d75b5-b519-4f4c-9de0-6aa0fa558e00",
+    "5118c4a0a67e1958a8f81a3acb0be36d869f70144b057126a4f4582ca4e151e4": "20effceb-b6b8-4291-916f-5ffc5dd84fb3"
   }
 }
