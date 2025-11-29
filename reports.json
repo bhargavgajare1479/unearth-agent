@@ -515,6 +515,231 @@
       },
       "reportId": "53c259c3-3d82-4b35-bf0c-5fd05c2b4c19",
       "reportUrl": "http://localhost:9002/report/53c259c3-3d82-4b35-bf0c-5fd05c2b4c19"
+    },
+    "de7c1040-3220-4a58-8023-51047338f995": {
+      "textAnalysis": {
+        "summary": "The text reports 8.2% GDP growth in Q2 of 2025-26, attributing this success to the government's pro-growth policies, reforms, and the hard work of its citizens. The government pledges to continue advancing reforms and improving the 'Ease of Living' for all citizens.",
+        "keyClaims": [
+          "GDP growth was 8.2% in Q2 of 2025-26.",
+          "This growth is a direct result of the government's pro-growth policies and reforms.",
+          "The growth also reflects the hard work and enterprise of the people.",
+          "The government plans to continue reforms and enhance the 'Ease of Living' for citizens."
+        ],
+        "contentAnalysis": "The text adopts a highly positive and self-congratulatory style, typical of a government or political statement. The tone is optimistic and confident, using phrases like 'very encouraging' to emphasize success. It employs common political rhetoric by attributing positive economic outcomes to its own policies while also giving credit to 'the people' and promising future improvements ('continue to advance reforms'). There is an implicit bias towards promoting the government's effectiveness.",
+        "misinformationRisk": "High",
+        "riskReasoning": "The primary claim of '8.2% GDP growth in Q2 of 2025-26' is highly problematic. As Q2 of 2025-26 is in the future, economic statistics for this period would not yet be available as confirmed facts. Presenting a future projection or hypothetical scenario as if it is an already achieved and observed economic figure ('is very encouraging') is misleading. This temporal discrepancy between the reported event and the current timeline creates a significant risk of misinformation by implying a definitive outcome that has not yet occurred."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 61
+      },
+      "metadata": {
+        "flags": [
+          "No metadata for text input."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "N/A",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 61/100 — The text reports 8.2% GDP growth in Q2 of 2025-26, attributing this success to the government's pro-growth policies, reforms, and the hard work of its citizens. The government pledges to continue advancing reforms a… Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 80,
+        "reasoning": "The text exhibits characteristics frequently observed in AI-generated content. The language is highly generic and formulaic, employing common political and economic phrases such as \"pro-growth policies and reforms,\" \"hard work and enterprise of our people,\" and \"strengthen Ease of Living for every citizen\" without providing any specific or unique details to substantiate these claims beyond the initial hypothetical GDP figure. There's a subtle repetitive structure with \"It reflects... It also reflects...\" that, while not grammatically incorrect, contributes to a sense of automated phrasing. The overall tone is perfectly coherent and grammatically sound, but its lack of distinct voice, creative phrasing, or nuanced elaboration beyond generic platitudes strongly suggests generation by an algorithm trained on a vast corpus of similar formal statements. The 'Texture Score' for text (reflecting digital artifacts) is particularly low due to this pronounced genericity and repetition.",
+        "artifactsFound": [
+          "High reliance on generic, boilerplate political and economic terminology",
+          "Lack of specific, unique details or examples beyond a numerical datum",
+          "Repetitive sentence structure ('It reflects... It also reflects...')",
+          "Formulaic phrasing common in AI-generated formal text"
+        ],
+        "anatomyScore": 80,
+        "physicsScore": 90,
+        "textureScore": 40
+      },
+      "reportId": "de7c1040-3220-4a58-8023-51047338f995",
+      "reportUrl": "http://localhost:9002/report/de7c1040-3220-4a58-8023-51047338f995"
+    },
+    "2b6d9cb5-3897-418c-bbe4-f8f9ea61e6dc": {
+      "imageAnalysis": {
+        "description": "The image is a photograph of a newspaper page, specifically the 'Business' section of 'THE HINDU' newspaper. A prominent headline, circled in red, reads: \"'Rupee is Asia's worst performing currency'\". Below the headline, the article text discusses the possibility of the domestic currency sliding to 90 against the USD if a trade deal with the U.S. does not happen. The article is by Lalatendu Mishra from Mumbai and references a 'sharp depreciation of 4.3% against the U.S. Dollar (USD) in this calendar year (January-December 2025)'. A small, blurry image of a person on a skateboard or similar board is also visible within the article.",
+        "manipulationAssessment": "The image appears to be a genuine photograph of a physical newspaper page. There are no obvious signs of digital manipulation to the newspaper content itself. The slight texture of the paper, the way it lies, and the lighting suggest a real-world photograph rather than a digital alteration or AI generation. The red circle highlighting the headline seems to be a physical marking on the newspaper.",
+        "reverseImageSearchKeywords": [
+          "Rupee Asia worst performing currency The Hindu",
+          "Lalatendu Mishra Rupee forecast",
+          "Indian Rupee 2025 prediction",
+          "The Hindu Business currency",
+          "USD INR trade deal newspaper"
+        ],
+        "misinformationRisk": "High",
+        "riskReasoning": "The image presents a headline that, if taken out of context, could easily be used to spread misinformation about the current state of the Indian Rupee. The article's body clearly states that the depreciation and 'worst performing currency' status refer to a 'calendar year (January-December 2025)'. Many people only read headlines or skim articles, and the prominent red circle further draws attention to the alarming headline without necessarily guiding the reader to the crucial future-dated context. Sharing this image, especially the circled headline, without explicitly clarifying that it is a *prediction for 2025* and not the current situation, poses a high risk of misinforming the public and potentially causing unnecessary alarm or misunderstanding about economic conditions."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 60
+      },
+      "metadata": {
+        "flags": [
+          "The image appears to be a genuine photograph of a physical newspaper page. There are no obvious signs of digital manipulation to the newspaper content itself. The slight texture of the paper, the way it lies, and the lighting suggest a real-world photograph rather than a digital alteration or AI generation. The red circle highlighting the headline seems to be a physical marking on the newspaper.",
+          "No obvious AI signatures found in file header."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 60/100 — The image is a photograph of a newspaper page, specifically the 'Business' section of 'THE HINDU' newspaper. A prominent headline, circled in red, reads: \"'Rupee is Asia's worst performing currency'\". Below the head… Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 75,
+        "reasoning": "The subject's skin exhibits a slightly waxy and overly smooth texture, lacking the natural pores and micro-imperfections typical of human skin. Hair strands appear somewhat uniform and clumped rather than individually defined. While no overt anatomical deformities or significant physics inconsistencies were detected, the overall image is conspicuously clean and lacks the natural photographic grain or noise patterns expected in real-world captures, suggesting a digital origin rather than an optical one. Metadata analysis did not reveal explicit AI signatures, but the visual cues are notable.",
+        "artifactsFound": [
+          "waxy skin texture",
+          "uniform hair strands",
+          "absence of natural photographic noise"
+        ],
+        "anatomyScore": 70,
+        "physicsScore": 85,
+        "textureScore": 65
+      },
+      "reportId": "2b6d9cb5-3897-418c-bbe4-f8f9ea61e6dc",
+      "reportUrl": "http://localhost:9002/report/2b6d9cb5-3897-418c-bbe4-f8f9ea61e6dc"
+    },
+    "0847b78e-33d7-4433-9b32-5f73c82bb932": {
+      "imageAnalysis": {
+        "description": "The image displays a close-up, upward-angled view of a heavily weathered stone wall, likely part of an ancient structure or ruin. The wall is constructed from large, irregularly shaped blocks of dark grey stone, possibly basalt or similar rock, exhibiting considerable age and natural wear. Prominent white and light grey streaks, indicative of efflorescence or mineral deposits from water flow, run vertically down the wall's surface. Some areas also show patches of brownish-orange discoloration, suggesting mineral staining or different types of lichen/algae. Near the top of the wall, there's a distinct horizontal molding or ledge, from which a small clump of dry, light-brown plant material (resembling dried grass or a small nest) protrudes. Several small, dark holes or crevices are visible within the stone blocks and mortar lines. The overall impression is one of rugged texture, decay, and natural aging under environmental conditions.",
+        "manipulationAssessment": "The image appears to be an authentic photograph and shows no clear signs of digital manipulation or AI generation. The textures of the stone, the patterns of efflorescence and staining, and the plant debris all exhibit natural variation and detail consistent with a real-world, aged structure. The lighting seems natural, casting subtle shadows that align with the rough surface of the wall. There are no obvious inconsistencies in lighting, shadows, or textures that would suggest Photoshopped elements or synthetic rendering. The resolution and detail are uniform across the image, without artifacts typically associated with heavy digital alteration or AI creation.",
+        "reverseImageSearchKeywords": [
+          "Weathered stone wall",
+          "Ancient masonry close-up",
+          "Efflorescence on stone",
+          "Old fortress wall texture",
+          "Historic building decay"
+        ],
+        "misinformationRisk": "Low",
+        "riskReasoning": "The image depicts a generic, weathered stone wall with no specific identifying features, recognizable landmarks, people, or events. Its content is purely descriptive of a common architectural element subject to natural aging. Therefore, it has a very low potential for being used to spread significant misinformation or to deceive viewers about a particular event, location, or person. While it could theoretically be misattributed to a different location or historical period, such misattribution would likely be minor in impact and not contribute to widespread or harmful misinformation campaigns."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 59
+      },
+      "metadata": {
+        "flags": [
+          "The image appears to be an authentic photograph and shows no clear signs of digital manipulation or AI generation. The textures of the stone, the patterns of efflorescence and staining, and the plant debris all exhibit natural variation and detail consistent with a real-world, aged structure. The lighting seems natural, casting subtle shadows that align with the rough surface of the wall. There are no obvious inconsistencies in lighting, shadows, or textures that would suggest Photoshopped elements or synthetic rendering. The resolution and detail are uniform across the image, without artifacts typically associated with heavy digital alteration or AI creation.",
+          "No obvious AI signatures found in file header."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 59/100 — The image displays a close-up, upward-angled view of a heavily weathered stone wall, likely part of an ancient structure or ruin. The wall is constructed from large, irregularly shaped … 🤖 High AI Probability (95%). Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 95,
+        "reasoning": "The analysis revealed several strong indicators of AI generation. Phase 1 showed significant anatomical inconsistencies, particularly with distorted hand structure and waxy skin texture, indicative of common AI rendering flaws. Phase 2 presented minor inconsistencies in lighting and background elements, suggesting a synthetic environment. Phase 3 identified classic AI 'gibberish' text in the background and an artificial, painterly noise pattern rather than natural photographic grain. While metadata did not contain explicit AI signatures, the comprehensive visual evidence strongly points to an AI origin, especially given the presence of multiple 'smoking gun' artifacts.",
+        "artifactsFound": [
+          "Warped fingers",
+          "Waxy skin texture",
+          "Lack of defined pores",
+          "Subtle lighting inconsistencies",
+          "Slightly illogical background elements",
+          "Gibberish text in background",
+          "Painterly noise pattern"
+        ],
+        "anatomyScore": 30,
+        "physicsScore": 60,
+        "textureScore": 20
+      },
+      "reportId": "0847b78e-33d7-4433-9b32-5f73c82bb932",
+      "reportUrl": "http://localhost:9002/report/0847b78e-33d7-4433-9b32-5f73c82bb932"
+    },
+    "50b2f417-f214-4536-888c-d5eb9dc5c826": {
+      "imageAnalysis": {
+        "description": "The image displays an information sign about Janjira Fort, written primarily in English with some Hindi/Marathi text visible on the left and bottom. The sign is dark green with white lettering, providing details about the fort's location, history, construction, features, and its resilience against various attacks. In the background, partially visible above and to the sides of the sign, are the weathered, ancient stone structures of what appears to be the fort itself, under a bright, clear sky. Several white splatters, likely bird droppings, are visible on the top edge and surface of the sign.",
+        "manipulationAssessment": "The image appears to be an authentic photograph taken outdoors. There are no discernible signs of digital manipulation, AI generation, or inconsistencies in lighting, shadows, or textures. The text on the sign is clear and legible, and the visible background elements (fort ruins, sky) seem consistent with a real-world scene. The bird droppings on the sign also appear natural.",
+        "reverseImageSearchKeywords": [
+          "Janjira Fort information board",
+          "Janjira Fort sign English Hindi",
+          "Archaeological Survey of India Janjira",
+          "Murud Janjira history",
+          "Island Fort Maharashtra details"
+        ],
+        "misinformationRisk": "Low",
+        "riskReasoning": "The image clearly depicts an informational sign about a historical monument, Janjira Fort. The content is factual and descriptive, provided by the Archaeological Survey of India. There are no ambiguous elements, emotionally charged visuals, or deceptive contexts within the image itself that could easily be exploited to spread misinformation. The primary purpose of such an image is to educate or document, making its misuse for misinformation purposes inherently difficult without significant external manipulation or miscaptioning, which is beyond the scope of the image's inherent properties."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 59
+      },
+      "metadata": {
+        "flags": [
+          "The image appears to be an authentic photograph taken outdoors. There are no discernible signs of digital manipulation, AI generation, or inconsistencies in lighting, shadows, or textures. The text on the sign is clear and legible, and the visible background elements (fort ruins, sky) seem consistent with a real-world scene. The bird droppings on the sign also appear natural.",
+          "No obvious AI signatures found in file header."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 59/100 — The image displays an information sign about Janjira Fort, written primarily in English with some Hindi/Marathi text visible on the left and bottom. The sign is dark green with white le… 🤖 High AI Probability (95%). Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 95,
+        "reasoning": "The forensic analysis reveals multiple tell-tale signs of AI generation, predominantly in the anatomical and textual consistency. The subject's hands exhibit significant distortions, including an irregular number of fingers and unnaturally merged knuckles, a common failure point for AI models. The skin texture appears overly smooth and 'waxy', lacking the subtle imperfections, pores, and individual hair strands characteristic of real human skin. Fine details in the eyes, such as corneal reflections and tear duct symmetry, show slight inconsistencies. Furthermore, the background environment contains instances of 'gibberish' text on what appear to be signs or labels, rendering them unreadable and nonsensical, which is a strong indicator of AI generation. Lighting and shadows, while generally plausible, show minor inconsistencies that suggest an artificially constructed scene rather than a natural photographic capture. The overall image lacks the nuanced digital noise typically found in authentic photographs, instead presenting a 'too clean' or 'painterly' finish in many areas.",
+        "artifactsFound": [
+          "Distorted hands/fingers (irregular count, merged knuckles)",
+          "Waxy and overly smooth skin texture",
+          "Inconsistent corneal reflections in eyes",
+          "Gibberish/unreadable text in background elements",
+          "Lack of natural photographic noise (ISO grain)",
+          "Subtle inconsistencies in lighting and shadow direction"
+        ],
+        "anatomyScore": 15,
+        "physicsScore": 55,
+        "textureScore": 25
+      },
+      "reportId": "50b2f417-f214-4536-888c-d5eb9dc5c826",
+      "reportUrl": "http://localhost:9002/report/50b2f417-f214-4536-888c-d5eb9dc5c826"
+    },
+    "812bc056-26a2-4cd1-b888-998e2420b772": {
+      "imageAnalysis": {
+        "description": "The image depicts a massive grey-white ash plume billowing upwards and outwards from what appears to be a volcanic eruption. The eruption dominates the center-left of the frame, with the ash cloud spreading across a large portion of the sky, giving a sense of scale and power. Below the ash cloud, the landscape is visible, featuring a mix of dark, potentially volcanic terrain and areas of green vegetation, including what look like fields or cultivated land in the foreground. Small structures, possibly houses or agricultural buildings, can be seen amidst the greenery. The sky surrounding the ash cloud appears overcast or hazy, contributing to the somber atmosphere.",
+        "manipulationAssessment": "The image appears to be a genuine photograph of a volcanic eruption. There are no obvious signs of digital manipulation, AI generation, or inconsistencies in lighting, shadows, or textures that would suggest alteration. The texture and movement of the ash cloud look natural, and the interaction with the surrounding environment seems consistent with a real-world event. The resolution is somewhat low, which is common for photos of rapidly unfolding natural disasters shared online, but this does not indicate manipulation.",
+        "reverseImageSearchKeywords": [
+          "volcanic eruption",
+          "ash cloud",
+          "volcano smoke",
+          "natural disaster",
+          "volcano landscape"
+        ],
+        "misinformationRisk": "Medium",
+        "riskReasoning": "Images of dramatic natural events like volcanic eruptions carry a 'Medium' risk of misinformation. While the image itself appears authentic, it could easily be miscontextualized. Common misinformation tactics include attributing the image to the wrong volcano, a different date, or a different country. It could be used to falsely claim an eruption is happening 'now' when it's an old event, or to exaggerate the scale or impact of an actual event by associating it with a more dramatic, unrelated image. Without proper context (date, location, specific volcano), it is susceptible to being repurposed for misleading narratives."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 71
+      },
+      "metadata": {
+        "flags": [
+          "The image appears to be a genuine photograph of a volcanic eruption. There are no obvious signs of digital manipulation, AI generation, or inconsistencies in lighting, shadows, or textures that would suggest alteration. The texture and movement of the ash cloud look natural, and the interaction with the surrounding environment seems consistent with a real-world event. The resolution is somewhat low, which is common for photos of rapidly unfolding natural disasters shared online, but this does not indicate manipulation.",
+          "No obvious AI signatures found in file header."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 71/100 — The image depicts a massive grey-white ash plume billowing upwards and outwards from what appears to be a volcanic eruption. The eruption dominates the center-left of the frame, with the ash cloud spreading across a… Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 80,
+        "reasoning": "The image exhibits several subtle but consistent characteristics commonly found in AI-generated content. Anatomically, the skin appears overly smooth and 'waxy,' lacking natural pores and individual imperfections, especially noticeable on the face. While features are largely symmetrical, the tear ducts lack granular detail, and the teeth, though distinct, present an unnatural uniformity. Physics-wise, lighting appears consistent, but reflections in the eyes are somewhat generic and lack specific environmental detail. The background, while coherent, shows slightly blurred or simplified details where sharper rendering would be expected. Digitally, the image possesses an unnaturally clean quality, lacking the micro-noise patterns typical of real photographic sensors. Hair strands tend to merge into larger 'painted' masses rather than showing distinct individual fibers. There were no obvious AI signatures found in the file metadata, nor any major 'smoking gun' like extra digits or gibberish text, but the cumulative effect of these minor discrepancies strongly points towards AI synthesis.",
+        "artifactsFound": [
+          "Waxy skin texture",
+          "Lack of natural skin pores",
+          "Unnaturally uniform teeth",
+          "Generic eye reflections",
+          "Slightly simplified background details",
+          "Lack of realistic micro-noise patterns",
+          "Painted-like hair strands"
+        ],
+        "anatomyScore": 70,
+        "physicsScore": 80,
+        "textureScore": 65
+      },
+      "reportId": "812bc056-26a2-4cd1-b888-998e2420b772",
+      "reportUrl": "http://localhost:9002/report/812bc056-26a2-4cd1-b888-998e2420b772"
     }
   },
   "votes": {
@@ -523,6 +748,14 @@
       "down": 0
     },
     "53c259c3-3d82-4b35-bf0c-5fd05c2b4c19": {
+      "up": 1,
+      "down": 0
+    },
+    "de7c1040-3220-4a58-8023-51047338f995": {
+      "up": 1,
+      "down": 0
+    },
+    "2b6d9cb5-3897-418c-bbe4-f8f9ea61e6dc": {
       "up": 1,
       "down": 0
     }
@@ -538,6 +771,11 @@
     "5118c4a0a67e1958a8f81a3acb0be36d869f70144b057126a4f4582ca4e151e4": "20effceb-b6b8-4291-916f-5ffc5dd84fb3",
     "d067a376da73a3f19a9856f967f1a28e74fa50a0ba617294281adb6fb04e2a00": "49a555cb-1049-4e84-a058-e683ebe780dd",
     "80b32f3e6f207f2ee7775e5c1e7620b3990fa5c1fecf7a9303b21d6792cf6e1f": "acc50bae-0433-44e0-824d-adbac646788b",
-    "94c947bdfce15af2e1c8fab6583d0c3e05911c5e4eb640fe045f67f36221b5f3": "53c259c3-3d82-4b35-bf0c-5fd05c2b4c19"
+    "94c947bdfce15af2e1c8fab6583d0c3e05911c5e4eb640fe045f67f36221b5f3": "53c259c3-3d82-4b35-bf0c-5fd05c2b4c19",
+    "c3239c40b9f76c617442c20a9f7d3c9fcf0bf6bc105d8e4d17bd3caf6d0021c8": "de7c1040-3220-4a58-8023-51047338f995",
+    "065cd0cecc3c1c582399f9f74650ecdf732a740e188b52d0d95cf5910dbc4c54": "2b6d9cb5-3897-418c-bbe4-f8f9ea61e6dc",
+    "e26680d75deee37ae3ff3c0fcf5e77aba0a84658bd7e1e222ad8c390722855af": "0847b78e-33d7-4433-9b32-5f73c82bb932",
+    "cbee1c9f34144c910e67352b858ef41a7ff76d8ae7d8dca8244a215475974cbe": "50b2f417-f214-4536-888c-d5eb9dc5c826",
+    "f84313b4991310173241c1b6bfe4aaf47164d9957a61562866840f668f6a2543": "812bc056-26a2-4cd1-b888-998e2420b772"
   }
 }

@@ -1,0 +1,28 @@
+# Node
+node_modules
+npm-debug.log
+package-lock.json
+
+# Next build
+.next
+/out
+
+# local env
+.env
+.env.local
+.env.*.local
+
+# system
+.DS_Store
+.git
+.vscode
+coverage
+
+# logs
+logs
+*.log
+
+# Build artifacts
+dist
+build
+.tmp

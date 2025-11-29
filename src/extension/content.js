@@ -70,7 +70,25 @@ const modalContent = document.getElementById("unearth-agent-modal-content");
 
 function showLoading() {
   modal.style.display = "flex";
-  modalContent.innerHTML = `<p style="text-align: center;">Analyzing... This may take a moment.</p>`;
+  modalContent.innerHTML = `
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px;">
+      <div style="width: 100%; max-width: 240px; background-color: #f3f4f6; border-radius: 9999px; height: 6px; overflow: hidden; margin-bottom: 20px;">
+        <div id="unearth-progress-bar" style="width: 0%; height: 100%; background-color: #10b981; transition: width 0.5s ease;"></div>
+      </div>
+      <p style="color: #4b5563; font-size: 14px; font-weight: 500; margin: 0;">Analyzing content...</p>
+      <p style="color: #9ca3af; font-size: 12px; margin-top: 5px;">This may take a few seconds</p>
+    </div>
+  `;
+  
+  // Simulate progress
+  let progress = 0;
+  const interval = setInterval(() => {
+    progress += Math.random() * 15;
+    if (progress > 90) progress = 90;
+    const bar = document.getElementById('unearth-progress-bar');
+    if (bar) bar.style.width = `${progress}%`;
+    else clearInterval(interval);
+  }, 500);
 }
 
 function showResults(data) {
@@ -132,64 +150,78 @@ function showResults(data) {
   }
 
   // Define border color for summary box based on score
-  const summaryBorderColor = score > 50 ? "#22c55e" : "#ef4444";
+  const summaryColor = score > 50 ? "#22c55e" : "#ef4444";
+  const summaryBg = score > 50 ? "#f0fdf4" : "#fef2f2";
 
   modalContent.innerHTML = `
-    <div style="text-align: center; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px;">
-      <div style="display: flex; align-items: center; justify-content: center;">
+    <div style="text-align: center; padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid #f3f4f6;">
+      <div style="display: inline-flex; align-items: center; justify-content: center; padding: 12px; background: ${summaryBg}; border-radius: 50%; margin-bottom: 12px;">
         ${iconSvg}
       </div>
+      <h3 style="margin: 0; font-size: 18px; font-weight: 700; color: #111827;">
+        ${score > 50 ? "Likely Authentic" : "Potential Misinformation"}
+      </h3>
+      <p style="margin: 4px 0 0; font-size: 13px; color: #6b7280;">
+        Immunity Score: <span style="font-weight: 700; color: ${summaryColor}">${score}/100</span>
+      </p>
     </div>
     
-    <div style="margin-bottom: 15px;">
-      <h4 style="margin-bottom: 5px; font-size: 14px;">Analysis Summary:</h4>
-      <p style="background: #f8f9fa; padding: 12px; border-radius: 6px; font-size: 14px; line-height: 1.5; border-left: 4px solid ${summaryBorderColor}; margin-top: 0;">${reasoning}</p>
+    <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; margin-bottom: 16px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+      <h4 style="margin: 0 0 8px 0; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280;">Analysis Summary</h4>
+      <p style="font-size: 14px; line-height: 1.6; color: #374151; margin: 0;">${reasoning}</p>
     </div>
 
-    ${facts ? `<div style="margin-bottom: 15px; border-top: 1px solid #eee; padding-top: 10px;">${facts}</div>` : ''}
+    ${facts ? `
+    <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; margin-bottom: 16px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+      ${facts}
+    </div>` : ''}
     
-    ${details ? `<div style="font-size: 13px; color: #666; border-top: 1px solid #eee; padding-top: 10px; margin-bottom: 15px;">${details}</div>` : ''}
+    ${details ? `
+    <div style="background: #f9fafb; border-radius: 8px; padding: 12px; margin-bottom: 16px; font-size: 13px; color: #4b5563;">
+      ${details}
+    </div>` : ''}
 
-    <div style="border-top: 1px solid #eee; padding-top: 15px;">
+    <div style="border-top: 1px solid #f3f4f6; padding-top: 20px;">
         ${results.aiDetection ? `
-        <div style="margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <h4 style="margin: 0; font-size: 12px; color: #666; text-transform: uppercase;">🤖 AI Probability</h4>
-                <span style="font-weight: 800; color: ${results.aiDetection.aiProbability > 50 ? '#7e22ce' : '#15803d'}; font-size: 14px;">
+        <div style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <h4 style="margin: 0; font-size: 12px; font-weight: 600; color: #6b7280; text-transform: uppercase;">AI Probability</h4>
+                <span style="font-weight: 700; color: ${results.aiDetection.aiProbability > 50 ? '#7e22ce' : '#15803d'}; font-size: 14px;">
                     ${results.aiDetection.aiProbability}%
                 </span>
             </div>
-            <p style="font-size: 11px; color: #666; margin-top: 5px; line-height: 1.4;">${results.aiDetection.reasoning.slice(0, 100)}...</p>
+            <div style="width: 100%; background: #f3f4f6; height: 6px; border-radius: 99px; overflow: hidden;">
+                <div style="width: ${results.aiDetection.aiProbability}%; background: ${results.aiDetection.aiProbability > 50 ? '#a855f7' : '#22c55e'}; height: 100%;"></div>
+            </div>
+            <p style="font-size: 11px; color: #6b7280; margin-top: 6px; line-height: 1.4;">${results.aiDetection.reasoning.slice(0, 100)}...</p>
         </div>
         ` : ''}
 
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-             <h4 style="margin: 0; font-size: 12px; color: #666; text-transform: uppercase;">Was this helpful?</h4>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+             <h4 style="margin: 0; font-size: 12px; font-weight: 600; color: #6b7280;">Was this helpful?</h4>
              <div style="display: flex; gap: 8px;">
-                 <button id="unearth-vote-up" style="background: white; border: 1px solid #ddd; border-radius: 4px; padding: 4px 8px; cursor: pointer;">👍</button>
-                 <button id="unearth-vote-down" style="background: white; border: 1px solid #ddd; border-radius: 4px; padding: 4px 8px; cursor: pointer;">👎</button>
+                 <button id="unearth-vote-up" style="background: white; border: 1px solid #e5e7eb; border-radius: 6px; padding: 6px 10px; cursor: pointer; transition: all 0.2s;">👍</button>
+                 <button id="unearth-vote-down" style="background: white; border: 1px solid #e5e7eb; border-radius: 6px; padding: 6px 10px; cursor: pointer; transition: all 0.2s;">👎</button>
              </div>
         </div>
 
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-            <h4 style="margin: 0; font-size: 12px; color: #666; text-transform: uppercase;">Language</h4>
-            <select id="unearth-lang-select" style="font-size: 12px; padding: 2px 5px; border-radius: 4px; border: 1px solid #ccc;">
-                <option value="English">English</option>
-                <option value="Hindi">Hindi</option>
-                <option value="Marathi">Marathi</option>
-                <option value="Spanish">Spanish</option>
-            </select>
+        <div style="margin-bottom: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <h4 style="margin: 0; font-size: 12px; font-weight: 600; color: #6b7280;">Language</h4>
+                <select id="unearth-lang-select" style="font-size: 12px; padding: 4px 8px; border-radius: 6px; border: 1px solid #d1d5db; background: white; cursor: pointer;">
+                    <option value="English">English</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Marathi">Marathi</option>
+                    <option value="Spanish">Spanish</option>
+                </select>
+            </div>
+            <div id="unearth-translated-summary" style="display: none; background: #eff6ff; padding: 12px; border-radius: 8px; font-size: 13px; color: #1e40af; line-height: 1.5;"></div>
         </div>
-        <div id="unearth-translated-summary" style="display: none; background: #eef2ff; padding: 10px; border-radius: 4px; font-size: 13px; color: #333; margin-bottom: 10px;"></div>
 
-        <h4 style="margin: 0 0 10px 0; font-size: 12px; color: #666; text-transform: uppercase;">Share Verified Report</h4>
-        <div style="display: flex; gap: 8px;">
-            <button id="unearth-share-x" style="flex: 1; background: #000; color: white; border: none; padding: 8px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 500;">Share on X</button>
-            <button id="unearth-share-fb" style="flex: 1; background: #1877F2; color: white; border: none; padding: 8px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 500;">Facebook</button>
-        </div>
-        <div style="margin-top: 8px; display: flex; gap: 8px;">
-             <button id="unearth-open-report" style="flex: 1; background: #4f46e5; color: white; border: none; padding: 8px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 600;">Open Full Report</button>
-             <button id="unearth-copy-link" style="width: 30px; background: #f0f0f0; color: #333; border: 1px solid #ccc; padding: 8px; border-radius: 4px; cursor: pointer; font-size: 12px; display: flex; align-items: center; justify-content: center;" title="Copy Link">🔗</button>
+        <div style="display: flex; gap: 10px;">
+            <button id="unearth-open-report" style="flex: 1; background: #4f46e5; color: white; border: none; padding: 10px; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 600; transition: background 0.2s;">View Full Report</button>
+            <button id="unearth-share-x" style="background: #000; color: white; border: none; padding: 10px 14px; border-radius: 8px; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center;">𝕏</button>
+            <button id="unearth-copy-link" style="background: #f3f4f6; color: #374151; border: 1px solid #e5e7eb; padding: 10px 14px; border-radius: 8px; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center;" title="Copy Link">🔗</button>
         </div>
     </div>
   `;
@@ -288,20 +320,34 @@ function createFactCheckButton(postElement, insertBefore = null) {
   button.innerText = "Fact Check";
   button.className = "unearth-agent-button"; // Add a class for styling and to avoid re-adding
   button.style.cssText = `
-    background-color: #386641;
+    background-color: #10b981; /* Emerald 500 */
     color: white;
     border: none;
     border-radius: 9999px;
-    padding: 6px 12px;
-    font-size: 12px;
-    font-weight: 500;
+    padding: 6px 16px;
+    font-size: 13px;
+    font-weight: 600;
     cursor: pointer;
     margin-top: 8px;
-    opacity: 0.8;
-    transition: opacity 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    width: auto; /* Ensure it's not full width */
   `;
-  button.onmouseover = () => (button.style.opacity = "1");
-  button.onmouseout = () => (button.style.opacity = "0.8");
+  button.innerHTML = `
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    Fact Check
+  `;
+  button.onmouseover = () => {
+    button.style.transform = "translateY(-1px)";
+    button.style.boxShadow = "0 4px 6px rgba(0,0,0,0.15)";
+  };
+  button.onmouseout = () => {
+    button.style.transform = "translateY(0)";
+    button.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
+  };
 
   button.onclick = async (e) => {
     e.stopPropagation(); // Prevent navigating to the tweet when clicking the button
