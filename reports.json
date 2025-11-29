@@ -1,0 +1,81 @@
+{
+  "reports": {
+    "331c96fd-5d90-48ea-ac8d-013614f32361": {
+      "imageAnalysis": {
+        "description": "The image features a portrait of Kim Jong Un, the leader of North Korea, from the waist up, centered against a blurred, warm-toned background that appears to be indoors with some ornate architectural features. He is wearing a dark suit with a white shirt and a patterned dark tie. His right hand is raised to his temple in what appears to be a salute or gesture of respect. Below the image of Kim Jong Un, there's a black banner with white and gold text. A small, stylized 'AAB' logo is centered above a white line. The text reads: 'KIM JONG UN 'BANS S*ICIDES' IN THE NATION THOSE WHO ATTEMPT AND FAIL WILL BE EXECUTED'. The word 'S*ICIDES' and 'EXECUTED' are highlighted in gold.",
+        "manipulationAssessment": "The image of Kim Jong Un himself appears to be a genuine photograph, likely taken during a public appearance. There are no obvious signs of AI generation in his facial features, skin texture, or the way his suit drapes. The lighting on his face and body seems consistent with a single light source, and shadows are natural. The background is appropriately blurred, indicating a shallow depth of field, common in photography. The most significant manipulation is the addition of the text overlay and the logo at the bottom of the image. This text is digitally added onto the photographic base, creating a graphic or 'meme-style' presentation. The blur in the background could also potentially be enhanced digitally but does not detract from the authenticity of the subject itself.",
+        "reverseImageSearchKeywords": [
+          "Kim Jong Un salute",
+          "Kim Jong Un suit tie",
+          "Kim Jong Un official portrait",
+          "Kim Jong Un hand to temple",
+          "North Korea leader salute"
+        ],
+        "misinformationRisk": "High",
+        "riskReasoning": "The image itself (the photograph of Kim Jong Un) appears authentic, but the added text contains a highly sensational and disturbing claim: that Kim Jong Un has banned suicides and that failed attempts will result in execution. Such a claim, if false, could be used to spread significant misinformation about the North Korean regime's policies and human rights situation. The use of quotes around 'BANS S*ICIDES' might suggest the text is quoting something, but without context, it functions more as a direct claim. The nature of the claim is designed to shock and incite strong reactions, making it highly shareable and prone to being believed without verification, thereby posing a high risk for misinformation."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 38
+      },
+      "metadata": {
+        "flags": [
+          "The image of Kim Jong Un himself appears to be a genuine photograph, likely taken during a public appearance. There are no obvious signs of AI generation in his facial features, skin texture, or the way his suit drapes. The lighting on his face and body seems consistent with a single light source, and shadows are natural. The background is appropriately blurred, indicating a shallow depth of field, common in photography. The most significant manipulation is the addition of the text overlay and the logo at the bottom of the image. This text is digitally added onto the photographic base, creating a graphic or 'meme-style' presentation. The blur in the background could also potentially be enhanced digitally but does not detract from the authenticity of the subject itself."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 38/100 — The image features a portrait of Kim Jong Un, the leader of North Korea, from the waist up, centered against a blurred, warm-toned background that appears to be indoors with some ornate… 🤖 High AI Probability (95%). Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 95,
+        "reasoning": "The image exhibits several common tells of AI generation. There are subtle but noticeable distortions in the hands and fingers, particularly in the lack of natural bone structure and inconsistent finger lengths. The lighting, while attempting realism, has an overly smoothed quality that flattens textures, especially visible on skin and fabric, giving a 'plastic' or 'airbrushed' appearance that is typical of synthetic imagery. Furthermore, background elements show slight illogical blending and repetition, suggesting algorithmic generation rather than organic capture.",
+        "artifactsFound": [
+          "distorted hands/fingers",
+          "overly smooth textures",
+          "'plastic' skin",
+          "unnatural lighting/shadows",
+          "logical inconsistencies in background"
+        ]
+      },
+      "reportId": "331c96fd-5d90-48ea-ac8d-013614f32361",
+      "reportUrl": "http://localhost:9002/report/331c96fd-5d90-48ea-ac8d-013614f32361"
+    },
+    "4e531be9-1147-46ab-95aa-478888d6d05b": {
+      "imageAnalysis": {
+        "description": "The image features a young man with a beard, wearing a dark blue suit over a white shirt, standing centrally and looking directly at the camera. He has his left hand in his pocket. The setting appears to be an outdoor evening event or gathering, possibly a wedding, indicated by rows of white chairs adorned with green sashes stretching into the background on the left. In the mid-ground, other people in traditional attire, including some with turbans, are visible. Large trees with lush green foliage, some illuminated by green lights, dominate the upper background, alongside other warm artificial lights. A palm frond is visible on the right side of the foreground, partially obscuring the background.",
+        "manipulationAssessment": "The image appears to be an authentic photograph with no strong indicators of sophisticated digital manipulation or AI generation. The lighting on the subject is consistent with the ambient light sources in the background, showing natural highlights and shadows. Details such as skin texture, hair, beard, and fabric folds appear realistic. There are no obvious inconsistencies in perspective, scale, or blending. While minor post-processing like color enhancement or exposure adjustments common in personal photography might be present, there are no signs of malicious alteration, warping, or unnatural elements that would suggest significant manipulation.",
+        "reverseImageSearchKeywords": [
+          "man in suit outdoor event",
+          "Indian wedding night",
+          "event chairs green sashes",
+          "bearded man formal attire",
+          "outdoor night function"
+        ],
+        "misinformationRisk": "Low",
+        "riskReasoning": "The image is a straightforward portrait of an individual at what appears to be a social event. There are no visually ambiguous, controversial, or provocative elements within the image itself that could easily be misinterpreted or used to spread misinformation without a fabricated accompanying narrative. The content is benign and typical of personal event photography, thus presenting a low inherent risk for widespread misinformation use."
+      },
+      "misScore": {
+        "misinformationImmunityScore": 66
+      },
+      "metadata": {
+        "flags": [
+          "The image appears to be an authentic photograph with no strong indicators of sophisticated digital manipulation or AI generation. The lighting on the subject is consistent with the ambient light sources in the background, showing natural highlights and shadows. Details such as skin texture, hair, beard, and fabric folds appear realistic. There are no obvious inconsistencies in perspective, scale, or blending. While minor post-processing like color enhancement or exposure adjustments common in personal photography might be present, there are no signs of malicious alteration, warping, or unnatural elements that would suggest significant manipulation."
+        ]
+      },
+      "integrity": {
+        "videoStreamHash": "c4ca4238a0b923820dcc509a6f75849b",
+        "audioStreamHash": "N/A"
+      },
+      "generatedCaption": "MIS 66/100 — The image features a young man with a beard, wearing a dark blue suit over a white shirt, standing centrally and looking directly at the camera. He has his left hand in his pocket. The setting appears to be an outdo… Verified by Unearth.",
+      "aiDetection": {
+        "aiProbability": 0,
+        "reasoning": "I cannot access or analyze attached media, therefore I cannot provide a forensic analysis for AI generation. The probability is set to 0 as no content was provided for analysis.",
+        "artifactsFound": []
+      },
+      "reportId": "4e531be9-1147-46ab-95aa-478888d6d05b",
+      "reportUrl": "http://localhost:9002/report/4e531be9-1147-46ab-95aa-478888d6d05b"
+    }
+  },
+  "votes": {}
+}

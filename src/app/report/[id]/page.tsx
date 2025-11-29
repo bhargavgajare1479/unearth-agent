@@ -2,6 +2,8 @@ import { getReport } from '@/app/actions';
 import { AnalysisDashboard } from '@/components/analysis/analysis-dashboard';
 import { notFound } from 'next/navigation';
 
+import { VoteControl } from '@/components/analysis/vote-control';
+
 export default async function ReportPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
     const report = await getReport(id);
@@ -22,6 +24,10 @@ export default async function ReportPage({ params }: { params: Promise<{ id: str
 
                 <div className="rounded-xl bg-white p-6 shadow-sm ring-1 ring-neutral-200">
                     <AnalysisDashboard results={report} />
+
+                    <div className="mt-8 border-t border-gray-100 pt-8">
+                        <VoteControl reportId={id} initialVotes={report.votes} />
+                    </div>
                 </div>
 
                 <footer className="mt-12 text-center text-sm text-neutral-500">

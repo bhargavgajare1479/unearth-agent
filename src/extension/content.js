@@ -150,6 +150,26 @@ function showResults(data) {
     ${details ? `<div style="font-size: 13px; color: #666; border-top: 1px solid #eee; padding-top: 10px; margin-bottom: 15px;">${details}</div>` : ''}
 
     <div style="border-top: 1px solid #eee; padding-top: 15px;">
+        ${results.aiDetection ? `
+        <div style="margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h4 style="margin: 0; font-size: 12px; color: #666; text-transform: uppercase;">🤖 AI Probability</h4>
+                <span style="font-weight: 800; color: ${results.aiDetection.aiProbability > 50 ? '#7e22ce' : '#15803d'}; font-size: 14px;">
+                    ${results.aiDetection.aiProbability}%
+                </span>
+            </div>
+            <p style="font-size: 11px; color: #666; margin-top: 5px; line-height: 1.4;">${results.aiDetection.reasoning.slice(0, 100)}...</p>
+        </div>
+        ` : ''}
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+             <h4 style="margin: 0; font-size: 12px; color: #666; text-transform: uppercase;">Was this helpful?</h4>
+             <div style="display: flex; gap: 8px;">
+                 <button id="unearth-vote-up" style="background: white; border: 1px solid #ddd; border-radius: 4px; padding: 4px 8px; cursor: pointer;">👍</button>
+                 <button id="unearth-vote-down" style="background: white; border: 1px solid #ddd; border-radius: 4px; padding: 4px 8px; cursor: pointer;">👎</button>
+             </div>
+        </div>
+
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
             <h4 style="margin: 0; font-size: 12px; color: #666; text-transform: uppercase;">Language</h4>
             <select id="unearth-lang-select" style="font-size: 12px; padding: 2px 5px; border-radius: 4px; border: 1px solid #ccc;">
@@ -176,6 +196,7 @@ function showResults(data) {
   setTimeout(() => {
     const caption = results.generatedCaption || `Verified by Unearth. MIS Score: ${score}/100`;
     const reportUrl = results.reportUrl || "https://unearth.ai";
+    const reportId = results.reportId;
     const encodedCaption = encodeURIComponent(caption);
     const encodedUrl = encodeURIComponent(reportUrl);
 
@@ -193,6 +214,23 @@ function showResults(data) {
         setTimeout(() => btn.innerText = "Copy Report Link", 2000);
       });
     };
+
+    // Voting
+    const handleVote = (vote) => {
+      if (!reportId) return;
+      chrome.runtime.sendMessage({
+        action: "vote",
+        payload: { reportId, vote }
+      }, (response) => {
+        if (response && response.success) {
+          const btn = document.getElementById(vote === 'up' ? 'unearth-vote-up' : 'unearth-vote-down');
+          btn.style.background = vote === 'up' ? '#dcfce7' : '#fee2e2';
+          btn.style.borderColor = vote === 'up' ? '#22c55e' : '#ef4444';
+        }
+      });
+    };
+    document.getElementById('unearth-vote-up').onclick = () => handleVote('up');
+    document.getElementById('unearth-vote-down').onclick = () => handleVote('down');
 
     // Language Selector
     const langSelect = document.getElementById('unearth-lang-select');

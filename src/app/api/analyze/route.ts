@@ -32,6 +32,14 @@ export async function POST(request: Request) {
       });
     }
 
+    if (body.action === 'vote') {
+      const { voteOnReport } = await import('@/app/actions');
+      const result = await voteOnReport(body.reportId, body.vote);
+      return NextResponse.json({ success: true, votes: result }, {
+        headers: { 'Access-Control-Allow-Origin': '*' },
+      });
+    }
+
     const results = await analyzeInput(body);
 
     return NextResponse.json(results, {

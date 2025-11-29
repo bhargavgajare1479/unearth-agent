@@ -94,6 +94,33 @@ export function AnalysisDashboard({
         </div>
       )}
 
+      {results.aiDetection && (
+        <div className={`rounded-lg border p-6 ${results.aiDetection.aiProbability > 50 ? 'bg-purple-50 border-purple-200' : 'bg-green-50 border-green-200'}`}>
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-lg font-semibold text-gray-900">🤖 AI Generation Detector</h3>
+            <div className="flex items-center">
+              <span className={`text-2xl font-bold ${results.aiDetection.aiProbability > 50 ? 'text-purple-700' : 'text-green-700'}`}>
+                {results.aiDetection.aiProbability}%
+              </span>
+              <span className="ml-2 text-sm text-gray-500">Probability</span>
+            </div>
+          </div>
+          <p className="text-sm text-gray-700 mb-4">{results.aiDetection.reasoning}</p>
+          {results.aiDetection.artifactsFound.length > 0 && (
+            <div>
+              <h4 className="text-xs font-semibold uppercase text-gray-500 mb-2">Detected Artifacts</h4>
+              <div className="flex flex-wrap gap-2">
+                {results.aiDetection.artifactsFound.map((artifact, i) => (
+                  <span key={i} className="inline-flex items-center rounded-full bg-white px-2.5 py-0.5 text-xs font-medium text-gray-800 border border-gray-200">
+                    {artifact}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
       {isUrlAnalysis && <UrlAnalysisReport urlAnalysis={results.urlAnalysis} />}
       {isTextAnalysis && (
         <TextAnalysisReport

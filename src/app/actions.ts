@@ -15,12 +15,14 @@ import {
 import {
   verifyCrisisFootageContext,
   type VerifyCrisisFootageContextOutput,
-} from '@/ai/flows/verify-crisis-footage-context';
+}
+  from '@/ai/flows/verify-crisis-footage-context';
 import { analyzeUrlContent, type AnalyzeUrlContentOutput } from '@/ai/flows/analyze-url-content';
 import { transcribeAudio } from '@/ai/flows/transcribe-audio';
 import { analyzeTextContent, type AnalyzeTextContentOutput } from '@/ai/flows/analyze-text-content';
 import { analyzeImageContent, type AnalyzeImageContentOutput } from '@/ai/flows/analyze-image-content';
 import { translateSummary, type TranslateSummaryInput, type TranslateSummaryOutput } from '@/ai/flows/translate-summary';
+import { detectAiGeneration, type DetectAiGenerationOutput } from '@/ai/flows/detect-ai-generation';
 
 export { translateSummary };
 
@@ -47,18 +49,69 @@ export type AnalysisResults = {
   generatedCaption?: string;
   reportId?: string;
   reportUrl?: string;
+  aiDetection?: DetectAiGenerationOutput;
+  votes?: { up: number; down: number };
 };
 
-// In-memory store for reports (Note: Data will be lost on server restart)
-const reportStore = new Map<string, AnalysisResults>();
+import fs from 'fs';
+import path from 'path';
 
-export async function getReport(id: string): Promise<AnalysisResults | undefined> {
-  return reportStore.get(id);
+// File path for persistent storage
+const DB_PATH = path.join(process.cwd(), 'reports.json');
+
+// Helper to read DB
+function readDb(): { reports: Record<string, AnalysisResults>, votes: Record<string, { up: number, down: number }> } {
+  try {
+    if (!fs.existsSync(DB_PATH)) {
+      return { reports: {}, votes: {} };
+    }
+    const data = fs.readFileSync(DB_PATH, 'utf-8');
+    return JSON.parse(data);
+  } catch (error) {
+    console.error('Error reading DB:', error);
+    return { reports: {}, votes: {} };
+  }
 }
 
-function generateCaption(score: number, summary: string): string {
+// Helper to write DB
+function writeDb(data: { reports: Record<string, AnalysisResults>, votes: Record<string, { up: number, down: number }> }) {
+  try {
+    fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2));
+  } catch (error) {
+    console.error('Error writing DB:', error);
+  }
+}
+
+export async function getReport(id: string): Promise<AnalysisResults | undefined> {
+  const db = readDb();
+  const report = db.reports[id];
+  if (report) {
+    const votes = db.votes[id] || { up: 0, down: 0 };
+    return { ...report, votes };
+  }
+  return undefined;
+}
+
+export async function voteOnReport(reportId: string, vote: 'up' | 'down') {
+  const db = readDb();
+  const current = db.votes[reportId] || { up: 0, down: 0 };
+
+  if (vote === 'up') current.up++;
+  else current.down++;
+
+  db.votes[reportId] = current;
+  writeDb(db);
+
+  return current;
+}
+
+function generateCaption(score: number, summary: string, aiProb?: number): string {
   const prefix = `MIS ${score}/100 — `;
-  const suffix = ` Verified by Unearth.`;
+  let suffix = ` Verified by Unearth.`;
+  if (aiProb && aiProb > 80) {
+    suffix = ` 🤖 High AI Probability (${aiProb}%).` + suffix;
+  }
+
   // Target 250 chars max
   const maxSummaryLength = 250 - prefix.length - suffix.length;
 
@@ -97,18 +150,21 @@ export async function analyzeInput(
 
   else if (input.type === 'text') {
     const textAnalysisResult = await analyzeTextContent({ content: input.content });
+    const aiDetectionResult = await detectAiGeneration({ text: input.content });
+
     const misScoreResult = await assessMisinformationTrustScore({
-      metadataIntegrity: 80, // Neutral score, as no metadata is available.
+      metadataIntegrity: aiDetectionResult.aiProbability > 80 ? 20 : 80,
       physicsMatch: 80, // Not applicable for text.
       sourceCorroboration: scoreMap[textAnalysisResult.misinformationRisk] || 50,
     });
-    const caption = generateCaption(misScoreResult.misinformationImmunityScore, textAnalysisResult.summary);
+    const caption = generateCaption(misScoreResult.misinformationImmunityScore, textAnalysisResult.summary, aiDetectionResult.aiProbability);
     results = {
       textAnalysis: textAnalysisResult,
       misScore: misScoreResult,
       metadata: { flags: ['No metadata for text input.'] },
       integrity: { videoStreamHash: 'N/A', audioStreamHash: 'N/A' },
       generatedCaption: caption,
+      aiDetection: aiDetectionResult,
     };
   }
 
@@ -134,19 +190,25 @@ export async function analyzeInput(
   else if (input.type === 'image') {
     try {
       const imageAnalysisResult = await analyzeImageContent({ imageDataUri: input.dataUri });
+      const aiDetectionResult = await detectAiGeneration({ dataUri: input.dataUri });
+
       const manipulationScore = imageAnalysisResult.manipulationAssessment.toLowerCase().includes('no obvious signs') ? 85 : 35;
+      // Factor in AI probability to integrity score
+      const finalIntegrity = aiDetectionResult.aiProbability > 80 ? 10 : manipulationScore;
+
       const misScoreResult = await assessMisinformationTrustScore({
-        metadataIntegrity: manipulationScore,
+        metadataIntegrity: finalIntegrity,
         physicsMatch: 75, // Not applicable for static images in this context.
         sourceCorroboration: scoreMap[imageAnalysisResult.misinformationRisk] || 50,
       });
-      const caption = generateCaption(misScoreResult.misinformationImmunityScore, imageAnalysisResult.description);
+      const caption = generateCaption(misScoreResult.misinformationImmunityScore, imageAnalysisResult.description, aiDetectionResult.aiProbability);
       results = {
         imageAnalysis: imageAnalysisResult,
         misScore: misScoreResult,
         metadata: { flags: [imageAnalysisResult.manipulationAssessment] },
         integrity: { videoStreamHash: 'c4ca4238a0b923820dcc509a6f75849b', audioStreamHash: 'N/A' },
         generatedCaption: caption,
+        aiDetection: aiDetectionResult,
       };
     } catch (error) {
       console.error('Image Analysis failed:', error);
@@ -159,7 +221,7 @@ export async function analyzeInput(
       const videoDataUri = input.dataUri;
       const { transcription } = await transcribeAudio({ audioDataUri: videoDataUri });
 
-      const [anonymizationResult, verificationResult, contextResult] = await Promise.all([
+      const [anonymizationResult, verificationResult, contextResult, aiDetectionResult] = await Promise.all([
         anonymizeWhistleblowerIdentity({ videoDataUri }),
         detectRecycledFootage({
           videoDataUri,
@@ -172,6 +234,7 @@ export async function analyzeInput(
           time: new Date().toISOString(),
           weatherDescription: 'Clear sky', // Placeholder weather
         }),
+        detectAiGeneration({ dataUri: videoDataUri }),
       ]);
 
       // Calculate scores based on analysis results
@@ -179,13 +242,16 @@ export async function analyzeInput(
       const physicsMatch = contextResult.weatherMatch ? 90 : 40;
       const sourceCorroboration = verificationResult.gdeltResults.toLowerCase().includes('no relevant events found') ? 40 : 90;
 
+      // Penalize for high AI probability
+      const adjustedIntegrity = aiDetectionResult.aiProbability > 80 ? 10 : metadataIntegrity;
+
       const misScoreResult = await assessMisinformationTrustScore({
-        metadataIntegrity,
+        metadataIntegrity: adjustedIntegrity,
         physicsMatch,
         sourceCorroboration,
       });
 
-      const caption = generateCaption(misScoreResult.misinformationImmunityScore, `Video analysis: ${verificationResult.gdeltResults}`);
+      const caption = generateCaption(misScoreResult.misinformationImmunityScore, `Video analysis: ${verificationResult.gdeltResults}`, aiDetectionResult.aiProbability);
 
       results = {
         anonymization: anonymizationResult,
@@ -196,6 +262,7 @@ export async function analyzeInput(
         metadata: { flags: ['Video analysis completed.'] },
         integrity: { videoStreamHash: verificationResult.perceptualHash, audioStreamHash: "d41d8cd98f00b204e9800998ecf8427e" },
         generatedCaption: caption,
+        aiDetection: aiDetectionResult,
       };
     } catch (error) {
       console.error('Video Analysis failed:', error);
@@ -210,7 +277,10 @@ export async function analyzeInput(
     const reportUrl = `http://localhost:9002/report/${reportId}`;
     results.reportId = reportId;
     results.reportUrl = reportUrl;
-    reportStore.set(reportId, results);
+
+    const db = readDb();
+    db.reports[reportId] = results;
+    writeDb(db);
   }
 
   return results;

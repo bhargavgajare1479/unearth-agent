@@ -92,6 +92,17 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       .catch(err => sendResponse({ success: false, error: err.message }));
     return true;
   }
+  if (request.action === "vote") {
+    fetch(ANALYSIS_ENDPOINT_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "vote", ...request.payload }),
+    })
+      .then(r => r.json())
+      .then(data => sendResponse(data))
+      .catch(err => sendResponse({ success: false, error: err.message }));
+    return true;
+  }
   if (request.action === "fetchMedia") {
     fetchMedia(request, sendResponse);
     return true;
