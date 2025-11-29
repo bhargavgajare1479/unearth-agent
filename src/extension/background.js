@@ -2,7 +2,10 @@
 // It listens for messages from the content script and makes the call
 // to the same `analyzeInput` Server Action used by the main web application.
 
-const ANALYSIS_ENDPOINT_URL = 'http://localhost:9002/api/analyze';
+// IMPORTANT: FOR FIREBASE STUDIO TESTING
+// Replace the placeholder URL below with the actual public URL for port 9002 from your Firebase Studio workspace.
+// You can find this in the "Ports" tab in your workspace.
+const ANALYSIS_ENDPOINT_URL = 'https://<YOUR_FIREBASE_STUDIO_WORKSPACE_URL>/api/analyze';
 
 // Helper function to fetch an image and convert it to a Data URI
 async function fetchImageAsDataUri(imageUrl) {
@@ -30,6 +33,11 @@ async function fetchImageAsDataUri(imageUrl) {
 async function analyzeContent(request, sendResponse) {
   try {
     let payload = request.payload;
+
+    // Before making the request, check if the placeholder URL is still there.
+    if (ANALYSIS_ENDPOINT_URL.includes('<YOUR_FIREBASE_STUDIO_WORKSPACE_URL>')) {
+      throw new Error('The extension backend URL has not been configured. Please update src/extension/background.js with your public workspace URL.');
+    }
 
     // If the payload is an image URL, we need to process it first.
     if (payload.type === 'image' && payload.content.startsWith('http')) {
